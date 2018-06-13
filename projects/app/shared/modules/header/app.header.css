@@ -1,0 +1,75 @@
+.HeaderWrap .NavBar{box-shadow:0px 0px 8px 0px #666666;}
+.HeaderWrap .NavBarInner{padding:0 2rem;}
+.HeaderWrap .Logo{width:1.15rem;min-width: 70px;}
+.HeaderWrap .Navigation{position:fixed;right:2rem;top:20px;height:32px;line-height:32px;z-index: 120;}
+.HeaderWrap .Navigation.active{box-shadow:0}
+.HeaderWrap .Navigation li{float:left;margin:0 0.15rem;font-size:14px;text-align:left;font-weight:bold;}
+.HeaderWrap .Navigation li.active{border-bottom: 2px solid blueviolet;}
+.HeaderWrap .Navigation li a{display:block}
+.HeaderWrap .Menu{position:relative;display:none;width:32px;
+    height: 32px;
+    z-index:30;}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight
+}
+
+/* ===== 响应设计 ===== */
+/* 大屏幕 大桌面显示器，最大 1200px */
+@media screen and (min-width: 1200px){
+.HeaderWrap .Navigation{top:20px;}
+}
+
+/* 中等屏幕 桌面显示器，最大 1024px */
+@media screen and (max-width: 1200px) {
+.HeaderWrap .Navigation{top:16px;}
+}
+
+/* 中等屏幕 桌面显示器，最大 992px */
+@media screen  and (max-width: 991px) {
+.HeaderWrap .Navigation{top:12px;}
+}
+
+/* 小屏幕 平板，最大 768px */
+@media screen and (max-width: 768px) {
+    .HeaderWrap .NavBarInner{padding:0 5%;}
+    .HeaderWrap .Menu{display: block}
+    .HeaderWrap .Navigation{display:none;bottom:0;top:0;right:0;width:250px;height:100%;padding-top:60px;background-color:#fff;z-index:10;}
+    .HeaderWrap .Navigation.active{display: block;box-shadow: 0px 5px 5px 0px #666666;}
+    .HeaderWrap .Navigation li{margin:0 10%;padding:1rem;float:none;}    
+}

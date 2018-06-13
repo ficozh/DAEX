@@ -1,0 +1,12 @@
+.FooterBox .FooterButton{
+position:fixed;left:0;right:0;bottom:0;height:48px;line-height:45px;background-color:#25a2e6;
+background: -webkit-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
+background: -o-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
+background: -moz-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
+background: -mos-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
+background: linear-gradient(to right, #2283e2, #26ade8, #27b5e9);
+background-size:cover;
+font-size:18px;
+color:rgb(255, 255, 255);
+z-index:99;
+}

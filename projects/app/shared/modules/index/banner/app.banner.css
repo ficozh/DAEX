@@ -1,0 +1,44 @@
+.BannerWrap{background-color:#333;}
+.BannerWrap h1 {
+    color: #fff;
+    font-size: .68rem;;
+    position: absolute;
+    top: 1.8rem;
+    left: 1.9rem;
+    transform: scale(1, 1.2);
+    -ms-transform: scale(1, 1.2);
+    -webkit-transform: scale(1, 1.2);
+    -moz-transform: scale(1, 1.2);
+    -o-transform: scale(1, 1.2);
+    animation: myTitle 2s 1 ease-in-out forwards;
+    -webkit-animation: myTitle 2s 1 ease-in-out forwards;
+    opacity: 0;
+    z-index: 10;
+  }
+.BannerWrap .Video {position:relative;overflow:hidden;background-size:cover;background-position:center center;background-repeat:no-repeat;background-image:url(assets/images/top-first.png);font-size: 0}
+.BannerWrap .Pic{display:none}
+
+@keyframes myTitle {
+    0% {
+      opacity: 0;
+      transform: scale(2);
+      -webkit-transform: scale(2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1, 1.2);
+      -webkit-transform: scale(1, 1.2);
+    }
+  }
+  @-webkit-keyframes myTitle {
+    0% {
+      opacity: 0;
+      transform: scale(2);
+      -webkit-transform: scale(2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1, 1.2);
+      -webkit-transform: scale(1, 1.2);
+    }
+  }

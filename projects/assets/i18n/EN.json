@@ -1,0 +1,26 @@
+{
+  "HEADER": {
+    "Home": "Home",
+    "Value": "Value",
+    "Ecosystem": "Ecosystem",
+    "DAEXpaper": "DAEX paper"
+  },
+  "BANNER": {
+    "WITNESSVALUE" : "WITNESS VALUE"
+  },
+  "ABOUT": {
+    "WHATISDAEX": "WHAT IS DAEX",
+    "Industry": "For Cryptocurrency Industry",
+    "IndustryA": "An open clearing",
+    "IndustryB": "ecosystem for cryptocurrencies",
+    "IndustryC": "Witness the fission of value",
+    "Exchanges": "For Cryptocurrency Exchanges",
+    "ExchangesA": "A bridge that",
+    "ExchangesB": "connects exchanges",
+    "ExchangesC": "Witness the liquidity of value",
+    "Users": "For Cryptocurrency Users",
+    "UsersA": "A reliable custodian",
+    "UsersB": "of multiple assets",
+    "UsersC": "Witness the accumulation of value"
+  }
+}

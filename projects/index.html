@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN" class="Mobile">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script>
+    (function (win,doc){
+    if (!win.addEventListener) return;
+    var html=document.documentElement;
+    function setFont(){
+      var cliWidth=html.clientWidth;
+      html.style.fontSize=100*(cliWidth/1920)+'px';
+    }
+    win.addEventListener('resize',setFont,false);
+    setFont();
+    })(window,document);
+</script>
+</head>
+<body id="WrapperArea">
+  <!-- 状态栏覆盖全屏幕模式 (PhoneGap) -->
+  <div class="StatusbarOverlay"></div>
+  <!-- root -->
+  <app-root></app-root>
+  <!-- root end -->
+  <script type="text/javascript">
+    window.onload = function () {
+		var lastTouchEnd=0;
+        document.addEventListener('touchstart',function (event) {if(event.touches.length>1){event.preventDefault()}})        
+        document.addEventListener('touchend',function (event) {
+            var now=(new Date()).getTime();
+            if(now-lastTouchEnd<=300){event.preventDefault()}
+            lastTouchEnd=now;
+        },false)
+    }
+  </script>
+</body>
+</html>

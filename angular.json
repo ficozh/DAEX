@@ -1,0 +1,141 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "web-app": {
+      "root": "projects",
+      "sourceRoot": "projects",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "daexH5",
+            "index": "projects/index.html",
+            "main": "projects/main.ts",
+            "tsConfig": "projects/tsconfig.app.json",
+            "polyfills": "projects/polyfills.ts",
+            "assets": [
+              { "glob": "**/*", "input": "projects/assets/", "output": "/assets/" },
+              { "glob": "favicon.ico", "input": "/projects", "output": "/" }
+            ],
+            "styles": [
+              "_lib/kelat.css",
+              "projects/styles.css"
+            ],
+            "scripts": [
+              "_lib/kelat.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/environments/environment.ts",
+                  "with": "projects/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "web-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "projects/polyfills.ts",
+            "tsConfig": "projects/tsconfig.spec.json",
+            "scripts": [
+              "_lib/kelat.js",
+              "node_modules/swiper/dist/js/swiper.min.js"
+            ],
+            "styles": [
+              "_lib/kelat.css",
+              "projects/styles.css"
+            ],
+            "assets": [
+              "projects/assets",
+              "projects/favicon.ico"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tsconfig.app.json",
+              "projects/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "web-app-e2e": {
+      "root": "",
+      "sourceRoot": "",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "web-app:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "web-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "flat": true,
+      "inlineStyle": true,
+      "prefix": "app",
+      "styleext": "css"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
+}

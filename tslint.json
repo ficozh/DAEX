@@ -1,0 +1,179 @@
+{
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
+  "rules": {
+    //转换箭头函数
+    "arrow-return-shorthand": true,
+    //
+    "callable-types": true,
+    //强制使用PascalClass类和接口名称
+    "class-name": true,
+    //单行注释的格式规则
+    "comment-format": [
+      true,
+      //要求所有的单行注释都必须以空格开始 // comment
+      "check-space"
+    ],
+    //强制使用大括号
+    "curly": true,
+    "deprecation": {
+      "severity": "warn"
+    },
+    //确保文件以换行符结束
+    "eofline": true,
+    //要求用for ... in语句过滤if语句
+    "forin": true,
+    //不允许通过import和直接导入指定的模块require
+    "import-blacklist": [
+      true,
+      "rxjs",
+      "rxjs/Rx"
+    ],
+    //确保语句关键字之间有适当的间距
+    "import-spacing": true,
+    //使用制表符或空格强制缩进
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "interface-over-type-literal": true,
+    "label-position": true,
+    //最大行长度
+    "max-line-length": [
+      true,
+      200
+    ],
+    "member-access": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static-field",
+          "instance-field",
+          "static-method",
+          "instance-method"
+        ]
+      }
+    ],
+    //不允许使用arguments.callee
+    "no-arg": true,
+    //不允许使用位运算符
+    "no-bitwise": true,
+    //禁止使用指定的控制台方法
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    //不允许使用 String/Number/Boolean的构造函数
+    "no-construct": true,
+    //不允许使用debugger
+    "no-debugger": true,
+    //构造函数两次用super会发出警告
+    "no-duplicate-super": true,
+    //不允许空的块
+    "no-empty": false,
+    //禁止空接口
+    "no-empty-interface": true,
+    //不允许使用eval
+    "no-eval": true,
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
+    //禁止定义构造函数或new class
+    "no-misused-new": true,
+    //不允许使用非空的 ！后缀运算符
+    "no-non-null-assertion": true,
+    "no-shadowed-variable": true,
+    //禁止不必要的字符串文字属性访问
+    "no-string-literal": false,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": true,
+    //尾部空格检测
+    "no-trailing-whitespace": true,
+    "no-unnecessary-initializer": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": true,
+    //禁止使用var关键字
+    "no-var-keyword": true,
+    //检查对象文本中key的排序
+    "object-literal-sort-keys": false,
+    //行内检测
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+    //const偏好,这么做可以优化性能
+    "prefer-const": true,
+    //引用规范 quotemark规定了引用符号的格式，比如在true,'single'的模式下，就会强制规定引用时必须使用单引号。然而，即使是WebStorm默认的引用格式也是双引号
+    "quotemark": [
+      true,
+      "single"
+    ],
+    //调用时需要指定radix参数parseInt
+    "radix": true,
+    //在每个语句的结尾执行一致的分号用法
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    //类型声明的冒号之前是否需要空格
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    //确保将结果typeof与正确的字符串值进行比较
+    "typeof-compare": true,
+    "unified-signatures": true,
+    "variable-name": false,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ],
+    "directive-selector": [
+      true,
+      "attribute",
+      "app",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "app",
+      "kebab-case"
+    ],
+    "no-output-on-prefix": true,
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": true,
+    "no-input-rename": true,
+    "no-output-rename": true,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "component-class-suffix": true,
+    "directive-class-suffix": true,
+    "invoke-injectable": true
+  }
+}

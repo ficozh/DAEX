@@ -1,0 +1,27 @@
+<header class="WAll HeaderWrap">
+	<div class="NavBar">
+		<div class="NavBarInner">
+			<span class="Left">
+				<img class="Logo" src="assets/images/logo.svg" />
+			</span>
+			<span class="Center"></span>
+			<span class="Right">
+				<img class="Menu Icon" (click)="onMenu($event)" alt="menu" src="assets/images/menu.png" />
+			</span>
+		</div>
+	</div>
+	<ul class="Navigation" id="Navigation">
+		<li class="active">
+			<a href="./index.html">{{'HEADER.Home' | translate}}</a>
+		</li>
+		<li>
+			<a href="./index.html#value">{{'HEADER.Value' | translate}}</a>
+		</li>
+		<li>
+			<a href="./index.html#ecosystem">{{'HEADER.Ecosystem' | translate}}</a>
+		</li>
+		<li class="paper-pc">
+			<a class="active">{{'HEADER.DAEXpaper' | translate}}</a>
+		</li>
+	</ul>
+</header>

@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": ">>>运行 手机版",
+            "type": "shell",
+            "command": "ng serve web-app --aot --host 10.180.108.89 --port 4201",
+            "problemMatcher": []
+        },
+        {
+            "label": "生成--- 手机版文件",
+            "type": "shell",
+            "command": "ng build web-app --prod --build-optimizer",
+            "problemMatcher": []
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "pad\\tsconfig.spec.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        }
+    ]
+}

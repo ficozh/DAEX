@@ -16,21 +16,23 @@ import { TranslateModule } from '@ngx-translate/core';
 // 路由相关模块
 import { RouterModule, Routes } from '@angular/router';
 // 视图组件
-import { WhitepaperComponent } from './app.whitepaper.component';
+import { UserCenterViewComponent } from './app.userCenter.component';
 // 视图事件
-import { WhitepaperAction } from './app.whitepaper.action';
+import { UserCenterAction } from './app.userCenter.action';
 
 // 公共模块
 import { COMMONMODILES } from '../commonModule/commonModule.module';
-// 组件
-/* import {
-  AppHeaderComponent,
-  AppFooterComponent,
- } from '@shared/modules'; */
-import { RouteService } from '@shared/services';
-import { RouteguardService } from '@shared/guard';
+// 页面
+import { UserCenterInfoComponent } from './info/app.info.component';
+import { UserCenterLoginComponent } from './login/app.login.component';
+import { UserCenterIntegralComponent } from './integral/app.integral.component';
+import { UserCenterPasswordComponent } from './password/app.password.component';
+import { UserCenterRegisterComponent } from './register/app.register.component';
 
-const PATH_ARR = ['whitepaper', 'index'];
+import { RouteService } from '@shared/services';
+import { RouteguardService, AuthComponent } from '@shared/guard';
+
+const PATH_ARR = ['userCenter', 'register', 'login', 'password', 'info', 'integral', 'auth'];
 // 根路径
 const ROOT_PATH = ['index'];
 /*定义路由const表示不可改变*/
@@ -40,10 +42,24 @@ const viewRoutes: Routes = [
   // component是映射的组件
   // children是嵌套组件的包含层
   // canActivate是内置拦截器，RouteguardService是鉴权服务
-  //  DAEX首页
-  { path: 'index', data: {title: 'DAEX'},  component: WhitepaperComponent },
-  // 错误路由重定向[写在最后一个]
-  { path: '**', redirectTo: 'index',  pathMatch: 'full'  /* 必须要设置 */}
+  {
+    path: '', component: UserCenterViewComponent, children: [
+      // 注册
+      { path: PATH_ARR[1], data: {title: '注册'}, canActivate: [RouteguardService], component: UserCenterRegisterComponent },
+      // 登录
+      { path: PATH_ARR[2], data: {title: '登录'}, canActivate: [RouteguardService], component: UserCenterLoginComponent },
+      // 忘记密码
+      { path: PATH_ARR[3], data: {title: '忘记密码'}, canActivate: [RouteguardService], component: UserCenterPasswordComponent },
+      // 完善个人信息
+      { path: PATH_ARR[4], data: {title: '完善个人信息'}, canActivate: [RouteguardService], component: UserCenterInfoComponent },
+      // 账户积分信息
+      { path: PATH_ARR[5], data: {title: '账户积分信息'}, canActivate: [RouteguardService], component: UserCenterIntegralComponent },
+      // 鉴权认证
+      {path: PATH_ARR[6],  canActivate: [RouteguardService], component: AuthComponent},
+      // 错误路由重定向[写在最后一个]
+      { path: '**', redirectTo: PATH_ARR[1],  pathMatch: 'full'  /* 必须要设置 */}
+    ]
+  }
 ];
 @NgModule({
   // 本模块声明的组件模板需要的类所在的其它模块。
@@ -59,12 +75,9 @@ export class AppWhitepaperViewRoutingModule {}
   // 声明本模块中拥有的视图类。Angular 有三种视图类：组件、指令和管道。
   declarations: [
     // 视图组件
-    WhitepaperComponent,
-    // Header
-    // AppHeaderComponent,
-    // footer
-    // AppFooterComponent,
-    // Whitepaper组件
+    UserCenterViewComponent,
+    // 鉴权认证
+    AuthComponent,
   ],
   // 本模块声明的组件模板需要的类所在的其它模块。
   imports: [
@@ -77,10 +90,10 @@ export class AppWhitepaperViewRoutingModule {}
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。
   providers: [
     // 事件
-    WhitepaperAction,
+    UserCenterAction,
   ]
 })
-export class WhitepaperViewModule {
+export class UserCenterViewModule {
   constructor(
     private routeService: RouteService,
   ) {

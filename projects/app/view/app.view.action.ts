@@ -1,8 +1,8 @@
 /**
- * 请求
- * @class: WhitepaperAction
- * @version: 0.1.6
- * @date: 2018/06/14
+ * 场景请求
+ * @class: ViewAction
+ * @version: 0.0.1
+ * @date: 2018/06/15
  * @author: fico
  * @description:
  * 对外提供 get 和 set 异步方法
@@ -20,7 +20,7 @@ import { HttpOption, HandleOption } from '@int/types';
 declare const $$: any;
 
 @Injectable()
-export class WhitepaperAction {
+export class ViewAction {
     constructor(
         private httpServices: HttpServices,
         private basic: BasicServices,
@@ -82,7 +82,7 @@ export class WhitepaperAction {
                 'name': option.name,
                 'result': option.result,
                 'callback': option.callback,
-                'error': option.error
+                'error': option.error,
             });
         });
     }
@@ -99,7 +99,7 @@ export class WhitepaperAction {
             options = undefined;
         }
         switch (name) {
-            // 首页banner图接口
+            // 场景首页banner图接口
             case 'sceneBanner':
                 paramURL = 'omsappapi/ad/popup';
                 // 广告位置1005：场景轮播广告
@@ -127,7 +127,7 @@ export class WhitepaperAction {
         let URL = '';
         let paramURL = '';
         switch (name) {
-            // 下载
+            // 场景下载
             case 'sceneDown':
                 paramURL = 'iftttscene/scene/store/download';
                 httpBody = {
@@ -145,8 +145,7 @@ export class WhitepaperAction {
             'paramUrl': paramURL,
             'httpBody': httpBody,
             'callback': callback,
-            'error': error
+            'error': error,
         });
     }
-
 }

@@ -18,7 +18,6 @@ import { CanActivate, RouterModule, Routes, Resolve, ActivatedRouteSnapshot, Rou
 import { HttpClient } from '@angular/common/http';
 // 组件
 import { AppHeaderComponent } from '@shared/modules';
-import { RouteguardService, AuthComponent } from '@shared/guard';
 import { RouteService } from '@shared/services';
 import { AppParam } from '@user';
 import { BrowserModule } from '@angular/platform-browser';
@@ -57,21 +56,17 @@ const routes: Routes = [
    outlet:字符串，路由目标，面对多个路由的情况
    children:Routes 子路由相关
    */
-  // 页面主路由
-  {path: 'index',  resolve: { translate: TranslateResolver }, loadChildren: './index/app.index.module#ViewModule'},
-  // 页面主路由
-  {path: 'whitepaper',  resolve: { translate: TranslateResolver }, loadChildren: './whitepaper/app.whitepaper.module#WhitepaperViewModule'},
-  // 鉴权认证
-  {path: 'auth',  canActivate: [RouteguardService], component: AuthComponent},
+  // 首页
+  {path: 'view',  resolve: { translate: TranslateResolver }, loadChildren: './view/app.view.module#ViewModule'},
+  // 用户中心
+  {path: 'userCenter',  resolve: { translate: TranslateResolver }, loadChildren: './userCenter/app.userCenter.module#UserCenterViewModule'},
   // 错误路由重定向[写在最后一个]
-  { path: '**', redirectTo: '/auth', pathMatch: 'full' /* 必须要设置 */}
+  { path: '**', redirectTo: '/view', pathMatch: 'full' /* 必须要设置 */}
 ];
 
 @NgModule({
   // 声明本模块中拥有的视图类。Angular 有三种视图类：组件、指令和管道。
   declarations: [
-    // 鉴权认证
-    AuthComponent,
     // 评论列表
   ],
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。

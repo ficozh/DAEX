@@ -1,15 +1,11 @@
 /**
  * 请求
- * @class: IndexAction
+ * @class: WhitepaperAction
  * @version: 0.1.6
- * @date: 2018/02/09
+ * @date: 2018/06/14
  * @author: fico
  * @description:
  * 对外提供 get 和 set 异步方法
- * 通过调用签名方法获取签名参数
- * 2018/03/06 增加下载接口
- * 2018/04/04 增加that变量，确保this指向
- * 2018/05/28 增加判断返回数据是否存在
  */
 import { Injectable } from '@angular/core';
 // 路由相关模块
@@ -24,7 +20,7 @@ import { HttpOption, HandleOption } from '@int/types';
 declare const $$: any;
 
 @Injectable()
-export class IndexAction {
+export class UserCenterAction {
     constructor(
         private httpServices: HttpServices,
         private basic: BasicServices,
@@ -86,7 +82,7 @@ export class IndexAction {
                 'name': option.name,
                 'result': option.result,
                 'callback': option.callback,
-                'error': option.error,
+                'error': option.error
             });
         });
     }
@@ -96,7 +92,6 @@ export class IndexAction {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
-        const isIgnore = false;
         // 判断参数类型
         if (typeof options === 'function') {
             callback = arguments[1];

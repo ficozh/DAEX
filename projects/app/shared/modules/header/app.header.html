@@ -11,17 +11,10 @@
 		</div>
 	</div>
 	<ul class="Navigation" id="Navigation">
-		<li class="active">
-			<a href="./index.html">{{'HEADER.Home' | translate}}</a>
-		</li>
-		<li>
-			<a href="./index.html#value">{{'HEADER.Value' | translate}}</a>
-		</li>
-		<li>
-			<a href="./index.html#ecosystem">{{'HEADER.Ecosystem' | translate}}</a>
-		</li>
-		<li class="paper-pc">
-			<a class="active">{{'HEADER.DAEXpaper' | translate}}</a>
-		</li>
+		<li class="active"><a href="./index.html">{{'HEADER.Home' | translate}}</a></li>
+		<li><a href="#value">{{'HEADER.Value' | translate}}</a></li>
+		<li><a href="#ecosystem">{{'HEADER.Ecosystem' | translate}}</a></li>
+		<li><a href="./index.html#/whitepaper/index">{{'HEADER.DAEXpaper' | translate}}</a></li>
+		<li><span (click)="Language('EN')">English</span> / <span (click)="Language('ZH-CN')">中文</span></li>
 	</ul>
 </header>

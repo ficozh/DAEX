@@ -39,7 +39,6 @@ export class AuthComponent implements OnInit {
     }
     // 存储用户信息
     storeInfo(userInfoData?: any) {
-        this.userModel.authCount += this.userModel.authCount;
         if (userInfoData) {
             // 测试
             if (this.isTest) {
@@ -53,7 +52,7 @@ export class AuthComponent implements OnInit {
         }
         // history.back(); history.go(-1);
         if (this.routeService.routeMode) {
-            this.router.navigate(['/view/index']);
+            this.router.navigate(['/index/home']);
         } else {
             let Url = this.routeService.get(-2);
             if (Url.indexOf('?') > -1) {
@@ -61,7 +60,7 @@ export class AuthComponent implements OnInit {
                 Url = Url.substring(0, Mark);
             }
             if (Url.indexOf(this.exclude[0]) === -1) {
-                Url = '/view/index';
+                Url = '/index/home';
             }
             this.router.navigate([Url]);
         }

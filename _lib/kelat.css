@@ -64,7 +64,7 @@ cursor:not-allowed!important;
 .Small,small{font-size:85%}
 
 .H1,.H2,.H3,.H4,.H5,.H6,
-h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;margin:5px 0}
+h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;margin:0}
 .H1,h1{font-size:36px}
 .H2,h2{font-size:30px}
 .H3,h3{font-size:24px}

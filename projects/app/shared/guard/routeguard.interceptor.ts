@@ -54,6 +54,9 @@ export class RouteguardService implements CanActivate {
     // 返回值 true: 跳转到当前路由 false: 不跳转到当前路由
     // 当前路由名称
     const path = route.routeConfig.path;
+    if (this.routeService.path.length >= 2 && this.routeService.get(-1).indexOf(path) > -1) {
+      return false;
+    }
     // 根据点击事件添加或删除路径数组队列
     this.routeService.set(state);
     console.log(this.routeService.path);
@@ -62,10 +65,6 @@ export class RouteguardService implements CanActivate {
     const nextRoute = this.routeService.PATH_ARR;
     // 是否登录
     const isLogin = this.userModel.isLogin;
-    // 认证达到 20 次 返回 false
-    if (this.userModel.authCount >= 20) {
-      return false;
-    }
     // 当前路由是nextRoute指定页时
     if (nextRoute.indexOf(path) >= 0) {
       if (typeof this.routeService.routeMode === 'undefined') {
@@ -73,12 +72,7 @@ export class RouteguardService implements CanActivate {
       }
       if (!isLogin) {
         // 未登录，跳转到login
-        /* if (this.userModel.authCount >= 100) {
-          return false;
-        } */
-        // setTimeout(() => {
-          this.router.navigate(['auth']);
-        // }, 50);
+        this.router.navigate(['auth']);
         return false;
       } else {
         // 已登录，跳转到当前路由
@@ -96,7 +90,6 @@ export class RouteguardService implements CanActivate {
         return true;
       } else {
         // 已登录，跳转到首页
-        this.router.navigate(['/view/index']);
         return false;
       }
     }

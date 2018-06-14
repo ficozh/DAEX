@@ -6,7 +6,7 @@
  * @author: fico
  * @description:
  */
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -15,13 +15,5 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class AppFooterComponent {
-  // title
-  @Input() title: string;
-  // 父级方法 点击打开图片预览
-  @Output() call: EventEmitter<number> = new EventEmitter();
-  // 点击调用父级方法
-  parentMethod() {
-    this.call.emit();
-  }
 
 }

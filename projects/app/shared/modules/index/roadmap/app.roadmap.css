@@ -1,0 +1,37 @@
+/*------------------ecosystem------------------*/
+.RoadmapWrap {
+  position: relative;
+}
+.RoadmapWrap img {
+  width: 100%;
+}
+.RoadmapWrap .roadmap-m {
+  display: none;
+}
+.RoadmapTitle h2 {
+  font-size: 24px;
+  color: #7339FF;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 1.5rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .RoadmapWrap {
+    position: relative;
+  }
+  .RoadmapWrap .roadmap-p {
+    display: none;
+  }
+  .RoadmapWrap .roadmap-m {
+    display: block;
+  }
+  .RoadmapWrap .RoadmapTitle h2 {
+    top: 1.5rem;
+    font-size: 22px;
+  }  
+}

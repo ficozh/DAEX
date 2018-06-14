@@ -58,8 +58,7 @@ export class HttpServices {
             'name': options.name,
             'result': '',
             'callback': options.callback,
-            'error': options.error,
-            'isIgnore': options.isIgnore
+            'error': options.error
         };
         if (this.appParam.isTestParam) {
             $$.get(window.location.origin + '/assets/test.json', function(httpData) {
@@ -83,24 +82,7 @@ export class HttpServices {
             // console.log(JSON.stringify(options.httpBody));
             // console.log(JSON.stringify(that.userModel.APP));
             // 接口请求
-            if (options.isCordovaHTTP) {
-                console.log(options.name + '请求cordovaHTTP接口');
-                that.userModel.APP['Content-Type'] = 'application/json;charset=utf-8';
-                window['cordovaHTTP'].post(options.url, options.httpBody, that.userModel.APP, function(httpData) {
-                    let __httpData__ = httpData.data;
-                    if (typeof httpData.data === 'string') {
-                        __httpData__ = JSON.parse(httpData.data);
-                    }
-                    _Result_.result = __httpData__;
-                    callback(_Result_);
-                },
-                function(err) {
-                    console.log('textStatus=' + err);
-                    _Result_.type = 'error';
-                    _Result_.result = err;
-                    callback(_Result_);
-                });
-            } else if ($$.fn.device.os === 'android' && _appVersion_) {
+            if ($$.fn.device.os === 'android' && _appVersion_) {
                 console.log(options.name + '请求ajax接口');
                 $$.ajax({
                     method: 'POST',

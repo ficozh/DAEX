@@ -10,8 +10,6 @@
 export class UserModel  {
     // 判断是否登录
     isLogin: boolean;
-    // 鉴权次数
-    authCount = 0;
     // 家庭ID
     familyId: string;
     // APP 信息

@@ -15,5 +15,13 @@ export * from './index/banner/app.banner';
 export * from './index/about/app.about';
 // value
 export * from './index/value/app.value';
+// ecosystem
+export * from './index/ecosystem/app.ecosystem';
+// roadmap
+export * from './index/roadmap/app.roadmap';
+// team
+export * from './index/team/app.team';
+// team
+export * from './index/community/app.community';
 
 

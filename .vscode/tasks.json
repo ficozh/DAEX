@@ -14,14 +14,6 @@
             "type": "shell",
             "command": "ng build web-app --prod --build-optimizer",
             "problemMatcher": []
-        },
-        {
-            "type": "typescript",
-            "tsconfig": "pad\\tsconfig.spec.json",
-            "option": "watch",
-            "problemMatcher": [
-                "$tsc-watch"
-            ]
         }
     ]
 }

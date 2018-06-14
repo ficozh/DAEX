@@ -12,7 +12,8 @@ import { APP_BASE_HREF } from '@angular/common';
 
 // 页面模块
 import { AppComponent } from './app.component';
-import { ViewModule } from './view/app.view.module';
+import { ViewModule } from './index/app.index.module';
+import { WhitepaperViewModule } from './whitepaper/app.whitepaper.module';
 
 // 组件
 import { NoopInterceptor } from '@shared/guard';
@@ -46,6 +47,7 @@ const urlParam = getUrlParams();
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。
   providers: [
     ViewModule,
+    WhitepaperViewModule,
     // http拦截
     {
       provide: HTTP_INTERCEPTORS,

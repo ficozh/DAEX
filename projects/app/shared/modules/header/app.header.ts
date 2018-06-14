@@ -12,6 +12,7 @@
 import { Component, Input } from '@angular/core';
 import { RouteService } from '@shared/services/route.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 // 定义 $$ 对象
 declare const $$: any;
 
@@ -26,6 +27,7 @@ export class AppHeaderComponent {
   constructor(
     // private appPlugin: AppPlugin,
     private router: Router,
+    private translate: TranslateService,
     private routeService: RouteService,
   ) { }
   // 菜单事件
@@ -33,7 +35,8 @@ export class AppHeaderComponent {
     $$('#Navigation').toggleClass('active animated fadeInRight');
   }
   // 返回事件
-  onBack() {
+  Language(name: string) {
+    this.translate.use(name);
   }
 
 }

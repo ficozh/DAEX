@@ -22,5 +22,42 @@
     "UsersA": "A reliable custodian",
     "UsersB": "of multiple assets",
     "UsersC": "Witness the accumulation of value"
+  },
+  "VALUE": {
+    "Title": "VALUE",
+    "Safe": "Safe",
+    "SafeA": "Joint custodian of assets,",
+    "SafeB": "Multiple encryptions",
+    "SafeC": "for wallet",
+    "Trust": "Trust",
+    "TrustA": "Value clearing community,",
+    "TrustB": "Transparent accounting,",
+    "TrustC": "Everyone participates",
+    "Open": "Open",
+    "OpenA": "Open exchange",
+    "OpenB": "and clearing network,",
+    "OpenC": "Support derivatives in the future"
+  },
+  "ECOSYSTEM": {
+    "Title": "ECOSYSTEM",
+    "TitleA": "Separate “digital assets” from “transaction data”",
+    "TitleB": "A new model of clearing and settlement",
+    "TitleC": "to solve safety and trust issues",
+    "coreA": "The core of DAEX provides individual and",
+    "coreB": "institutional customers with a unified clearing and",
+    "coreC": "settlement service using distributed ledger technology.",
+    "coreD": "Based on smart contract technology, the clearing",
+    "coreE": "and settlement service is used for",
+    "coreF": "cryptocurrency derivatives.",
+    "walletA": "The DAEX Client: A distributed wallet that supports multiple",
+    "walletB": "types of cryptocurrency assets.",
+    "walletC": "Featuring multiple encryptions to ensure wallet safety",
+    "walletD": "Able to freely connect with exchanges.",
+    "walletE": "Obtain clearing services in a highly effective manner",
+    "walletF": "The “Everyone-Clearing” reward mechanism enhances",
+    "walletG": "the systems robustness."
+  },
+  "ROADMAP": {
+    "Title": "ROADMAP"
   }
 }

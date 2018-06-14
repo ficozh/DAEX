@@ -57,9 +57,10 @@ const routes: Routes = [
    outlet:字符串，路由目标，面对多个路由的情况
    children:Routes 子路由相关
    */
-  // 场景商店
   // 页面主路由
-  {path: 'view',  resolve: { translate: TranslateResolver }, loadChildren: './view/app.view.module#ViewModule'},
+  {path: 'index',  resolve: { translate: TranslateResolver }, loadChildren: './index/app.index.module#ViewModule'},
+  // 页面主路由
+  {path: 'whitepaper',  resolve: { translate: TranslateResolver }, loadChildren: './whitepaper/app.whitepaper.module#WhitepaperViewModule'},
   // 鉴权认证
   {path: 'auth',  canActivate: [RouteguardService], component: AuthComponent},
   // 错误路由重定向[写在最后一个]

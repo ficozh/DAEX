@@ -1,0 +1,54 @@
+/*------------------community------------------*/
+.CommunityWrap {
+  background-color: #FAFAFA;
+  height: 580px;
+}
+.CommunityWrap h2 {
+  font-size: 24px;
+  color: #7339FF;
+  text-align: center;
+  padding: 130px 0 100px;
+}
+.CommunityWrap > div {
+  text-align: center;
+  padding: 0 3.35rem;
+}
+.CommunityWrap img {
+  width: 100%;
+  margin: .6rem auto;
+  min-width: 60px;
+}
+.CommunityWrap .MaxExchangeImg {
+  display: block;
+}
+.CommunityWrap .MinExchangeImg {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .CommunityWrap {
+    height: 800px;
+  }
+  .CommunityWrap h2 {
+    font-size: 22px;
+    padding: 136px 0 140px;
+  }
+  .CommunityWrap > div {
+    padding: 0 .7rem;
+  }
+  .CommunityWrap img {
+    width: 220px;
+    margin: 0 auto;
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    -o-transform: scale(1.0);
+  }
+  .CommunityWrap .MaxExchangeImg {
+    display: none;
+  }
+  .CommunityWrap .MinExchangeImg {
+    display: block;
+  }
+}

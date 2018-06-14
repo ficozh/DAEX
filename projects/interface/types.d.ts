@@ -10,8 +10,6 @@ export interface HttpOption {
     url: string;
     paramUrl: string;
     httpBody: any;
-    isCordovaHTTP: boolean;
-    isIgnore: boolean;
     callback: Function;
     error: Function;
 }
@@ -23,5 +21,4 @@ export interface HandleOption {
     result: any;
     callback: Function;
     error: Function;
-    isIgnore: boolean;
 }

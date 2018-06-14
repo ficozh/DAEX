@@ -6,7 +6,7 @@
  * @author: fico
  * @description:
  */
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-value',
@@ -14,16 +14,4 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./app.value.css']
 })
 
-export class AppValueComponent implements  OnInit {
-
-  constructor(
-  ) {
-  }
-
-
-
-  // 组件初始化，通常会设置一些初始值
-  ngOnInit(): void {
-  }
-
-}
+export class AppValueComponent {}

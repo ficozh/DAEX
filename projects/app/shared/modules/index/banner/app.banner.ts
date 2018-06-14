@@ -6,7 +6,7 @@
  * @author: fico
  * @description:
  */
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-banner',
@@ -14,16 +14,4 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./app.banner.css']
 })
 
-export class AppBannerComponent implements  OnInit {
-
-  constructor(
-  ) {
-  }
-
-
-
-  // 组件初始化，通常会设置一些初始值
-  ngOnInit(): void {
-  }
-
-}
+export class AppBannerComponent {}

@@ -1,12 +1,105 @@
-.FooterBox .FooterButton{
-position:fixed;left:0;right:0;bottom:0;height:48px;line-height:45px;background-color:#25a2e6;
-background: -webkit-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
-background: -o-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
-background: -moz-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
-background: -mos-linear-gradient(to right, #2283e2, #26ade8, #27b5e9);  
-background: linear-gradient(to right, #2283e2, #26ade8, #27b5e9);
-background-size:cover;
-font-size:18px;
-color:rgb(255, 255, 255);
-z-index:99;
+.FooterWrap {
+padding: .87rem .9rem;
+background-color: #7852F2;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-box-pack: justify;
+-moz-justify-content: space-between;
+-webkit-justify-content: space-between;
+justify-content: space-between;
+-ms-flex-pack: justify;
+-webkit-box-align: start;
+-moz-align-items: flex-start;
+-webkit-align-items: flex-start;
+align-items: flex-start;
+-ms-flex-align: start;
+}
+.FollowTitle {
+font-size: 30px;
+color: white;
+margin-bottom: .36rem;
+}
+.FollowIcon {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-box-align: center;
+-moz-align-items: center;
+-webkit-align-items: center;
+align-items: center;
+-ms-flex-align: center;
+margin-bottom: 0.72rem;
+}
+.FollowIcon li {
+margin-right: .3rem;
+}
+.FollowIcon img {
+display: list-item;
+width: .52rem;
+min-width: 30px;
+}
+.FollowIcon img:hover {
+animation: myLogo 0.3s 1 ease-in-out forwards 0.1s;
+-webkit-animation: myLogo 0.3s 1 ease-in-out forwards 0.1s;
+}
+.FollowBottomText {
+color: white;
+font-size: 20px;
+}
+.FollowBottomText span {
+display: inline-block;
+height: 25px;
+line-height: 25px;
+}
+.FollowBottomText span:nth-last-child(1) {
+font-size: 14px;
+position: absolute;
+right: .9rem;
+}
+.FollowUsRight img {
+display: list-item;
+width: 1.72rem;
+min-width: 100px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .FooterWrap {
+    padding: 1rem;
+    -webkit-box-align: start;
+    -moz-align-items: flex-start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -ms-flex-align: start;
+    }
+    .FooterWrap .FollowTitle {
+    font-size: 22px;
+    }
+    .FooterWrap .FollowIcon {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 12rem;
+    }
+    .FooterWrap .FollowIcon li {
+        margin-right: 1.3rem;
+    margin-bottom: 10px;
+    }
+    .FooterWrap .FollowIcon img {
+    min-width: 27px;
+    width: 1.6rem;
+    }
+    .FooterWrap .FollowUsRight img {
+        width: 3.6rem;
+    position: relative;
+    top: 3px;
+    }
+      
 }

@@ -38,6 +38,12 @@ import {
   AppHeaderComponent,
   AppFooterComponent,
   AppBannerComponent,
+  AppAboutComponent,
+  AppValueComponent,
+  AppRoadmapComponent,
+  AppTeamComponent,
+  AppCommunityComponent,
+  AppEcosystemComponent,
  } from '@shared/modules';
 import { RouteService } from '@shared/services';
 import { RouteguardService } from '@shared/guard';
@@ -111,7 +117,14 @@ export class AppViewRoutingModule {}
     TeamComponent,
     WhitepaperComponent,
     FAQComponent,
-    CommunityComponent
+    CommunityComponent,
+
+    AppAboutComponent,
+    AppValueComponent,
+    AppRoadmapComponent,
+    AppTeamComponent,
+    AppCommunityComponent,
+    AppEcosystemComponent
   ],
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。
   providers: [

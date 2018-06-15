@@ -11,7 +11,7 @@ import { ViewAction } from '../app.view.action';
 
 
 @Component({
-  selector: 'app-community',
+  selector: 'app-communitycomponent',
   templateUrl: './app.community.component.html',
   styleUrls: ['./app.community.component.css']
 })

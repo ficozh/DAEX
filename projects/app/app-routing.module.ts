@@ -17,13 +17,14 @@ import { CanActivate, RouterModule, Routes, Resolve, ActivatedRouteSnapshot, Rou
 // http
 import { HttpClient } from '@angular/common/http';
 // 组件
-import { AppHeaderComponent } from '@shared/modules';
+import { AppHeaderComponent, AppFooterComponent } from '@shared/modules';
 import { RouteService } from '@shared/services';
 import { AppParam } from '@user';
 import { BrowserModule } from '@angular/platform-browser';
 // 国际化
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 // 国际化JSON文件
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -73,6 +74,7 @@ const routes: Routes = [
   providers: [
     // Header
     AppHeaderComponent,
+    AppFooterComponent,
     // APP 信息
     AppParam,
     // 路由服务

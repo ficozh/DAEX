@@ -12,8 +12,8 @@ import { APP_BASE_HREF } from '@angular/common';
 
 // 页面模块
 import { AppComponent } from './app.component';
-import { ViewModule } from './index/app.index.module';
-import { WhitepaperViewModule } from './whitepaper/app.whitepaper.module';
+import { ViewModule } from './view/app.view.module';
+import { UserCenterViewModule } from './userCenter/app.userCenter.module';
 
 // 组件
 import { NoopInterceptor } from '@shared/guard';
@@ -25,7 +25,6 @@ import { environment } from '../environments/environment';
 import { getUrlParams } from '../components/';
 // declare const $$: any;
 
-/* import { ScrollDirective } from '../shared/directive/scroll/scroll.directive'; */
 const urlParam = getUrlParams();
 
 @NgModule({
@@ -47,7 +46,7 @@ const urlParam = getUrlParams();
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。
   providers: [
     ViewModule,
-    WhitepaperViewModule,
+    UserCenterViewModule,
     // http拦截
     {
       provide: HTTP_INTERCEPTORS,

@@ -11,7 +11,7 @@ import { ViewAction } from '../app.view.action';
 
 
 @Component({
-  selector: 'app-team',
+  selector: 'app-teamcomponent',
   templateUrl: './app.team.component.html',
   styleUrls: ['./app.team.component.css']
 })

@@ -78,6 +78,12 @@ export class AppWhitepaperViewRoutingModule {}
     UserCenterViewComponent,
     // 鉴权认证
     AuthComponent,
+    // 页面
+    UserCenterRegisterComponent,
+    UserCenterLoginComponent,
+    UserCenterPasswordComponent,
+    UserCenterInfoComponent,
+    UserCenterIntegralComponent
   ],
   // 本模块声明的组件模板需要的类所在的其它模块。
   imports: [

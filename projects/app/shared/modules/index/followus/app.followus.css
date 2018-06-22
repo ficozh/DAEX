@@ -1,0 +1,18 @@
+/*------------------followus------------------*/
+.FollowUsWrap {
+  background-color: #7855F1;
+  padding-top:0.8rem;
+  padding-bottom:0.8rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  .ValueWrap {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
+  
+}
+
+
+

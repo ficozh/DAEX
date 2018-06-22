@@ -24,6 +24,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // 国际化
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { RouteguardService, AuthComponent } from '@shared/guard';
 
 // 国际化JSON文件
 export function createTranslateLoader(http: HttpClient) {
@@ -62,13 +63,13 @@ const routes: Routes = [
   // 用户中心
   {path: 'userCenter',  resolve: { translate: TranslateResolver }, loadChildren: './userCenter/app.userCenter.module#UserCenterViewModule'},
   // 错误路由重定向[写在最后一个]
-  { path: '**', redirectTo: '/view', pathMatch: 'full' /* 必须要设置 */}
+  { path: '**', redirectTo: '/view/index', pathMatch: 'full' /* 必须要设置 */}
 ];
 
 @NgModule({
   // 声明本模块中拥有的视图类。Angular 有三种视图类：组件、指令和管道。
   declarations: [
-    // 评论列表
+    AuthComponent
   ],
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。
   providers: [

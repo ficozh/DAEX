@@ -64,14 +64,4 @@ export class BasicServices {
     }, () => { }, SignData);
   }
 
-  // 关闭web容器
-  exitApp() {
-    // 退出设备详情页
-    const nav = navigator || window.navigator;
-    if (/iPhone|mac|iPod|iPad/i.test(nav.userAgent)) {
-      upcore.closeH5ContainerView(function () { }, function () { });
-    } else if (nav && nav['app'] && typeof (nav['app'].exitApp) === 'function') {
-      nav['app'].exitApp();
-    }
-  }
 }

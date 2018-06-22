@@ -30,9 +30,9 @@ import { UserCenterPasswordComponent } from './password/app.password.component';
 import { UserCenterRegisterComponent } from './register/app.register.component';
 
 import { RouteService } from '@shared/services';
-import { RouteguardService, AuthComponent } from '@shared/guard';
+import { RouteguardService } from '@shared/guard';
 
-const PATH_ARR = ['userCenter', 'register', 'login', 'password', 'info', 'integral', 'auth'];
+const PATH_ARR = ['userCenter', 'register', 'login', 'password', 'info', 'integral'];
 // 根路径
 const ROOT_PATH = ['index'];
 /*定义路由const表示不可改变*/
@@ -47,15 +47,13 @@ const viewRoutes: Routes = [
       // 注册
       { path: PATH_ARR[1], data: {title: '注册'}, canActivate: [RouteguardService], component: UserCenterRegisterComponent },
       // 登录
-      { path: PATH_ARR[2], data: {title: '登录'}, canActivate: [RouteguardService], component: UserCenterLoginComponent },
+      { path: PATH_ARR[2], data: {title: '登录'}, component: UserCenterLoginComponent },
       // 忘记密码
-      { path: PATH_ARR[3], data: {title: '忘记密码'}, canActivate: [RouteguardService], component: UserCenterPasswordComponent },
+      { path: PATH_ARR[3], data: {title: '忘记密码'}, component: UserCenterPasswordComponent },
       // 完善个人信息
       { path: PATH_ARR[4], data: {title: '完善个人信息'}, canActivate: [RouteguardService], component: UserCenterInfoComponent },
       // 账户积分信息
       { path: PATH_ARR[5], data: {title: '账户积分信息'}, canActivate: [RouteguardService], component: UserCenterIntegralComponent },
-      // 鉴权认证
-      {path: PATH_ARR[6],  canActivate: [RouteguardService], component: AuthComponent},
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: PATH_ARR[1],  pathMatch: 'full'  /* 必须要设置 */}
     ]
@@ -76,8 +74,6 @@ export class AppWhitepaperViewRoutingModule {}
   declarations: [
     // 视图组件
     UserCenterViewComponent,
-    // 鉴权认证
-    AuthComponent,
     // 页面
     UserCenterRegisterComponent,
     UserCenterLoginComponent,

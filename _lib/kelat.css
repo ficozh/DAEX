@@ -2058,8 +2058,8 @@ box-sizing:border-box;}
 
 /*页眉*/
 .WrapHeader{position:fixed;top:0;left:0;width:100%;text-align:center;background-color:#fff;z-index:99;
--webkit-box-shadow:0 0 7px rgba(71, 71, 71, 0.19);
-        box-shadow:0 0 7px rgba(71, 71, 71, 0.19);}
+-webkit-box-shadow:0 0 7px rgba(71, 71, 71, 0.479);
+        box-shadow:0 0 7px rgba(71, 71, 71, 0.479);}
 html.WithStatusbarOverlay body .WrapHeader{top:auto}
     /*顶部导航*/
     .HeaNav{height:inherit;line-height:44px;margin-top:-3px;

@@ -31,7 +31,7 @@ export class AppHeaderComponent {
     private routeService: RouteService,
   ) { }
   // 菜单事件
-  onMenu(ev) {
+  onMenu() {
     $$('#Navigation').toggleClass('active animated fadeInRight');
   }
   // 返回事件

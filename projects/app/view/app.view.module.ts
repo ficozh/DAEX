@@ -44,38 +44,37 @@ import {
   AppTeamComponent,
   AppCommunityComponent,
   AppEcosystemComponent,
+  AppFollowUsComponent
  } from '@shared/modules';
 import { RouteService } from '@shared/services';
-import { RouteguardService } from '@shared/guard';
 
-const PATH_ARR = ['view', 'home', 'information', 'community', 'followus', 'team', 'whitepaper', 'FAQ'];
+const PATH_ARR = ['view', 'index', 'information', 'community', 'followus', 'team', 'whitepaper', 'FAQ'];
 // 根路径
-const ROOT_PATH = ['home'];
+const ROOT_PATH = ['index'];
 /*定义路由const表示不可改变*/
 const viewRoutes: Routes = [
   // path是路由访问的路径
   // 留空可以让路径默认指向第一个组件，访问时候没有带任何子路径情况下
   // component是映射的组件
   // children是嵌套组件的包含层
-  // canActivate是内置拦截器，RouteguardService是鉴权服务
   {
     path: '', component: ViewComponent, children: [
       //  home
-      { path: 'home', data: {title: 'DAEX'}, canActivate: [RouteguardService], component: IndexComponent },
+      { path: 'index', data: {title: 'DAEX'},  component: IndexComponent },
       //  information
-      { path: 'information', data: {title: 'information'}, canActivate: [RouteguardService], component: InformationComponent },
+      { path: 'information', data: {title: 'information'},  component: InformationComponent },
       // community
-      { path: 'community' , data: {title: 'community'}, canActivate: [RouteguardService], component: CommunityComponent},
+      { path: 'community' , data: {title: 'community'},  component: CommunityComponent},
       // followus
-      { path: 'followus', data: {title: 'followus'}, canActivate: [RouteguardService], component: FollowusComponent },
+      { path: 'followus', data: {title: 'followus'},  component: FollowusComponent },
       // team
-      { path: 'team', data: {title: 'team'}, canActivate: [RouteguardService], component: TeamComponent },
+      { path: 'team', data: {title: 'team'},  component: TeamComponent },
       // whitepaper
-      { path: 'whitepaper', data: {title: 'whitepaper'}, canActivate: [RouteguardService], component: WhitepaperComponent },
+      { path: 'whitepaper', data: {title: 'whitepaper'},  component: WhitepaperComponent },
       // FAQ
-      { path: 'FAQ', data: {title: 'FAQ'}, /* canActivate: [RouteguardService], */ component: FAQComponent },
+      { path: 'FAQ', data: {title: 'FAQ'},  component: FAQComponent },
       // 错误路由重定向[写在最后一个]
-      { path: '**', redirectTo: 'home',  pathMatch: 'full'  /* 必须要设置 */}
+      { path: '**', redirectTo: 'index',  pathMatch: 'full'  /* 必须要设置 */}
     ]
   }
 ];
@@ -124,7 +123,8 @@ export class AppViewRoutingModule {}
     AppRoadmapComponent,
     AppTeamComponent,
     AppCommunityComponent,
-    AppEcosystemComponent
+    AppEcosystemComponent,
+    AppFollowUsComponent
   ],
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。
   providers: [

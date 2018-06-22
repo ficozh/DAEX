@@ -21,7 +21,9 @@ export * from './index/ecosystem/app.ecosystem';
 export * from './index/roadmap/app.roadmap';
 // team
 export * from './index/team/app.team';
-// team
+// community
 export * from './index/community/app.community';
+// followus
+export * from './index/followus/app.followus';
 
 

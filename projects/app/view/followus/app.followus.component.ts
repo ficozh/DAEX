@@ -11,7 +11,7 @@ import { ViewAction } from '../app.view.action';
 
 
 @Component({
-  selector: 'app-followus',
+  selector: 'app-follow-us',
   templateUrl: './app.followus.component.html',
   styleUrls: ['./app.followus.component.css']
 })

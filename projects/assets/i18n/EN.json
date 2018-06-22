@@ -3,10 +3,17 @@
     "Home": "Home",
     "Value": "Value",
     "Ecosystem": "Ecosystem",
-    "DAEXpaper": "DAEX paper"
+    "Community": "Community",
+    "DAEXpaper": "DAEX paper",
+    "faq": "FAQ",
+    "login": "LOGIN",
+    "signUp": "SIGN UP"
   },
   "BANNER": {
     "WITNESSVALUE" : "WITNESS VALUE"
+  },
+  "FOLLOWUS": {
+    "Title": "FOLLOW US"
   },
   "ABOUT": {
     "WHATISDAEX": "WHAT IS DAEX",

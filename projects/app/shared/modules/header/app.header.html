@@ -1,4 +1,4 @@
-<header class="WAll HeaderWrap">
+<header class="WAll WARPWALL HeaderWrap">
 	<div class="NavBar">
 		<div class="NavBarInner">
 			<span class="Left">
@@ -6,7 +6,7 @@
 			</span>
 			<span class="Center"></span>
 			<span class="Right">
-				<img class="Menu Icon" (click)="onMenu($event)" alt="menu" src="assets/images/menu.png" />
+				<img class="Menu Icon" (click)="onMenu()" alt="menu" src="assets/images/menu.png" />
 			</span>
 		</div>
 	</div>
@@ -14,7 +14,10 @@
 		<li class="active"><a href="./index.html">{{'HEADER.Home' | translate}}</a></li>
 		<li><a href="#value">{{'HEADER.Value' | translate}}</a></li>
 		<li><a href="#ecosystem">{{'HEADER.Ecosystem' | translate}}</a></li>
-		<li><a href="./index.html#/whitepaper/index">{{'HEADER.DAEXpaper' | translate}}</a></li>
-		<li><span (click)="Language('EN')">English</span> / <span (click)="Language('ZH-CN')">中文</span></li>
+		<li><a href="">{{'HEADER.Community' | translate}}</a></li>
+		<li><a href="./index.html#/view/whitepaper">{{'HEADER.DAEXpaper' | translate}}</a></li>
+		<li><a href="">{{'HEADER.faq' | translate}}</a></li>
+		<li class="UserCenter"><a href="#/userCenter/login">{{'HEADER.login' | translate}}</a> | <a href="#/userCenter/register">{{'HEADER.signUp' | translate}}</a></li>
+		<!-- <li><span (click)="Language('EN')">English</span> / <span (click)="Language('ZH-CN')">中文</span></li> -->
 	</ul>
 </header>

@@ -20,7 +20,6 @@ import { RouteService } from '@shared/services/route.service';
 @Component({template: '<router-outlet></router-outlet>'})
 export class AuthComponent implements OnInit {
     isTest: boolean;
-    exclude = ['details'];
     constructor(
         private appParam: AppParam,
         private router: Router,
@@ -50,20 +49,15 @@ export class AuthComponent implements OnInit {
             // 失败
             this.userModel.isLogin = false;
         }
-        // history.back(); history.go(-1);
-        if (this.routeService.routeMode) {
-            this.router.navigate(['/index/home']);
-        } else {
-            let Url = this.routeService.get(-2);
-            if (Url.indexOf('?') > -1) {
-                const Mark = Url.indexOf('?');
-                Url = Url.substring(0, Mark);
-            }
-            if (Url.indexOf(this.exclude[0]) === -1) {
-                Url = '/index/home';
-            }
-            this.router.navigate([Url]);
+        // history.back();
+        //  history.go(-1);
+
+        /* let Url = this.routeService.get(-2);
+        if (Url.indexOf('?') > -1) {
+            const Mark = Url.indexOf('?');
+            Url = Url.substring(0, Mark);
         }
+        this.router.navigate([Url]); */
     }
 
     ngOnInit(): void {

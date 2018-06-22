@@ -25,7 +25,10 @@
 .TeamIntro li {
   text-align: center;
 }
-.TeamIntro li:nth-last-child(1) {
+.TeamIntro.TeamList .Avatar{position: relative; width:3.5rem;height:3.5rem;overflow: hidden;background-repeat: no-repeat;background-size: cover;font-size: 12px;color: #fff;}
+.TeamIntro.TeamList .Avatar .Info{position: absolute;bottom: 0;left: 0;right: 0;background: rgba(116, 57, 255, 0.452)}
+.TeamIntro.TeamList .Avatar .Describe{display: none;max-height: 80%}
+/* .TeamIntro li:nth-last-child(1) {
   margin-right: 0!important;
 }
 .TeamIntro li h4 {
@@ -115,15 +118,15 @@
 }
 .TeamWrap .arrow:hover {
   cursor: pointer;
-}
-@keyframes imgRotate {
+} */
+/* @keyframes imgRotate {
   0% {
     transform: rotateY(0deg);
   }
   100% {
     transform: rotateY(360deg);
   }
-}
+} */
 
 @media screen and (max-width: 768px) {
   .Ourteam h2 {

@@ -14,7 +14,6 @@ import { PlatformLocation } from '@angular/common';
 // 路由相关模块
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { UserModel, AppParam } from '@user';
-import { BasicServices } from '@shared/services/basic.services';
 import { RouteService } from '@shared/services/route.service';
 // 标题组件
 import { Title } from '@angular/platform-browser';
@@ -26,7 +25,6 @@ export class RouteguardService implements CanActivate {
 
   constructor(
     private routeService: RouteService,
-    private basic: BasicServices,
     private location: PlatformLocation,
     private router: Router,
     private userModel: UserModel,
@@ -39,10 +37,6 @@ export class RouteguardService implements CanActivate {
     state: RouterStateSnapshot): boolean {
     // 处理安卓物理返回键回退 监听location的变化
     this.location.onPopState(() => {
-      if (!this.routeService.routeState || (this.routeService.path.length >= 2 && (this.routeService.get(-1).indexOf(this.routeService.ROOT_PATH[0]) > -1))) {
-        this.basic.exitApp();
-        return false;
-      }
     });
     // 设置页面标题
     const _Title_ = route.data['title'];
@@ -72,7 +66,7 @@ export class RouteguardService implements CanActivate {
       }
       if (!isLogin) {
         // 未登录，跳转到login
-        this.router.navigate(['auth']);
+        this.router.navigate(['/userCenter/login']);
         return false;
       } else {
         // 已登录，跳转到当前路由
@@ -90,6 +84,7 @@ export class RouteguardService implements CanActivate {
         return true;
       } else {
         // 已登录，跳转到首页
+        this.router.navigate(['/view/index']);
         return false;
       }
     }

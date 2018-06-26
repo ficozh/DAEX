@@ -12,6 +12,11 @@ export class UserModel  {
     isLogin: boolean;
     // 家庭ID
     familyId: string;
+    anchor: number;
+    anchorName: string;
+    anchorOffset: any = {
+        'home': '0'
+    };
     // APP 信息
     APP: any = {
         'appId': 'MB-UZHSH-0000'

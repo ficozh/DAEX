@@ -1,17 +1,18 @@
 /*------------------community------------------*/
-.CommunityWrap {
-  background-color: #FAFAFA;
-  height: 580px;
+.COMMUNITYBox {
+  background-color: #F3F3F3;
 }
+.COMMUNITYList{padding-bottom: 40px;}
 .CommunityWrap h2 {
   font-size: 24px;
   color: #7339FF;
   text-align: center;
   padding: 130px 0 100px;
 }
+.EXCHANGESBox{background-color: #FAFAFA;padding-bottom: 50px}
+.CommunityWrap .EXCHANGESTi{padding: 50px 0 100px;}
 .CommunityWrap > div {
   text-align: center;
-  padding: 0 3.35rem;
 }
 .CommunityWrap img {
   width: 100%;
@@ -26,15 +27,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .CommunityWrap {
-    height: 800px;
-  }
   .CommunityWrap h2 {
     font-size: 22px;
-    padding: 136px 0 140px;
-  }
-  .CommunityWrap > div {
-    padding: 0 .7rem;
   }
   .CommunityWrap img {
     width: 220px;

@@ -30,24 +30,28 @@
   -o-flex-wrap: wrap;
   flex-wrap: wrap;
   text-align: center;
-  padding: 1.1rem 0 .83rem 0;
+  padding-top:1.1rem ;
+  padding-bottom:.83rem;
 }
-.DigitialContent div {
-  margin-right: .43rem;
-}
+.DigitialContent .InfoBox {padding: 0 1rem 0 0;}
+.DigitialContent .Info {position: relative; padding-left: 36px;text-align: left;margin-bottom: 12px}
+.DigitialContent .Info img{position: absolute;left: 0;top:0;width: 24px;height: 24px;}
+.DigitialContent .Info .Ti{line-height: 24px;height: 24px;font-size: 14px;}
+
 .DigitialContent div p {
   text-align: center;
   margin-bottom: 6px;
 }
-.DigitialContent img {
-  width: 8.5rem;
+.DigitialContent .EcoGif{margin-left: -5px;}
+.DigitialContent .EcoGif img {
+  width: 6.5rem;
   min-width: 340px;
 }
-.DigitialContent .eco-gif img:nth-of-type(1) {
+.DigitialContent .EcoGif img:nth-of-type(1) {
   z-index: 9;
   position: absolute;
 }
-.DigitialContent .eco-gif img:nth-of-type(2) {
+.DigitialContent .EcoGif img:nth-of-type(2) {
   position: absolute;
 }
 .ClientContent {
@@ -130,7 +134,7 @@
     font-size: 22px;
   }
   .DigitialContent {
-    padding: 0 0 1.1rem 0;
+    padding-bottom:1.1rem;
   }
   .DigitialContent > div {
     margin-bottom: .75rem;
@@ -139,7 +143,7 @@
   .DigitialContent > div p {
     font-size: 13px;
   }
-  .DigitialContent img {
+  .DigitialContent .EcoGif img {
     width: 12.8rem;
     min-width: 12.8rem;
   }

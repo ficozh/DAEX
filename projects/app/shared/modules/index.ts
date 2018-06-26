@@ -25,5 +25,7 @@ export * from './index/team/app.team';
 export * from './index/community/app.community';
 // followus
 export * from './index/followus/app.followus';
+// foreign
+export * from './index/foreign/app.foreign';
 
 

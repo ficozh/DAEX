@@ -28,31 +28,9 @@ export class ViewAction {
         private userModel: UserModel
     ) {
     }
-    // 加载
-    private Preloader(isShow: boolean) {
-        if (isShow) {
-            // load 显示
-            window['IS_LOAD'] = false;
-            setTimeout(() => {
-                if (!window['IS_LOAD']) {
-                    $$('#preloader').show();
-                }
-            }, 200);
-        } else {
-            // load 隐藏
-            window['IS_LOAD'] = true;
-            setTimeout(() => {
-                $$('#Transit').addClass('TransitOut').transitionEnd(function() {
-                    $$('#Transit').remove();
-                });
-            }, 1000);
-            $$('#preloader').hide();
-        }
-    }
 
     // 回调操作
     private CallbackHandle(options: HandleOption) {
-        this.Preloader(false);
         if (options.type === 'success') {
             console.log('请求' + name + '成功:' + JSON.stringify(options.result));
             if (this.appParam.isTestParam || options.result.retCode === '00000') {
@@ -75,7 +53,6 @@ export class ViewAction {
     // 请求
     private httpSend(options: HttpOption) {
         const that = this;
-        this.Preloader(true);
         this.httpServices.HTTP(options, (option: HandleOption) => {
             that.CallbackHandle({
                 'type': option.type,

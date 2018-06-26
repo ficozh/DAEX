@@ -10,7 +10,8 @@ import { Component } from '@angular/core';
 // 路由相关模块
 import { Router, NavigationEnd } from '@angular/router';
 import { ViewAction } from '../app.view.action';
-
+// 定义 $$ 对象
+declare const $$: any;
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ export class WhitepaperComponent {
     private router: Router,
     private viewAction: ViewAction,
   ) {
+    $$('html').scrollTop(0, 300);
   }
 
 }

@@ -44,7 +44,8 @@ import {
   AppTeamComponent,
   AppCommunityComponent,
   AppEcosystemComponent,
-  AppFollowUsComponent
+  AppFollowUsComponent,
+  AppForeignComponent
  } from '@shared/modules';
 import { RouteService } from '@shared/services';
 
@@ -72,7 +73,7 @@ const viewRoutes: Routes = [
       // whitepaper
       { path: 'whitepaper', data: {title: 'whitepaper'},  component: WhitepaperComponent },
       // FAQ
-      { path: 'FAQ', data: {title: 'FAQ'},  component: FAQComponent },
+      { path: 'faq', data: {title: 'FAQ'},  component: FAQComponent },
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: 'index',  pathMatch: 'full'  /* 必须要设置 */}
     ]
@@ -124,7 +125,8 @@ export class AppViewRoutingModule {}
     AppTeamComponent,
     AppCommunityComponent,
     AppEcosystemComponent,
-    AppFollowUsComponent
+    AppFollowUsComponent,
+    AppForeignComponent
   ],
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。
   providers: [

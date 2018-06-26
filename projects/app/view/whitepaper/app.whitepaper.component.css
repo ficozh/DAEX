@@ -44,6 +44,18 @@
     min-width: 400px;
     z-index: -1;
   }
+
+.WhitepaperBox .WhitepaperList{padding-top:1rem;padding-bottom: 1rem}
+.WhitepaperBox .WhitepaperBanner{font-size: 0;}
+.WhitepaperBox .WhitepaperBanner img{width: 100%}
+.WhitepaperList li{text-align:center;font-size: 14px;margin-bottom: 20px}
+.WhitepaperList li .WhitepaperItme{background-position: center;background-repeat: no-repeat;background-size: cover;height:360px;width: 300px;margin: 0 auto 12px;}
+.WhitepaperList li .Name{font-size: 16px}
+.WhitepaperList li .Desc{font-size: 12px}
+.WhitepaperList li .Down a{color: #7339FF}
+.WhitepaperList li .Down span{display: inline-block; vertical-align: middle;width: 4px;height: 4px;border-radius: 10px;background-color: #383838;margin: 0 8px;}
+
+
   @media screen and (max-width: 716px) {
     .WhitepaperWrap .content .main-text {
       width: 100%;

@@ -11,12 +11,12 @@
 		</div>
 	</div>
 	<ul class="Navigation" id="Navigation">
-		<li class="active"><a href="./index.html">{{'HEADER.Home' | translate}}</a></li>
-		<li><a href="#value">{{'HEADER.Value' | translate}}</a></li>
-		<li><a href="#ecosystem">{{'HEADER.Ecosystem' | translate}}</a></li>
-		<li><a href="">{{'HEADER.Community' | translate}}</a></li>
-		<li><a href="./index.html#/view/whitepaper">{{'HEADER.DAEXpaper' | translate}}</a></li>
-		<li><a href="">{{'HEADER.faq' | translate}}</a></li>
+		<li [ngClass]="{'active': !info}" (click)="setAnchor(0, 'home')"><a href="#home">{{'HEADER.Home' | translate}}</a></li>
+		<li [ngClass]="{'active': info === 1 }" (click)="setAnchor(1, 'value')"><a href="#value">{{'HEADER.Value' | translate}}</a></li>
+		<li [ngClass]="{'active': info === 2 }" (click)="setAnchor(2, 'ecosystem')"><a href="#ecosystem">{{'HEADER.Ecosystem' | translate}}</a></li>
+		<li [ngClass]="{'active': info === 3 }" (click)="setAnchor(3, 'community')"><a href="#community">{{'HEADER.Community' | translate}}</a></li>
+		<li [ngClass]="{'active': info === 4 }"><a href="#/view/whitepaper">{{'HEADER.DAEXpaper' | translate}}</a></li>
+		<li [ngClass]="{'active': info === 5 }"><a href="#/view/faq">{{'HEADER.faq' | translate}}</a></li>
 		<li class="UserCenter"><a href="#/userCenter/login">{{'HEADER.login' | translate}}</a> | <a href="#/userCenter/register">{{'HEADER.signUp' | translate}}</a></li>
 		<!-- <li><span (click)="Language('EN')">English</span> / <span (click)="Language('ZH-CN')">中文</span></li> -->
 	</ul>

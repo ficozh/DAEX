@@ -1,3 +1,12 @@
+.AboutBox {padding-top: 1.5rem}
+.AboutBox .Video{height:32vw;overflow:hidden;background-color: rgb(57, 57, 58)}
+.AboutBox h2 {
+  font-size: 24px;
+  color: #7339FF;
+  text-align: center;
+  margin-bottom: .34rem;
+}
+
 .AboutWrap {
   display: -webkit-box;
   display: -moz-box;
@@ -19,31 +28,14 @@
   -ms-flex-wrap: wrap;
   -o-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding-top:1.5rem;
+  padding-top:.5rem;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 1.45rem;
 }
-.AboutWrap .AboutContent {
-  margin-right: .97rem;
-}
-.AboutWrap .AboutContent h2 {
-  font-size: 24px;
-  color: #7339FF;
-  text-align: center;
-  margin-bottom: .34rem;
-}
+
 .AboutWrap .AboutContent ul {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
+  text-align: center;
   padding: .35rem .23rem;
   border-bottom: 1px solid #ac4cf3;
 }
@@ -55,28 +47,22 @@
   text-align: center;
   font-size: 14px;
   letter-spacing: 0.5px;
-  margin-left: .64rem;
-}
-.AboutWrap .AboutContent ul li:nth-of-type(1) {
-  margin-left: 0;
-  margin-right: .64rem;
-  width: 3.3rem;
-  max-width: 240px;
 }
 .AboutWrap .AboutContent ul li p {
   margin-bottom:0 0 8px;
 }
-.AboutWrap .AboutContent ul i {
-  display: inline-block;
+.AboutWrap .AboutContent ul li.Arrow {
   font-size: 0;
   line-height: 0;
   border-width: 6px;
   border-color: #ac4cf3;
-  border-right-width: 0;
+  border-bottom-width: 0;
   border-style: dashed;
-  border-left-style: solid;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
+  border-top-style: solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  width: 6px;
+  margin: 4px auto;
 }
 .AboutWrap .AboutImg img {
   width: 4.48rem;
@@ -101,33 +87,20 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .AboutWrap .AboutContent {
-    margin-right: 0;
-  }
+
   .AboutWrap {
     padding-top:1.1rem;
     margin-bottom: 1.3rem;
   }
-  .AboutWrap h2 {
+  .AboutBox h2 {
     font-size: 22px;
   }
-  .AboutWrap .AboutContent {
-    margin-right: 0;
-  }
+
   .AboutWrap .AboutImg img {
     width: 9.48rem;
     min-width: 4.48rem;
   }
   .AboutWrap .AboutContent ul li {
     font-size: 12px;
-    margin-left: .5rem;
-    letter-spacing: 0;
-  }
-  .AboutWrap .AboutContent ul li:nth-of-type(1) {
-    width: 6.4rem;
-    margin-right: .5rem;
-  }
-  .AboutWrap .AboutContent ul li:nth-last-of-type(1) {
-    width: 8rem;
   }
 }

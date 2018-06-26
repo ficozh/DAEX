@@ -2,7 +2,7 @@
 .HeaderWrap .Navigation{position:fixed;right:1rem;top:20px;height:32px;line-height:32px;z-index:120}
 .HeaderWrap .Navigation.active{box-shadow:0}
 .HeaderWrap .Navigation li{float:left;margin:0 0.15rem;font-size:14px;text-align:left;font-weight:500}
-.HeaderWrap .Navigation li.active{border-bottom:2px solid A94CF1;}
+.HeaderWrap .Navigation li.active{border-bottom:2px solid #A94CF1;}
 .HeaderWrap .Navigation li a{display:block}
 .HeaderWrap .Navigation li.UserCenter{color:#A94CF1}
 .HeaderWrap .Navigation li.UserCenter a{display:inline-block;color:#A94CF1}

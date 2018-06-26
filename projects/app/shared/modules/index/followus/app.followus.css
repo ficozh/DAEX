@@ -1,17 +1,32 @@
 /*------------------followus------------------*/
-.FollowUsWrap {
-  background-color: #7855F1;
-  padding-top:0.8rem;
-  padding-bottom:0.8rem;
-}
-
+.FollowUsWrap {background-color:#7855F1;padding-top:1px;padding-bottom:1px}
+.FollowUsWrap .FollowUsBox{height:50px;line-height:50px;margin-top:0.4rem;margin-bottom:0.4rem;}
+.FollowUsWrap h2{font-size: 40px;line-height: 50px; color: rgba(255, 255, 255, 0.418)}
+.FollowUsWrap .FollowUsList{vertical-align: middle;font-size: 0;margin-left: 20px}
+.FollowUsWrap .FollowUsList li{display: inline-block;margin-left: 15px;}
+.FollowUsWrap .FollowUsList li img{width: 50px;height: 50px;}
+.FollowUsWrap .SearchBox{ height: 50px;overflow: hidden; border-radius: 300px;}
+.FollowUsWrap .SearchBox .Input{width:200px;border:1px solid #fff;border-radius: 200px 0 0 200px; background:transparent;height: 100%; font-size: 14px;color: #fff;float: right;padding: 0 12px;}
+.FollowUsWrap .SearchBox .Input::-webkit-input-placeholder {color: #fff;}
+.FollowUsWrap .SearchBox .Buttun{float: right;font-size:16px;font-weight: 500; height: 100%;padding: 0 12px; line-height: 50px; border-radius: 0 200px 200px 0; background-color: #fff;color: #7855F1;}
 
 @media screen and (max-width: 768px) {
-  .ValueWrap {
-    padding-top: .25rem;
-    padding-bottom: .25rem;
-  }
-  
+  .FollowUsWrap .FollowUsBox{height:36px;line-height:36px;}
+  .FollowUsWrap h2 {font-size:18px;line-height:36px}
+  .FollowUsWrap .SearchBox{height: 36px;}
+  .FollowUsWrap .SearchBox .Buttun{line-height: 36px}
+  .FollowUsWrap .FollowUsList{margin-left:5px;}
+  .FollowUsWrap .FollowUsList li img{width:36px;height:36px;}
+  .FollowUsWrap .FollowUsList li{margin-left:3px;}
+  .FollowUsWrap .SearchBox .Input{width: 160px;padding: 0 10px;}
+  .FollowUsWrap .SearchBox .Buttun{padding: 0 8px;}
+}
+
+@media screen and (max-width: 600px) {
+  .FollowUsWrap .FollowUsBox{height: auto;}
+  .FollowUsWrap .FL{float: none}
+  .FollowUsWrap .SearchWrap{float: none;}
+  .FollowUsWrap .FollowUsList li img{width:24px;height:24px;}
 }
 
 

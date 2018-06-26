@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /daexH5
+/UI
 
 # dependencies
 /node_modules

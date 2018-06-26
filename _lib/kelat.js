@@ -1788,6 +1788,118 @@ kelat.each("Boolean Number String Function Array Date RegExp Object Error Symbol
 
 
 /************* 页面UI部分 *************/
+/*=====================================================
+************   折叠面板   ************
+=====================================================*/
+/** 触发折叠面板
+ * @alias accordionToggle
+ * @param {Object} item:折叠面板对象
+ */
+KUIAPP.isAccordion = true;
+KUIAPP.accordionToggle = function (item) {
+    item = $$(item);
+    if(item.length === 0){
+        return;
+    }
+    if(item.hasClass('AccordionItemExpanded')){
+        KUIAPP.accordionClose(item);
+    }else{
+        KUIAPP.accordionOpen(item);
+    };
+};
+/** 打开折叠面板
+ * @alias accordionOpen
+ * @param {Object} item:折叠面板对象
+ */
+KUIAPP.accordionOpen = function (item) {
+    item = $$(item);
+    var list = item.parents('.AccordionList').eq(0);
+    var content = item.children('.AccordionItemCon');
+    if(content.length === 0){
+        content = item.find('.AccordionItemCon');
+    };
+    var expandedItem = list.length > 0 && item.parent().children('.AccordionItemExpanded');
+    if(expandedItem.length > 0){
+        KUIAPP.accordionClose(expandedItem);
+    }
+    content.css('height', content[0].scrollHeight + 'px').transitionEnd(function () {
+        if(item.hasClass('AccordionItemExpanded')){
+            content.transition(0);
+            content.css('height', 'auto');
+            //Relayout
+            var clientLeft = item[0].clientLeft;
+            content.transition('');
+            item.trigger('opened');
+        }else{
+            content.css('height', '');
+            item.trigger('closed');
+        };
+        KUIAPP.isAccordion = true;
+    });
+    item.trigger('open');
+    item.addClass('AccordionItemExpanded');
+};
+/** 关闭折叠面板
+ * @alias accordionClose
+ * @param {Object} item:折叠面板对象
+ */
+KUIAPP.accordionClose = function (item) {
+    item = $$(item);
+    var content = item.children('.AccordionItemCon');
+    if(content.length === 0){
+        content = item.find('.AccordionItemCon');
+    };
+    item.removeClass('AccordionItemExpanded');
+    content.transition(0);
+    content.css('height', content[0].scrollHeight + 'px');
+    //Relayout
+    var clientLeft = content[0].clientLeft;
+    //关闭
+    content.transition('');
+    content.css('height', '').transitionEnd(function(){
+        if(item.hasClass('AccordionItemExpanded')){
+            content.transition(0);
+            content.css('height', 'auto');
+            //Relayout
+            var clientLeft = content[0].clientLeft;
+            content.transition('');
+            item.trigger('opened');
+        }else{
+            content.css('height', '');
+            item.trigger('closed');
+        }
+        KUIAPP.isAccordion = true;
+    });
+    item.trigger('close');
+};
+/** 初始化折叠面板
+ * @alias initAccordion
+ * @param {Object} item:折叠面板对象
+ */
+KUIAPP.initAccordion = function(isAccordion){
+    $$(document).on('click','.AccordionItemToggle,.ItemLink,.AccordionItem',function(){
+        if(!KUIAPP.isAccordion){
+            return
+        };
+        var clicked = $$(this);
+        var accordionItem = clicked.parent('.AccordionItem');
+        if(accordionItem.length === 0){
+            accordionItem = clicked.parents('.AccordionItem');
+        }
+        if(accordionItem.length === 0){
+            accordionItem = clicked.parents('li');
+        };
+        if(clicked.hasClass('ItemLink') && clicked.parent().hasClass('AccordionItem')){
+            KUIAPP.accordionToggle(accordionItem);
+            KUIAPP.isAccordion = isAccordion ? true : false;
+        };
+        
+    })
+};
+window['kelat']['initAccordion'] = KUIAPP.initAccordion; 
+window['kelat']['accordionOpen'] = KUIAPP.accordionOpen; 
+window['kelat']['accordionClose'] = KUIAPP.accordionClose; 
+window['kelat']['accordionToggle'] = KUIAPP.accordionToggle; 
 
 /*======================================================
 ************   Toast 显示信息   ************

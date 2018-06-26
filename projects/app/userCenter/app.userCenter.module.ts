@@ -45,7 +45,7 @@ const viewRoutes: Routes = [
   {
     path: '', component: UserCenterViewComponent, children: [
       // 注册
-      { path: PATH_ARR[1], data: {title: '注册'}, canActivate: [RouteguardService], component: UserCenterRegisterComponent },
+      { path: PATH_ARR[1], data: {title: '注册'}, component: UserCenterRegisterComponent },
       // 登录
       { path: PATH_ARR[2], data: {title: '登录'}, component: UserCenterLoginComponent },
       // 忘记密码

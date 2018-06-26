@@ -1,0 +1,13 @@
+.FAQWrap .Title{font-size: 48px;font-weight: 500;padding: 50px 0;text-align: center}
+.FAQWrap .ListBlock{margin-bottom: 50px}
+.FAQWrap .ListBlock .ItemLink .ItemInner{background-position: 1% center}
+.FAQWrap .ListBlock .ItemTitle{padding-left: 40px}
+.FAQWrap .ListBlock .AccordionItemExpanded .ItemTitle{color: #7855F7}
+
+
+@media screen and (max-width: 716px) {
+    .FAQWrap .Title{font-size: 32px}
+  }
+  @media screen and (max-width: 560px) {
+    .FAQWrap .Title{font-size: 24px}
+  }

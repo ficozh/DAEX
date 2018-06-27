@@ -6,7 +6,7 @@ p{margin: 0;}
 .WARPWALL{padding:0 2rem;}
 
 /* 登录 注册 */
-.LoginWrap{background: url(assets/images/top-m.jpg) no-repeat center;background-size: cover;width: 100%;min-height: 100%;padding: 1px;}
+.LoginWrap{background-repeat: no-repeat;background-position: center;  background-size: cover;width: 100%;min-height: 100%;padding: 1px;}
 .LoginWrap .LoginHeader{height: 120px;position: relative;font-size: 24px;font-weight: 500;}
 .LoginWrap .LoginHeader .Logo{position: relative;}
 .LoginWrap .LoginHeader .Logo img{width:115px;position: absolute;top:30px;}

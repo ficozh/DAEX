@@ -17,15 +17,15 @@ flex-wrap: wrap;
 .TeamIntro li {margin-bottom: 20px;}
 
 .TeamList .Avatar{position: relative; width:90%;height:420px;overflow: hidden;margin: 0 auto; background-repeat: no-repeat;background-position: center; background-size: cover;font-size: 12px;color: #fff;text-align: center}
-.TeamList .Avatar .Info .Name{position:relative;padding:0.1rem;height:15%;}
-.TeamList .Avatar .Info .Name h4{font-size: 16px}
+.TeamList .Avatar .Info .Name{position:relative;padding:0.1rem;height:60px;line-height: 30px}
+.TeamList .Avatar .Info .Name h4{font-size: 16px;}
 .TeamList .Avatar .Info .Name p{font-size: 12px}
 .TeamList .Avatar .Division{display:none;border: 0;height:2px;width:50%;margin: 0 auto; background-color:#fff;}
-.TeamList .Avatar .Info{position: absolute;bottom:0;left:0;right:0;top:calc(100% - 15%);background: rgba(116, 57, 255, 0.452);
+.TeamList .Avatar .Info{position: absolute;bottom:0;left:0;right:0;top:calc(100% - 60px);background: rgba(116, 57, 255, 0.452);
   -webkit-transition:all .3s ease-in-out;
   transition:all .3s ease-in-out
 }
-.TeamList .Avatar .Describe{position:relative;display:none;height:85%;overflow-y:auto;padding: 0.08rem;}
+.TeamList .Avatar .Describe{position:relative;display:none;height:85%;overflow-y:auto;padding:8px;text-align: left;line-height: 2;font-size: 14px}
 .TeamList .Avatar:focus .Division,
 .TeamList .Avatar:active .Division,
 .TeamList .Avatar:hover .Division{display: block;}
@@ -39,13 +39,13 @@ flex-wrap: wrap;
 .TeamList .linkInIcon{width:24px;height: 24px; }
 
 .TeamListAdvisors .Avatar{position: relative; width:90%;height:360px;overflow: hidden;margin: 0 auto; background-repeat: no-repeat;background-position: center; background-size: cover;font-size: 12px;color: #fff;text-align: center}
-.TeamListAdvisors .Avatar .Info{position: absolute;bottom:0;left:0;right:0;top:calc(100% - 15%);background: rgba(116, 57, 255, 0.452);
+.TeamListAdvisors .Avatar .Info{position: absolute;bottom:0;left:0;right:0;top:calc(100% - 40px);background: rgba(116, 57, 255, 0.452);
   -webkit-transition:all .3s ease-in-out;
   transition:all .3s ease-in-out
 }
-.TeamListAdvisors .Avatar .Info .Name{position:relative;padding:0.1rem;height:15%;}
-.TeamListAdvisors .Avatar .Info .Name h4{font-size: 16px}
-.TeamListAdvisors .Avatar .Describe{position:relative;display:none;height:85%;overflow-y:auto;padding: 0.08rem;}
+.TeamListAdvisors .Avatar .Info .Name{position:relative;height:40px;line-height:40px}
+.TeamListAdvisors .Avatar .Info .Name h4{font-size: 16px;line-height:40px}
+.TeamListAdvisors .Avatar .Describe{position:relative;display:none;height:85%;overflow-y:auto;padding:8px;line-height: 2;}
 .TeamListAdvisors .Avatar:hover .Info,
 .TeamListAdvisors .Avatar:focus .Info,
 .TeamListAdvisors .Avatar:active .Info{top: 0}
@@ -54,20 +54,23 @@ flex-wrap: wrap;
 .TeamListAdvisors .Avatar:hover .Info .Describe{display: block}
 .TeamListAdvisors .Avatar:focus .Info  .Name,
 .TeamListAdvisors .Avatar:active .Info .Name,
-.TeamListAdvisors .Avatar:hover .Info .Name{padding-top: 40%;margin-bottom: 12px;}
+.TeamListAdvisors .Avatar:hover .Info .Name{margin-top:40%;}
 
 
 @media screen and (max-width: 768px) {
   .TeamList .Avatar{height: 8rem;} 
-  .TeamList .Avatar .Info .Name{height:25%}
-  .TeamList .Avatar .Info{top:calc(100% - 25%)}
+  .TeamList .Avatar .Info .Name{height:40px;line-height: 20px}
+  .TeamList .Avatar .Info{top:calc(100% - 40px)}
   .TeamList .Avatar .Info .Name h4{font-size: 12px}
+  .TeamList .Avatar .Info .Name{padding:5px;}
+  .TeamList .Avatar .Describe{font-size: 12px;line-height: 1.2;padding:5px 5px 25px;}
   .TeamListAdvisors .Avatar{height: 5rem;}
   .TeamListAdvisors .Avatar:focus .Info  .Name,
   .TeamListAdvisors .Avatar:active .Info .Name,
-  .TeamListAdvisors .Avatar:hover .Info .Name{padding-top: 15%;margin-bottom:6px;}
-  .TeamListAdvisors .Avatar .Info .Name{height:25%}
-  .TeamListAdvisors .Avatar .Info{top:calc(100% - 25%)}
-  .TeamListAdvisors .Avatar .Info .Name h4{font-size: 12px}
+  .TeamListAdvisors .Avatar:hover .Info .Name{margin-top:10%;}
+  .TeamListAdvisors .Avatar .Info .Name{height:25px}
+  .TeamListAdvisors .Avatar .Info{top:calc(100% - 25px);}
+  .TeamListAdvisors .Avatar .Info .Name h4{font-size: 12px;line-height: 25px}
+  .TeamListAdvisors .Avatar .Describe{line-height: 1.2;padding:0 5px 30px}
 
 }

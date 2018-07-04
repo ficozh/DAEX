@@ -4,7 +4,7 @@
 .HeaderWrap .Navigation li{float:left;margin:0 0.15rem;font-size:14px;text-align:left;font-weight:500}
 .HeaderWrap .Navigation li.active{border-bottom:2px solid #A94CF1;}
 .HeaderWrap .Navigation li a{display:block}
-.HeaderWrap .Navigation li.UserCenter{color:#A94CF1}
+.HeaderWrap .Navigation li.UserCenter{color:#A94CF1;margin-left: 50px}
 .HeaderWrap .Navigation li.UserCenter a{display:inline-block;color:#A94CF1}
 .HeaderWrap .Menu{position:relative;display:none;width:32px;height:32px;z-index:30}
 
@@ -69,5 +69,6 @@
     .HeaderWrap .Menu{display: block}
     .HeaderWrap .Navigation{display:none;bottom:0;top:0;right:0;width:250px;height:100%;padding-top:60px;background-color:#fff;z-index:10;}
     .HeaderWrap .Navigation.active{display: block;box-shadow: 0px 5px 5px 0px #666666;}
-    .HeaderWrap .Navigation li{margin:0 10%;padding:0.5rem;float:none;}    
+    .HeaderWrap .Navigation li{margin:0 10%;padding:0.5rem;float:none;}   
+    .HeaderWrap .Navigation li.UserCenter{margin-left: 0} 
 }

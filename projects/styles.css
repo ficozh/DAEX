@@ -4,7 +4,13 @@ a{color:#333;-webkit-transition-duration:300ms;
   transition-duration:300ms;}
 p{margin: 0;}
 .WARPWALL{padding:0 2rem;}
-
+/* ===== 动画时间 ===== */
+.Transi{
+-webkit-transition:all 150ms ease-out;
+    -moz-transition:all 150ms ease-out;
+    -o-transition:all 150ms ease-out;
+    transition:all 150ms ease-out;
+}
 /* 登录 注册 */
 .LoginWrap{background-repeat: no-repeat;background-position: center;  background-size: cover;width: 100%;min-height: 100%;padding: 1px;}
 .LoginWrap .LoginHeader{height: 120px;position: relative;font-size: 24px;font-weight: 500;}
@@ -16,7 +22,8 @@ p{margin: 0;}
 .FormWrap li{padding: 5px 0;font-size: 12px;}
 
 .FormWrap li.Fill label{display: block;color: #544DB0;font-size: 16px;font-weight: 500}
-.FormWrap li.Fill input{width: 100%;padding: 4px;border: 1px solid #C071F0; background:#FFF;height:42px;line-height:42px;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;border-radius:3px;font-size:14px}
+.FormWrap li.Fill input{width: 100%;padding: 4px;border: 1px solid #ccc; background:#FFF;height:42px;line-height:42px;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;border-radius:3px;font-size:14px}
+.FormWrap li.Fill input:focus{border: 1px solid #C071F0}
 .FormWrap li.Fill .Sub{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;}
 .FormWrap li.Fill .Sub span{width:45%;height:42px;margin-left: 10px}
 .FormWrap li.Fill .Sub span.Btn{background-color: #C071F0;font-weight: 500;color: #fff;border:none;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;}

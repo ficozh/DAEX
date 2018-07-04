@@ -6,9 +6,9 @@
 .FollowUsWrap .FollowUsList li{display: inline-block;margin-left: 15px;}
 .FollowUsWrap .FollowUsList li img{width: 50px;height: 50px;}
 .FollowUsWrap .SearchBox{ height: 50px;overflow: hidden; border-radius: 300px;}
-.FollowUsWrap .SearchBox .Input{width:200px;border:1px solid #fff;border-radius: 200px 0 0 200px; background:transparent;height: 100%; font-size: 14px;color: #fff;float: right;padding: 0 12px;}
+.FollowUsWrap .SearchBox .Input{width:350px;border:1px solid #fff;border-radius: 200px 0 0 200px; background:transparent;height: 100%; font-size: 14px;color: #fff;float: right;padding: 0 12px;}
 .FollowUsWrap .SearchBox .Input::-webkit-input-placeholder {color: #fff;}
-.FollowUsWrap .SearchBox .Buttun{float: right;font-size:16px;font-weight: 500; height: 100%;padding: 0 12px; line-height: 50px; border-radius: 0 200px 200px 0; background-color: #fff;color: #7855F1;}
+.FollowUsWrap .SearchBox .Buttun{float: right;font-size:16px;font-weight: 500; height: 100%;padding: 0 20px; line-height: 50px; border-radius: 0 200px 200px 0; background-color: #fff;color: #7855F1;}
 
 @media screen and (max-width: 768px) {
   .FollowUsWrap .FollowUsBox{height:36px;line-height:36px;}

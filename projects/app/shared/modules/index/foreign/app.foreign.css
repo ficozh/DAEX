@@ -7,13 +7,19 @@
 .ForeignWrap .ForeignList .Date{font-size:13px;line-height:24px;}
 .ForeignWrap .ForeignList .Date span{font-size:0;}
 .ForeignWrap .ForeignList .Date img{width:24px;height:24px;}
-.ForeignWrap .ForeignList li{margin-bottom:12px;}
+.ForeignWrap .ForeignList li{margin-bottom:30px;}
 .ForeignWrap .ForeignList li.active{color:#7138FD}
-.ForeignWrap .More{height: 24px;text-align: center;margin-top: 12px}
+.ForeignWrap .More{height: 24px;text-align: center;margin-top: 30px}
 .ForeignWrap .More .Btn{width: 90px;border:1px solid #7138FD;color: #7138FD; font-size: 14px;padding: 0.3em 1em;margin: 0 auto;}
 .ForeignWrap .More .Btn .BtnIconR{margin: -6px -5px -3px 5px;}
+.ForeignWrap .Video{width:650px;height:440px;
+-webkit-box-shadow:0 0 34px rgba(113, 56, 253, 0.48);
+    box-shadow:0 0 34px rgba(113, 56, 253, 0.48); }
+    .ForeignWrap .Video img{width: 100%}
+
+
 
 @media screen and (max-width: 768px) {
   
-
+    .ForeignWrap .Video{width:100%;height:240px;margin-bottom: 20px}
 }

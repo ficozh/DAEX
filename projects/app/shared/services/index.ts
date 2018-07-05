@@ -8,3 +8,5 @@ export * from './basic.services';
 export * from './http.services';
 // 路由服务
 export * from './route.service';
+// 验证服务
+export * from './validator.services';

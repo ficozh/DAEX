@@ -110,10 +110,8 @@ export class ViewAction {
                 httpBody = {
                     // 需要下载的场景
                     'storeSceneIds': [options.storeSceneIds],
-                    // 家庭Id
-                    'familyId': this.userModel.familyId
                 };
-                URL = environment.paths.UWS_URL + paramURL;
+                URL = environment.paths.SERVER_URL + paramURL;
                 break;
         }
         this.httpSend({

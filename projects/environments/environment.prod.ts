@@ -17,11 +17,8 @@ export const environment = {
   IS_TEST: false,
   // 生产环境 接口路径
   paths: {
-    SERVER_URL: 'http://uhome.haier.net/',
-    UWS_URL: 'https://uws.haier.net/'
+    SERVER_URL: 'http://daex.zhixingcy.com/web/'
   },
-  // 生产环境 文件路径 影响路由指向
-  // publicBase: '/download/mall/sceneH5/',
   publicBase: '/',
   production: true
 };

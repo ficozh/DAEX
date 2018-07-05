@@ -10,32 +10,9 @@
 export class UserModel  {
     // 判断是否登录
     isLogin: boolean;
-    // 家庭ID
-    familyId: string;
     anchor: number;
     anchorName: string;
     anchorOffset: any = {
         'home': '0'
     };
-    // APP 信息
-    APP: any = {
-        'appId': 'MB-UZHSH-0000'
-    };
-    // url参数
-    URL_PARAM: any;
-    // 用户信息
-    USER: any = {};
-    // 设置信息
-    setInfo(userInfoData: any) {
-        // APP信息
-        const _APP_ = ['appId', 'appKey', 'accessToken', 'appVersion', 'clientId', 'appName'];
-        _APP_.forEach( itme => {
-            this.APP[itme] = userInfoData[itme] || '';
-        });
-        // 用户信息
-        const _USER_ = ['sdToken', 'coSessionId', 'phoneNumber', 'isLogin', 'userId', 'userName', 'offUserId', 'timestamp', 'lng', 'lat'];
-        _USER_.forEach( itme => {
-            this.USER[itme] = userInfoData[itme] || '';
-        });
-    }
 }

@@ -18,10 +18,7 @@ export const environment = {
   IS_TEST: true,
   // 本地测试环境  接口路径
   paths: {
-    // SERVER_URL: 'http://192.168.160.159:9130/',
-    // SERVER_URL: 'https://uhome.haier.net:443/',
-    SERVER_URL: 'http://uhome.haier.net/',
-    UWS_URL: 'https://uws.haier.net/'
+    SERVER_URL: 'http://daex.zhixingcy.com/web/'
   },
   // 本地测试环境  文件路径
   publicBase: '/',

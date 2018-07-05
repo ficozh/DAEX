@@ -11,10 +11,10 @@ justify-content: center;
 -webkit-flex-wrap: wrap;
 -moz-flex-wrap: wrap;
 -ms-flex-wrap: wrap;
--o-flex-wrap: wrap;
-flex-wrap: wrap;
+-o-flex-wrap:wrap;
+flex-wrap:wrap
 }
-.TeamIntro li {margin-bottom: 20px;}
+.TeamIntro li {margin-bottom:20px}
 
 .TeamList .Avatar{position: relative; width:90%;height:420px;overflow: hidden;margin: 0 auto; background-repeat: no-repeat;background-position: center; background-size: cover;font-size: 12px;color: #fff;text-align: center}
 .TeamList .Avatar .Info .Name{position:relative;padding:0.1rem;height:60px;line-height: 30px}

@@ -10,7 +10,7 @@
  */
 // 主库
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // 国际化
 import { TranslateModule } from '@ngx-translate/core';
 // 路由相关模块
@@ -87,6 +87,7 @@ export class AppWhitepaperViewRoutingModule {}
     TranslateModule,
     COMMONMODILES,
     FormsModule,
+    ReactiveFormsModule,
     AppWhitepaperViewRoutingModule
   ],
   // 服务的创建者，并加入到全局服务列表中，可用于应用任何部分。

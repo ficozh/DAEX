@@ -17,15 +17,9 @@ import { UserCenterViewModule } from './userCenter/app.userCenter.module';
 
 // 组件
 import { NoopInterceptor } from '@shared/guard';
-import { RouteService } from '@shared/services';
 // app参数
 import { UserModel } from '@user';
 import { environment } from '../environments/environment';
-// app插件
-import { getUrlParams } from '../components/';
-// declare const $$: any;
-
-const urlParam = getUrlParams();
 
 @NgModule({
   // 声明本模块中拥有的视图类。Angular 有三种视图类：组件、指令和管道。
@@ -69,15 +63,7 @@ const urlParam = getUrlParams();
 
 export class AppModule {
   constructor(
-    private userModel: UserModel
   ) {
-    // 设置url参数
-    this.userModel.URL_PARAM = urlParam;
-    console.log(urlParam);
-    // 设置家庭ID
-    this.userModel['familyId'] = urlParam['familyId'] || localStorage.getItem('familyId');
-    // 存储家庭ID
-    localStorage.setItem('familyId', this.userModel['familyId']);
     // 判断是否使用alert
     if (environment.IS_ALERT) {
       const log = console.log;

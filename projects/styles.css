@@ -28,6 +28,7 @@ p{margin: 0;}
 .FormWrap li.Fill .Sub span{width:45%;height:42px;margin-left: 10px}
 .FormWrap li.Fill .Sub span.Btn{background-color: #C071F0;font-weight: 500;color: #fff;border:none;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;}
 .FormWrap li.Fill .Sub span.Validate{background-color: #fff;color: #333;border:1px solid #C071F0;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;}
+.FormWrap li.Fill .Remind{line-height:20px;height:20px;color:#f60;font-size:12px}
 .FormWrap li.Link {padding: 8px 0 ;}
 .FormWrap li.Link a{color: #C071F0;font-size: 16px;font-weight: 500}
 .FormWrap li.Buttun{padding-top: 15px}

@@ -23,7 +23,7 @@ declare const $$: any;
 export class UserCenterAction {
     constructor(
         private httpServices: HttpServices,
-        private basic: BasicServices,
+        private basicServices: BasicServices,
         private appParam: AppParam,
         private userModel: UserModel
     ) {
@@ -34,13 +34,13 @@ export class UserCenterAction {
     private CallbackHandle(options: HandleOption) {
         if (options.type === 'success') {
             console.log('请求' + name + '成功:' + JSON.stringify(options.result));
-            if (this.appParam.isTestParam || options.result.retCode === '00000') {
+            if (this.appParam.isTestParam || options.result.code === 0) {
                 // 判断返回数据
-                if (options.result.data !== null || this.appParam.isTestParam) {
-                    options.callback(options.result);
+                if (options.result.data !== null) {
+                    options.callback(options.result.data);
                 }
             } else {
-                $$.warn(options.result.retInfo);
+                // $$.warn(options.result.retInfo);
                 options.error();
             }
         } else {
@@ -66,7 +66,7 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: string | 'sceneRules' | 'sceneType' | 'sceneList' | 'sceneBanner' | 'sceneDetail', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'emailValid' | 'message' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode', options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -77,13 +77,46 @@ export class UserCenterAction {
             options = undefined;
         }
         switch (name) {
-            // 首页banner图接口
-            case 'sceneBanner':
-                paramURL = 'omsappapi/ad/popup';
-                // 广告位置1005：场景轮播广告
+            // 验证用户名
+            case 'emailValid':
+                paramURL = 'api/user/validname';
                 httpBody = {
-                    'adLocation': '1005'
+                    // 用户名
+                    'username': [options.username]
                 };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 内容
+            case 'message':
+                paramURL = 'api/message';
+                httpBody = {
+                    // 用户名
+                    'username': [options.username]
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 请求邮箱验证码
+            case 'sendingMailCode':
+                paramURL = 'api/sendingMailCode';
+                httpBody = {};
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 验证邮箱验证码
+            case 'validMailCode':
+                paramURL = 'api/validMailCode';
+                httpBody = {};
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 请求图片验证码
+            case 'refreshCode':
+                paramURL = 'api/refreshCode';
+                httpBody = {};
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 验证图片验证码
+            case 'validCode':
+                paramURL = 'api/validCode';
+                httpBody = {};
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             default:
@@ -94,27 +127,44 @@ export class UserCenterAction {
             'url': URL,
             'paramUrl': paramURL,
             'httpBody': httpBody,
-            'callback': callback,
-            'error': error
+            'callback': callback || function() {},
+            'error': error || function() {}
         });
     }
 
     // 提交数据
-    set(name: string | 'recordDown' | 'sceneDown', options: any, callback?: Function, error?: Function) {
+    set(name: string | 'register' | 'login', options: any, callback?: Function, error?: Function) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
         switch (name) {
-            // 下载
-            case 'sceneDown':
-                paramURL = 'iftttscene/scene/store/download';
+            // 登录
+            case 'login':
+                paramURL = 'api/user/login';
                 httpBody = {
-                    // 需要下载的场景
-                    'storeSceneIds': [options.storeSceneIds],
-                    // 家庭Id
-                    'familyId': this.userModel.familyId
+                    // 用户名
+                    'email': options.email,
+                    // 密码
+                    'password': options.password
                 };
-                URL = environment.paths.UWS_URL + paramURL;
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 注册
+            case 'register':
+                paramURL = 'api/user/save';
+                httpBody = {
+                    // 邮箱验证码
+                    'mailCode': options.mailCode,
+                    // 图片验证码
+                    'code': options.verify,
+                    // 密码
+                    'password': options.password,
+                    // 邀请码
+                    'inviteCode': options.inviteCode,
+                    // email
+                    'email': options.email
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
                 break;
         }
         this.httpSend({
@@ -122,8 +172,8 @@ export class UserCenterAction {
             'url': URL,
             'paramUrl': paramURL,
             'httpBody': httpBody,
-            'callback': callback,
-            'error': error
+            'callback': callback || function() {},
+            'error': error || function() {}
         });
     }
 

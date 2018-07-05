@@ -1295,7 +1295,7 @@ text-transform:uppercase;
 .ModalNoButtons .ModalButton{display:none}
 
 /*Warn 提醒*/
-.ModalWarnBox{background-color:rgba(0,0,0,.8);width:auto;left:5px;top:5px;right:5px;margin:0 auto;border-radius:4px;
+.ModalWarnBox{background-color:rgba(0,0,0,.8);width:auto;max-width: 500px;left:5px;top:5px;right:5px;margin:0 auto;border-radius:4px;
 -webkit-transform:translate3d(0,-100%,0) scale(1);
         transform:translate3d(0,-100%,0) scale(1)
 }

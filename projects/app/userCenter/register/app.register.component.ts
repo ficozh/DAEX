@@ -7,11 +7,8 @@
  * @description:
  */
 import { Component, OnInit } from '@angular/core';
-import { AppParam } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
-// 服务
-import { ValidatorServices } from '@shared/services';
 
 @Component({
   selector: 'app-register',
@@ -22,9 +19,8 @@ import { ValidatorServices } from '@shared/services';
 export class UserCenterRegisterComponent implements OnInit {
   RegisterForm: any;
   confirmPasswordError: boolean;
+  emailError: boolean;
   constructor(
-    private appParam: AppParam,
-    private validatorServices: ValidatorServices,
     private userCenterAction: UserCenterAction,
     private formBuilder: FormBuilder
   ) {
@@ -36,9 +32,17 @@ export class UserCenterRegisterComponent implements OnInit {
   }
   // 组件初始化
   ngOnInit(): void {
-
+    // 请求图片验证码
   }
-  // 验证邮箱
+  // 请求图片验证码
+  validate(event) {
+    event.target.src = 'http://daex.zhixingcy.com/web/api/refreshCode';
+  }
+  // 请求邮箱验证码
+  emailCode() {
+    this.userCenterAction.get('sendingMailCode');
+  }
+  // 验证
   registerValid(name) {
     switch (name) {
       case 'email':
@@ -49,8 +53,18 @@ export class UserCenterRegisterComponent implements OnInit {
           }
           break;
       case 'emailCode':
+          this.userCenterAction.get('validMailCode', this.RegisterForm.value, (su) => {
+            console.log(su);
+          }, (err) => {
+            console.log(err);
+          });
           break;
       case 'verify':
+          this.userCenterAction.get('validCode', this.RegisterForm.value, (su) => {
+            console.log(su);
+          }, (err) => {
+            console.log(err);
+          });
           break;
       case 'password':
           break;

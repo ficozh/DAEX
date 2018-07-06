@@ -12,42 +12,34 @@
 			<form [formGroup]="RegisterForm" (ngSubmit)="postDate()">
 				<ul class="FormWrap">
 					<li class="Fill">
-						<label>Email:</label>
-						<input class="Transi" (blur)="registerValid('email')" type="text" formControlName="email" placeholder="Enter Your Email"
-						/>
+						<label>Email: <span class="Remind" [hidden]="!emailError">The mailbox has been registered</span></label>
+						<input class="Transi" (blur)="registerValid('email')" type="text" formControlName="email" placeholder="Enter Your Email"/>
 					</li>
 					<li class="Fill">
 						<label>Email Code:</label>
 						<div class="Sub">
-							<input class="Transi" (blur)="registerValid('emailCode')" type="text" formControlName="emailCode" placeholder="Enter Email Code"
-							/>
-							<span class="Btn">Send Code</span>
+							<input class="Transi" (blur)="registerValid('emailCode')" type="text" formControlName="emailCode" placeholder="Enter Email Code"/>
+							<span class="Btn" (click)="emailCode()">Send Code</span>
 						</div>
 					</li>
 					<li class="Fill">
 						<label>Verify:</label>
 						<div class="Sub">
-							<input class="Transi" (blur)="registerValid('verify')" type="text" formControlName="verify" placeholder="Image Cheaking-code"
-							/>
-							<span class="Btn Validate">H5wd1</span>
+							<input class="Transi" (blur)="registerValid('verify')" type="text" formControlName="verify" placeholder="Image Cheaking-code"/>
+							<span class="Btn Validate"><img (click)="validate($event)" src="http://daex.zhixingcy.com/web/api/refreshCode"/></span>
 						</div>
 					</li>
 					<li class="Fill">
 						<label>Password:</label>
-						<input class="Transi" (blur)="registerValid('password')" type="password" formControlName="password" placeholder="6 to 20 Characters With Numbers And Letters"
-						/>
+						<input class="Transi" (blur)="registerValid('password')" type="password" formControlName="password" placeholder="6 to 20 Characters With Numbers And Letters"/>
 					</li>
 					<li class="Fill">
-						<label>Confirm:
-							<span class="Remind Transi" [hidden]="!confirmPasswordError">The two passwords aren't the same</span>
-						</label>
-						<input class="Transi" (blur)="registerValid('confirmPassword')" type="password" formControlName="confirmPassword" placeholder="Please Enter Your Password Code"
-						/>
+						<label>Confirm: <span class="Remind" [hidden]="!confirmPasswordError">The two passwords aren't the same</span></label>
+						<input class="Transi" (blur)="registerValid('confirmPassword')" type="password" formControlName="confirmPassword" placeholder="Please Enter Your Password Code"/>
 					</li>
 					<li class="Fill">
 						<label>Invitation Code:</label>
-						<input class="Transi" (blur)="registerValid('inviteCode')" type="text" formControlName="inviteCode" placeholder="Please Enter Your Invitation Code"
-						/>
+						<input class="Transi" (blur)="registerValid('inviteCode')" type="text" formControlName="inviteCode" placeholder="Please Enter Your Invitation Code"/>
 					</li>
 					<li class="Buttun">
 						<input type="submit" value="SIGN UP" class="Btn BtnBlock" [disabled]="!RegisterForm.valid" />

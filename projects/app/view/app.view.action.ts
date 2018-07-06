@@ -17,15 +17,12 @@ import { environment } from 'environments/environment';
 // 类型接口
 import { HttpOption, HandleOption } from '@int/types';
 
-declare const $$: any;
 
 @Injectable()
 export class ViewAction {
     constructor(
         private httpServices: HttpServices,
-        private basic: BasicServices,
-        private appParam: AppParam,
-        private userModel: UserModel
+        private appParam: AppParam
     ) {
     }
 
@@ -33,13 +30,12 @@ export class ViewAction {
     private CallbackHandle(options: HandleOption) {
         if (options.type === 'success') {
             console.log('请求' + name + '成功:' + JSON.stringify(options.result));
-            if (this.appParam.isTestParam || options.result.retCode === '00000') {
+            if (this.appParam.isTestParam || options.result.code === 0) {
                 // 判断返回数据
-                if (options.result.data !== null || this.appParam.isTestParam) {
-                    options.callback(options.result);
+                if (options.result.data !== null) {
+                    options.callback(options.result.data);
                 }
             } else {
-                $$.warn(options.result.retInfo);
                 options.error();
             }
         } else {
@@ -50,6 +46,7 @@ export class ViewAction {
             options.error();
         }
     }
+
     // 请求
     private httpSend(options: HttpOption) {
         const that = this;
@@ -65,7 +62,7 @@ export class ViewAction {
     }
 
     // 获取数据
-    get(name: string | 'sceneRules' | 'sceneType' | 'sceneList' | 'sceneBanner' | 'sceneDetail', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'message' | 'messageInfo' | 'paper', options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -76,13 +73,26 @@ export class ViewAction {
             options = undefined;
         }
         switch (name) {
-            // 场景首页banner图接口
-            case 'sceneBanner':
-                paramURL = 'omsappapi/ad/popup';
-                // 广告位置1005：场景轮播广告
+            // 内容
+            case 'message':
+                paramURL = 'api/message/list';
                 httpBody = {
-                    'adLocation': '1005'
+                    // 用户名
+                    'limit': '10',
+                    'order': '',
+                    'sidx': '',
+                    'page': options.page
                 };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 内容
+            case 'messageInfo':
+                paramURL = 'api/message/info' + options.code;
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 白皮书
+            case 'paper':
+                paramURL = 'api/message/info' + options.code;
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             default:
@@ -99,16 +109,16 @@ export class ViewAction {
     }
 
     // 提交数据
-    set(name: string | 'recordDown' | 'sceneDown', options: any, callback?: Function, error?: Function) {
+    set(name: 'Down', options: any, callback?: Function, error?: Function) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
         switch (name) {
-            // 场景下载
-            case 'sceneDown':
+            // 下载
+            case 'Down':
                 paramURL = 'iftttscene/scene/store/download';
                 httpBody = {
-                    // 需要下载的场景
+                    // 需要下载
                     'storeSceneIds': [options.storeSceneIds],
                 };
                 URL = environment.paths.SERVER_URL + paramURL;

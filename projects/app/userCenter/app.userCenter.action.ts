@@ -9,23 +9,19 @@
  */
 import { Injectable } from '@angular/core';
 // 路由相关模块
-import { UserModel, AppParam } from '@user';
+import { AppParam } from '@user';
 // 服务
-import { HttpServices, BasicServices } from '../shared/services';
+import { HttpServices } from '../shared/services';
 // 环境配置
 import { environment } from 'environments/environment';
 // 类型接口
 import { HttpOption, HandleOption } from '@int/types';
 
-declare const $$: any;
-
 @Injectable()
 export class UserCenterAction {
     constructor(
         private httpServices: HttpServices,
-        private basicServices: BasicServices,
-        private appParam: AppParam,
-        private userModel: UserModel
+        private appParam: AppParam
     ) {
     }
 
@@ -40,7 +36,6 @@ export class UserCenterAction {
                     options.callback(options.result.data);
                 }
             } else {
-                // $$.warn(options.result.retInfo);
                 options.error();
             }
         } else {
@@ -66,7 +61,7 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: 'emailValid' | 'message' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'emailValid' | 'message' | 'messageInfo' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode', options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -82,17 +77,25 @@ export class UserCenterAction {
                 paramURL = 'api/user/validname';
                 httpBody = {
                     // 用户名
-                    'username': [options.username]
+                    'email': options.email
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 内容
             case 'message':
-                paramURL = 'api/message';
+                paramURL = 'api/message/list';
                 httpBody = {
                     // 用户名
-                    'username': [options.username]
+                    'limit': '10',
+                    'order': '',
+                    'sidx': '',
+                    'page': options.page
                 };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 内容
+            case 'messageInfo':
+                paramURL = 'api/message/info' + options.code;
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 请求邮箱验证码
@@ -104,7 +107,9 @@ export class UserCenterAction {
             // 验证邮箱验证码
             case 'validMailCode':
                 paramURL = 'api/validMailCode';
-                httpBody = {};
+                httpBody = {
+                    'mailCode': options.emailCode
+                };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 请求图片验证码
@@ -116,7 +121,9 @@ export class UserCenterAction {
             // 验证图片验证码
             case 'validCode':
                 paramURL = 'api/validCode';
-                httpBody = {};
+                httpBody = {
+                    'picCode': options.verify
+                };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             default:

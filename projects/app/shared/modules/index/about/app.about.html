@@ -1,8 +1,9 @@
 <section class="WARPWALL AboutBox">
     <h2>{{'ABOUT.WHATISDAEX' | translate}}</h2>
-    <div class="Video">
-        <video  loop="" autoplay="" muted="" poster="assets/images/top-first.png" style="min-width: auto; min-height: auto; width: 100%; height: auto; transition-duration: 2000ms;">
-            <source src="assets/images/header/top.mp4" type="video/mp4">
+    <div class="Video" (click)="play()">
+        <img class="Img" *ngIf="!playState" src="assets/images/aboutVideoBg.jpg"/>
+        <video class="MP4"  *ngIf="playState" loop="" autoplay="" muted="">
+            <source src="http://images.zhixingchuyun.com/qixuan.mp4" type="video/mp4">
         </video>
     </div>
     <div class="AboutWrap Row">

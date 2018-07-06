@@ -14,4 +14,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.about.css']
 })
 
-export class AppAboutComponent {}
+export class AppAboutComponent {
+  playState: boolean;
+  play() {
+    this.playState = true;
+  }
+}

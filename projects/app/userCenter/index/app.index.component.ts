@@ -9,16 +9,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AppParam } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
-declare const $$: any;
+
 
 @Component({
-  selector: 'app-integral',
-  templateUrl: './app.integral.component.html',
-  styleUrls: ['./app.integral.component.css']
+  selector: 'app-usercenter-index',
+  templateUrl: './app.index.component.html',
+  styleUrls: ['./app.index.component.css']
 })
 
-export class UserCenterIntegralComponent implements OnInit {
-  EXCHANGE: boolean;
+export class UserCenterIndexlComponent implements OnInit {
   constructor(
     private appParam: AppParam,
     private userCenterAction: UserCenterAction,
@@ -32,13 +31,5 @@ export class UserCenterIntegralComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  exchange() {
-    this.EXCHANGE = true;
-  }
-  cancel() {
-    this.EXCHANGE = false;
-  }
-  confirm() {
-    this.EXCHANGE = false;
-  }
+
 }

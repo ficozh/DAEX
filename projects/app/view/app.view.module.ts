@@ -27,16 +27,13 @@ import { WhitepaperComponent } from './whitepaper/app.whitepaper.component';
 import { CommunityComponent } from './community/app.community.component';
 import { FAQComponent } from './FAQ/app.faq.component';
 import { FollowusComponent } from './followus/app.followus.component';
+import { BountyComponent } from './bounty/app.bounty.component';
 
 // 公共模块
 import { COMMONMODILES } from '../commonModule/commonModule.module';
-// 中间件
-import { DataOM } from '@mid';
 
 // 组件
 import {
-  AppHeaderComponent,
-  AppFooterComponent,
   AppBannerComponent,
   AppAboutComponent,
   AppValueComponent,
@@ -49,7 +46,7 @@ import {
  } from '@shared/modules';
 import { RouteService } from '@shared/services';
 
-const PATH_ARR = ['view', 'index', 'information', 'community', 'followus', 'team', 'whitepaper', 'FAQ'];
+const PATH_ARR = ['view', 'index', 'information', 'community', 'followus', 'team', 'whitepaper', 'FAQ', 'bounty'];
 // 根路径
 const ROOT_PATH = ['index'];
 /*定义路由const表示不可改变*/
@@ -74,6 +71,8 @@ const viewRoutes: Routes = [
       { path: 'whitepaper', data: {title: 'whitepaper'},  component: WhitepaperComponent },
       // FAQ
       { path: 'faq', data: {title: 'FAQ'},  component: FAQComponent },
+      // FAQ
+      { path: 'bounty', data: {title: 'bounty'},  component: BountyComponent },
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: 'index',  pathMatch: 'full'  /* 必须要设置 */}
     ]
@@ -101,10 +100,6 @@ export class AppViewRoutingModule {}
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   // 声明本模块中拥有的视图类。Angular 有三种视图类：组件、指令和管道。
   declarations: [
-    // Header
-    AppHeaderComponent,
-    // footer
-    AppFooterComponent,
     // 视图组件
     ViewComponent,
     // 轮播图
@@ -113,6 +108,7 @@ export class AppViewRoutingModule {}
     // 页面
     IndexComponent,
     FollowusComponent,
+    BountyComponent,
     InformationComponent,
     TeamComponent,
     WhitepaperComponent,
@@ -132,8 +128,6 @@ export class AppViewRoutingModule {}
   providers: [
     // 场景事件
     ViewAction,
-    // 数据中间件
-    DataOM
   ]
 })
 export class ViewModule {

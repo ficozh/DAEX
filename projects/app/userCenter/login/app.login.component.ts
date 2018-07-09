@@ -7,7 +7,7 @@
  * @description:
  */
 import { Component, OnInit } from '@angular/core';
-import { AppParam } from '@user';
+import { UserModel } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 
@@ -21,7 +21,7 @@ import { FormBuilder, Validators, FormControl } from '@angular/forms';
 export class UserCenterLoginComponent implements OnInit {
   LoginForm: any;
   constructor(
-    private appParam: AppParam,
+    private userModel: UserModel,
     private userCenterAction: UserCenterAction,
     private formBuilder: FormBuilder
   ) {
@@ -54,7 +54,7 @@ export class UserCenterLoginComponent implements OnInit {
        */
     if (this.LoginForm.valid) {
       this.userCenterAction.set('login', this.LoginForm.value, () => {
-
+        this.userModel.isLogin = true;
       });
     }
   }

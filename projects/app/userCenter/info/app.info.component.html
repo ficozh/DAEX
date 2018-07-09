@@ -1,31 +1,204 @@
 <!--Header-->
-<app-header class="WrapHeader" [isLast]="true"></app-header>
+<app-header class="WrapHeader"  [info]="99"></app-header>
 <!--Header end-->
 <!--PageBody-->
 <div class="WrapContent">
 	<div class="WAll">
-		<section class="WhitepaperWrap">
-			<div class="content">
-				<p class="main-text">
-					DAEX is a clearing solution for centralized cryptocurrency trading exchanges. Its clearing service is based on distributed
-					ledger technology. Clearing and settlement rules are preprogrammed into clearing smart contracts on the DAEX clearing
-					chain. The clearing process is automatic without people’s interference. The objectivity of clearing is guaranteed by
-					the consensus mechanism on the clearing chain. Also, customers’ digital assets are registered and stored on the DAEX’s
-					clearing chain. No other institutions or individuals can access these assets without the owner’s permission.
-				</p>
-				<div class="paper-button" style="background-image: url(assets/images/whitepaper/read-more.png)">
-					<a href="assets/DAEX(EN)-NonTechnicalWhitepaper-V0.9.8c-7.pdf" target="_blank">Non Technical Whitepaper</a>
-				</div>
-				<div class="paper-button" style="background-image: url(assets/images/whitepaper/read-more.png);margin-top:.4rem;margin-bottom: 1rem">
-					<a href="assets/DAEX(CN)-TechnicalWhitepaper-V0.6.1.pdf" target="_blank">Technical Whitepaper</a>
-				</div>
-				<div class="bottom-text">
-					<p>New Generation</p>
-					<p>Of Clearing Ecosystem</p>
-					<p>For Cryptocurrency</p>
+		<section class="WARPWALL">
+			<div class="UserCenterInfoWrap">
+				<div class="Title">VERIFIED</div>
+				<div class="TabBox">
+					<div class="ToolBar TabBar">
+						<ul class="ToolBarInner">
+							<li data-tab="#tab1" class="TabLink active">
+								<img class="Bright" src="assets/images/userCenter/004.jpg" />
+								<img class="Dark" src="assets/images/userCenter/005.jpg" />
+								<div>Personal Certification</div>
+							</li>
+							<li data-tab="#tab2" class="TabLink">
+								<img class="Bright" src="assets/images/userCenter/006.jpg" />
+								<img class="Dark" src="assets/images/userCenter/007.jpg" />
+								<div>Agency Certification</div>
+							</li>
+							<span class="TabLinkHighlight"></span>
+						</ul>
+					</div>
+					<div class="Tabs">
+						<div id="tab1" class="Tab PAll active UserCenterForm">
+							<ul class="FormWrap">
+								<li class="Fill">
+									<label><span class="Required">*</span> Usemame:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Fires (Given) name:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label><span class="Required">*</span> Last (Family) name:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label><span class="Required">*</span> Country:</label>
+									<select class="InputContr">
+										<option value="CHN">CHN</option>
+										<option value="EN">EN</option>
+									</select>
+								</li>
+								<li class="Fill">
+									<label><span class="Required">*</span> Type of certificate:</label>
+									<select class="InputContr">
+										<option value="Passport">Passport</option>
+									</select>
+								</li>
+								<li class="Fill">
+									<label><span class="Required">*</span> ID number:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Document calidity period:</label>
+									<div class="Row">
+										<div class="Col40">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Day</div>
+										</div>
+										<div class="Col40">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Month</div>
+										</div>
+										<div class="Col20">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Year</div>
+										</div>
+									</div>
+									
+								</li>
+								<li class="Fill">
+									<label>Address:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Wallet address:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill Row UPLoad">
+									<div class="Col50">
+										<label>Upload positive ID:</label>
+										<div class="AddImg">
+											<input type="file" />
+										</div>
+									</div>
+									<div class="Col50">
+										<label>Upload negative ID:</label>
+										<div class="AddImg">
+												<input type="file" />
+											</div>
+										</div>
+									<div class="Col50">
+										<label>Hand-held document front:</label>
+										<div class="AddImg">
+												<input type="file" />
+											</div>
+										</div>
+									<div class="Col50">
+										<label>Hand-held document reverse:</label>
+										<div class="AddImg">
+												<input type="file" />
+											</div>
+										</div>
+								</li>
+								<li class="Buttun">
+									<input type="submit" value="submit"  class="Btn BtnBlock" />
+								</li>
+							</ul>
+						</div>
+						<div id="tab2" class="Tab PAll UserCenterForm">
+							<ul class="FormWrap">
+								<li class="Fill">
+									<label><span class="Required">*</span> Business/institution name:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Fires (Given) name:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Company registration code:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Issuing agency:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Registration date:</label>
+									<div class="Row">
+										<div class="Col40">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Day</div>
+										</div>
+										<div class="Col40">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Month</div>
+										</div>
+										<div class="Col20">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Year</div>
+										</div>
+									</div>
+								</li>
+								<li class="Fill">
+									<label>Renewal calidity period:</label>
+									<div class="Row">
+										<div class="Col40">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Day</div>
+										</div>
+										<div class="Col40">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Month</div>
+										</div>
+										<div class="Col20">
+											<input class="Transi" type="text" />
+											<div class="CA TC">Year</div>
+										</div>
+									</div>
+								</li>
+								<li class="Fill">
+									<label>Registered address:</label>
+									<input class="Transi" type="text" />
+								</li>
+
+								<li class="Line"></li>
+
+								<li class="Fill">
+									<label>Legal representative:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Contact information:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill">
+									<label>Wallet address:</label>
+									<input class="Transi" type="text" />
+								</li>
+								<li class="Fill Row UPLoad">
+									<div class="Col100 Table50">
+										<label>Upload business license:</label>
+										<div class="AddImg">
+												<input type="file" />
+											</div>
+										</div>
+								</li>
+								<li class="Buttun">
+									<input type="submit" value="submit"  class="Btn BtnBlock" />
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-			<img src="assets/images/whitepaper/whitepaper-bg.jpg">
 		</section>
 	</div>
 </div>

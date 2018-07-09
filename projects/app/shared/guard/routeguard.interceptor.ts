@@ -74,7 +74,7 @@ export class RouteguardService implements CanActivate {
       }
     }
     // 当前路由是login时
-    if (path === 'auth') {
+    if (path === 'login') {
       if (typeof this.routeService.routeMode === 'undefined') {
         this.routeService.routeMode = true;
       }
@@ -84,7 +84,7 @@ export class RouteguardService implements CanActivate {
         return true;
       } else {
         // 已登录，跳转到首页
-        this.router.navigate(['/view/index']);
+        this.router.navigate(['/userCenter/index']);
         return false;
       }
     }

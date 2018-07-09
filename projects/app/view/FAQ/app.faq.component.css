@@ -3,7 +3,8 @@
 .FAQWrap .ListBlock .ItemLink .ItemInner{background-position: 1% center}
 .FAQWrap .ListBlock .ItemTitle{padding-left: 40px}
 .FAQWrap .ListBlock .AccordionItemExpanded .ItemTitle{color: #7855F7}
-
+.FAQWrap .FAQBanner{font-size: 0;}
+.FAQWrap .FAQBanner img{width: 100%}
 
 @media screen and (max-width: 716px) {
     .FAQWrap .Title{font-size: 32px}

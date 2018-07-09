@@ -1,0 +1,20 @@
+.IntrgralWrap{padding-top: 100px;padding-bottom: 100px;}
+.IntrgralWrap .InfoBox{position: relative; margin-bottom: 30px;padding-left: 100px;}
+.IntrgralWrap .InfoBox .Img{position: absolute;left:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+.IntrgralWrap .InfoBox .Info span{float: right;}
+.IntrgralWrap .InfoBox .Info .Title{font-size: 24px;margin-bottom: 10px}
+.IntrgralWrap .InfoBox .Info .Title span{font-size: 14px;color: #7339FF;padding-right: 30px}
+.IntrgralWrap .InfoBox .Info .Desc{font-size: 14px;color: #aaa}
+.IntrgralWrap .InfoBox .Info .Desc .BtnPrimary{font-size: 14px}
+
+.IntrgralList .ListBlock{font-size: 14px}
+.IntrgralList .ListBlock .GroupTitle{font-size: 18px;font-weight: 700;border-bottom: 1px dotted #ccc;padding:8px 20px;background: none;}
+.IntrgralList .ListBlock:after, .IntrgralList .ListBlock:before,
+.IntrgralList .ListBlock .ListItem:after,
+.IntrgralList .ListBlock .ListGroup:after{display: none}
+.IntrgralList .ListBlock .ItemAfter{color: #7339FF;}
+
+.ExchangeModal{left:50%;top:50%;margin-left: 0;width: 500px; -webkit-transform:translateY(-50%) translateX(-50%);transform:translateY(-50%) translateX(-50%);}
+.ExchangeModal .ModalBox .ModalFooter {justify-content: center}
+.ExchangeModal .ModalBox .ModalFooter .ModalButton{width: 100%}
+.ExchangeModal .ModalBox .ModalFooter .ModalButton .Btn {width: 70%}

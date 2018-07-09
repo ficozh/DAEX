@@ -40,7 +40,7 @@ export class UserCenterRegisterComponent implements OnInit {
   }
   // 请求邮箱验证码
   emailCode() {
-    this.userCenterAction.get('sendingMailCode');
+    this.userCenterAction.get('sendingMailCode', this.RegisterForm.value);
   }
   // 验证
   registerValid(name) {

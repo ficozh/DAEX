@@ -101,7 +101,9 @@ export class UserCenterAction {
             // 请求邮箱验证码
             case 'sendingMailCode':
                 paramURL = 'api/sendingMailCode';
-                httpBody = {};
+                httpBody = {
+                    'email': options.email
+                };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 验证邮箱验证码

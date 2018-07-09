@@ -9,7 +9,7 @@
 import { Component, OnInit} from '@angular/core';
 import { AppParam } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
-
+declare const $$: any;
 
 @Component({
   selector: 'app-info',
@@ -29,7 +29,7 @@ export class UserCenterInfoComponent implements OnInit {
   }
   // 组件初始化
   ngOnInit(): void {
-
+    $$.tabs('.TAB');
   }
 
 }

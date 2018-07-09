@@ -9,7 +9,7 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { AppFooterComponent, AppHeaderComponent } from '@shared/modules';
+import { AppFooterComponent, AppHeaderComponent } from '@shared/modules';
 // 国际化
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -21,14 +21,14 @@ import { TranslateModule } from '@ngx-translate/core';
     // 声明本模块中拥有的视图类。Angular 有三种视图类：组件、指令和管道。
     // 这里引入共享的组件
     declarations: [
-        /* AppHeaderComponent,
-        AppFooterComponent */
+        AppHeaderComponent,
+        AppFooterComponent
     ],
     // 这里将共享的组件放入到导出的出口中
     exports: [
         CommonModule,
-        /* AppHeaderComponent,
-        AppFooterComponent */
+        AppHeaderComponent,
+        AppFooterComponent
     ]
 })
 export class COMMONMODILES { }

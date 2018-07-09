@@ -1,0 +1,11 @@
+.UserCenterIndexWrap{padding: 150px;}
+.UserCenterIndexWrap .AdvisorWrap{position: relative;text-align: center}
+.UserCenterIndexWrap .AdvisorWrap:before {position: absolute;display:block;content:'';right:0;top:25%;height: 50%;width: 1px;background-color: #ddd;z-index: 15;}
+.UserCenterIndexWrap .AdvisorWrap .Advisor{border-radius: 1000px;}
+.UserCenterIndexWrap .AdvisorWrap .Advisor img{width: 180px}
+.UserCenterIndexWrap .AdvisorWrap .Name{font-size: 24px;}
+.UserCenterIndexWrap .ListBlock li{padding: 15px 0 15px 30px;}
+.UserCenterIndexWrap .ListBlock:after, .UserCenterIndexWrap .ListBlock:before,
+.UserCenterIndexWrap .ListBlock .ListItem:after{display: none}
+.UserCenterIndexWrap .ListBlock .ListItem .ItemTitle{font-size: 20px;color: #8E60FC}
+.UserCenterIndexWrap .ListBlock .ListItem .ItemAfter img{width: 32px;height: 32px;}

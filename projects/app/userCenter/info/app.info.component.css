@@ -1,0 +1,25 @@
+.UserCenterInfoWrap{max-width: 1000px;margin: 0 auto;padding: 100px 0;}
+.UserCenterInfoWrap .Title{font-size: 32px;font-weight: 700;text-align: center;margin-bottom: 30px}
+.UserCenterInfoWrap .TabBox{border:1px solid #ccc}
+.UserCenterInfoWrap .TabBox .ToolBar{height: 120px;}
+.UserCenterInfoWrap .TabBox .TabBar .TabLinkHighlight{display: none !important}
+.UserCenterInfoWrap .TabBox .ToolBarInner .TabLink{width: 50%;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc; color: #333}
+.UserCenterInfoWrap .TabBox .ToolBarInner .TabLink img{display: none;width: 48px;margin-bottom: 12px}
+.UserCenterInfoWrap .TabBox .ToolBarInner .TabLink .Dark{display: block}
+.UserCenterInfoWrap .TabBox .ToolBarInner li:nth-child(2){border-right:none;}
+.UserCenterInfoWrap .TabBox .ToolBarInner .TabLink.active{border-bottom-color:#fff;color: #7951FF}
+.UserCenterInfoWrap .TabBox .ToolBarInner .TabLink.active .Bright{display: block;}
+.UserCenterInfoWrap .TabBox .ToolBarInner .TabLink.active .Dark{display: none}
+
+.UserCenterInfoWrap .TabBox .PAll{padding: 20px 100px;}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .UserCenterInfoWrap{padding:50px 0;}
+    .UserCenterInfoWrap .TabBox .ToolBar{height: 80px;}
+    .UserCenterInfoWrap .TabBox .ToolBarInner .TabLink{font-size: 12px}
+    .UserCenterInfoWrap .TabBox .ToolBarInner .TabLink img{width: 24px}
+    .UserCenterInfoWrap .TabBox .PAll{padding: 20px 10px;} 
+}

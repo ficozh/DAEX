@@ -22,8 +22,12 @@ p{margin: 0;}
 .FormWrap li{padding: 5px 0;font-size: 12px;}
 
 .FormWrap li.Fill label{display: block;color: #544DB0;font-size: 16px;font-weight: 500}
-.FormWrap li.Fill input{width: 100%;padding: 4px;border: 1px solid #ccc; background:#FFF;height:42px;line-height:42px;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;border-radius:3px;font-size:14px}
-.FormWrap li.Fill input:focus{border: 1px solid #C071F0}
+.FormWrap li.Fill label .Required{color:#544DB0}
+.FormWrap li.Fill input,
+.FormWrap li.Fill select{width: 100%;padding: 4px;border: 1px solid #ccc; background:#FFF;height:42px;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;border-radius:3px;font-size:14px}
+.FormWrap li.Fill input:focus,
+.FormWrap li.Fill select:focus{border: 1px solid #C071F0}
+.FormWrap li.Fill select{-webkit-appearance:menulist;appearance:menulist;}
 .FormWrap li.Fill .Sub{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;}
 .FormWrap li.Fill .Sub span{width:45%;height:42px;margin-left: 10px}
 .FormWrap li.Fill .Sub span.Btn{background-color: #C071F0;font-weight: 500;color: #fff;border:none;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;}
@@ -34,7 +38,43 @@ p{margin: 0;}
 .FormWrap li.Link a{color: #C071F0;font-size: 16px;font-weight: 500}
 .FormWrap li.Buttun{padding-top: 15px}
 .FormWrap li.Buttun .Btn{background-color: #C071F0;font-weight: 500;color: #fff;border:none;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;}
+.FormWrap li.Line {padding: 30px 0 0;border-bottom: 1px dotted #ccc; margin-bottom: 10px}
 
+.UserCenterForm .FormWrap li.Fill label{color: #444;line-height: 40px;font-size: 14px;font-weight: 400}
+.UserCenterForm .FormWrap li.Buttun .Btn{background-color: #7853F0;}
+.UserCenterForm .FormWrap li.Fill input,
+.UserCenterForm .FormWrap li.Fill select{box-shadow: none}
+.UserCenterForm .FormWrap li.Fill.UPLoad .AddImg{height:150px;width:100%;border:1px solid #ddd;position:relative;text-align:center;background: url(assets/images/userCenter/add.png) no-repeat center}
+.UserCenterForm .FormWrap li.Fill.UPLoad .AddImg input{opacity:0.00001;position:absolute;top:0;left:0;border:0;margin:0;background:none;width:100%;height:100%;z-index:5}
+
+.ModalBox .ModalFooter{height: auto;padding: 15px ;}
+.ModalBox .ModalFooter .ModalButton {width: 100%}
+.ModalBox .ModalFooter .ModalButton .Btn{width: 60%}
+
+/* 首选按钮 */
+.BtnPrimary{color:#FFF;border-color:#7339FF;background-color:#7339FF;border-radius:100px;font-size: 14px}
+.BtnLine.BtnPrimary:focus,
+.BtnLine.BtnPrimary:active,
+.BtnPrimary:hover,
+.BtnPrimary:focus{color:#fff}
+.BtnPrimary.active,
+.BtnPrimary:focus,
+.BtnPrimary:active{border-color:#7339FF;background-color:#7339FF}
+.BtnLine.BtnPrimary{color:#7339FF}
+
+/*灰色按钮*/
+.BtnGray{color:#fff;background-color:#C4C4C4;border-color:#C4C4C4;border-radius:100px;font-size: 14px}
+.BtnLine.BtnGray:focus,
+.BtnLine.BtnGray:active,
+.BtnGray:hover,
+.BtnGray:focus{color:#fff}
+.BtnGray.active,
+.BtnGray:focus,
+.BtnGray:active{border-color:#C4C4C4;background-color:#C4C4C4}
+.BtnLine.BtnGray{color:#555}
+
+/*无底色按钮*/
+.BtnLine{background-color:transparent;text-shadow:none}
 
 /*------------------media-pc------------------*/
 @media screen and (max-width: 1200px) {

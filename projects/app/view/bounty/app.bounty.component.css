@@ -1,0 +1,25 @@
+.BountyWrap .BountyBanner{font-size: 0;padding: 20px 0;}
+.BountyWrap .BountyBanner img{width: 100%}
+
+.BountyWrap .BountyList{padding:0 0 30px 0;background-color: #F0F0F0;font-size: 13px}
+.BountyWrap .BountyList .Title{font-size: 18px;text-align: center;color: #7137FA;padding:30px 0;}
+.BountyWrap .BountyList .Box{box-shadow:none;border:1px solid #bbb;border-radius: 6px}
+.BountyWrap .BountyList .Box .BoxHeader{display: block;font-size: 16px;text-align: center}
+.BountyWrap .BountyList .Box .BoxHeader .Reward{color: #7137FA}
+.BountyWrap .BountyList .Box .BoxContent{height: 150px;overflow-y: auto;text-align: left}
+.BountyWrap .BountyList .Box .BoxContent:before{background: none;border-top:1px dotted #ccc}
+.BountyWrap .BountyList .Box .BoxContent:after{display: none}
+.BountyWrap .BountyList .Row li{text-align: center;}
+.BountyWrap .BountyList .Row li .Button{font-size: 14px;height: 32px;}
+.BountyWrap .BountyList .Row li .Btn{font-size: 14px;height: 32px;}
+.BountyWrap .BountyListColor{background-color:#F6F6F6 }
+.BountyWrap .BountyListColorA{background-color:#FFF }
+.BountyWrap .BountyList .Table{text-align:center}
+.BountyWrap .BountyList .Table tr > th{border-top:0;}
+.BountyWrap .BountyList .Table > thead > tr > th {border-bottom: 1px dotted #ddd}
+.BountyWrap .BountyList .Table tr > td {border-top: 1px dotted #ddd}
+
+
+@media screen and (max-width: 716px) {
+  .BountyWrap .BountyList .Row li{margin-bottom: 30px}
+}

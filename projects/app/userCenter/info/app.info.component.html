@@ -25,176 +25,154 @@
 					</div>
 					<div class="Tabs">
 						<div id="tab1" class="Tab PAll active UserCenterForm">
-							<ul class="FormWrap">
-								<li class="Fill">
-									<label><span class="Required">*</span> Usemame:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Fires (Given) name:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label><span class="Required">*</span> Last (Family) name:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label><span class="Required">*</span> Country:</label>
-									<select class="InputContr">
-										<option value="CHN">CHN</option>
-										<option value="EN">EN</option>
-									</select>
-								</li>
-								<li class="Fill">
-									<label><span class="Required">*</span> Type of certificate:</label>
-									<select class="InputContr">
-										<option value="Passport">Passport</option>
-									</select>
-								</li>
-								<li class="Fill">
-									<label><span class="Required">*</span> ID number:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Document calidity period:</label>
-									<div class="Row">
-										<div class="Col40">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Day</div>
-										</div>
-										<div class="Col40">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Month</div>
-										</div>
-										<div class="Col20">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Year</div>
-										</div>
-									</div>
-									
-								</li>
-								<li class="Fill">
-									<label>Address:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Wallet address:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill Row UPLoad">
-									<div class="Col50">
-										<label>Upload positive ID:</label>
-										<div class="AddImg">
-											<input type="file" />
-										</div>
-									</div>
-									<div class="Col50">
-										<label>Upload negative ID:</label>
-										<div class="AddImg">
+							<form [formGroup]="PersonalForm">
+								<ul class="FormWrap">
+									<li class="Fill">
+										<label><span class="Required">*</span> Usemame:</label>
+										<input class="Transi" type="text" formControlName="usemame"/>
+									</li>
+									<li class="Fill">
+										<label>Fires (Given) name:</label>
+										<input class="Transi" type="text" formControlName="firstName"/>
+									</li>
+									<li class="Fill">
+										<label><span class="Required">*</span> Last (Family) name:</label>
+										<input class="Transi" type="text" formControlName="lastName"/>
+									</li>
+									<li class="Fill">
+										<label><span class="Required">*</span> Country:</label>
+										<select formControlName="nation" class="InputContr">
+											<option value="CHN">CHN</option>
+											<option value="EN">EN</option>
+										</select>
+									</li>
+									<li class="Fill">
+										<label><span class="Required">*</span> Type of certificate:</label>
+										<select formControlName="cardType" class="InputContr">
+											<option value="Passport">Passport</option>
+										</select>
+									</li>
+									<li class="Fill">
+										<label><span class="Required">*</span> ID number:</label>
+										<input class="Transi" type="text" formControlName="cardCode"/>
+									</li>
+									<li class="Fill">
+										<label>Document calidity period:</label>
+										<input class="Transi" type="text" id="PersonalDate" formControlName="validDate"/>									
+									</li>
+									<li class="Fill">
+										<label>Address:</label>
+										<input class="Transi" type="text" formControlName="address"/>
+									</li>
+									<li class="Fill">
+										<label>Wallet address:</label>
+										<input class="Transi" type="text" formControlName="purseAddress"/>
+									</li>
+									<li class="Fill Row UPLoad">
+										<div class="Col50">
+											<label>Upload positive ID:</label>
+											<div class="AddImg">
 												<input type="file" />
 											</div>
 										</div>
-									<div class="Col50">
-										<label>Hand-held document front:</label>
-										<div class="AddImg">
-												<input type="file" />
+										<div class="Col50">
+											<label>Upload negative ID:</label>
+											<div class="AddImg">
+													<input type="file" />
+												</div>
 											</div>
-										</div>
-									<div class="Col50">
-										<label>Hand-held document reverse:</label>
-										<div class="AddImg">
-												<input type="file" />
+										<div class="Col50">
+											<label>Hand-held document front:</label>
+											<div class="AddImg">
+													<input type="file" />
+												</div>
 											</div>
-										</div>
-								</li>
-								<li class="Buttun">
-									<input type="submit" value="submit"  class="Btn BtnBlock" />
-								</li>
-							</ul>
+										<div class="Col50">
+											<label>Hand-held document reverse:</label>
+											<div class="AddImg">
+													<input type="file" />
+												</div>
+											</div>
+									</li>
+									<li class="Buttun">
+										<input (click)="submit(1)" type="submit" value="submit"  class="Btn BtnBlock" />
+									</li>
+								</ul>
+							</form>
 						</div>
 						<div id="tab2" class="Tab PAll UserCenterForm">
-							<ul class="FormWrap">
-								<li class="Fill">
-									<label><span class="Required">*</span> Business/institution name:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Fires (Given) name:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Company registration code:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Issuing agency:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Registration date:</label>
-									<div class="Row">
-										<div class="Col40">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Day</div>
-										</div>
-										<div class="Col40">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Month</div>
-										</div>
-										<div class="Col20">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Year</div>
-										</div>
-									</div>
-								</li>
-								<li class="Fill">
-									<label>Renewal calidity period:</label>
-									<div class="Row">
-										<div class="Col40">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Day</div>
-										</div>
-										<div class="Col40">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Month</div>
-										</div>
-										<div class="Col20">
-											<input class="Transi" type="text" />
-											<div class="CA TC">Year</div>
-										</div>
-									</div>
-								</li>
-								<li class="Fill">
-									<label>Registered address:</label>
-									<input class="Transi" type="text" />
-								</li>
-
-								<li class="Line"></li>
-
-								<li class="Fill">
-									<label>Legal representative:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Contact information:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill">
-									<label>Wallet address:</label>
-									<input class="Transi" type="text" />
-								</li>
-								<li class="Fill Row UPLoad">
-									<div class="Col100 Table50">
-										<label>Upload business license:</label>
-										<div class="AddImg">
-												<input type="file" />
+							<form [formGroup]="AgencyForm">
+								<ul class="FormWrap">
+									<li class="Fill">
+										<label><span class="Required">*</span> Business/institution name:</label>
+										<input class="Transi" type="text" formControlName="name"/>
+									</li>
+									<li class="Fill">
+										<label>Fires (Given) name:</label>
+										<input class="Transi" type="text" formControlName="firesname"/>
+									</li>
+									<li class="Fill">
+										<label>Company registration code:</label>
+										<input class="Transi" type="text" formControlName="registerCode"/>
+									</li>
+									<li class="Fill">
+										<label>Issuing agency:</label>
+										<input class="Transi" type="text" formControlName="certifyAuthority"/>
+									</li>
+									<li class="Fill">
+										<label>Registration date:</label>
+										<input class="Transi" type="text" id="AgencyDate" formControlName="registerDate"/>
+										<!-- <div class="Row">
+											<div class="Col40">
+												<input class="Transi" type="text" />
+												<div class="CA TC">Day</div>
 											</div>
-										</div>
-								</li>
-								<li class="Buttun">
-									<input type="submit" value="submit"  class="Btn BtnBlock" />
-								</li>
-							</ul>
+											<div class="Col40">
+												<input class="Transi" type="text" />
+												<div class="CA TC">Month</div>
+											</div>
+											<div class="Col20">
+												<input class="Transi" type="text" />
+												<div class="CA TC">Year</div>
+											</div>
+										</div> -->
+									</li>
+									<li class="Fill">
+										<label>Renewal calidity period:</label>
+										<input class="Transi" type="text" id="AgencyADate" formControlName="validDate"/>
+									</li>
+									<li class="Fill">
+										<label>Registered address:</label>
+										<input class="Transi" type="text"  formControlName="companyAddress"/>
+									</li>
+
+									<li class="Line"></li>
+
+									<li class="Fill">
+										<label>Legal representative:</label>
+										<input class="Transi" type="text" formControlName="representative"/>
+									</li>
+									<li class="Fill">
+										<label>Contact information:</label>
+										<input class="Transi" type="text" formControlName="contact"/>
+									</li>
+									<li class="Fill">
+										<label>Wallet address:</label>
+										<input class="Transi" type="text" formControlName="purseAddress"/>
+									</li>
+									<li class="Fill Row UPLoad">
+										<div class="Col100 Table50">
+											<label>Upload business license:</label>
+											<div class="AddImg">
+													<input type="file" />
+												</div>
+											</div>
+									</li>
+									<li class="Buttun">
+										<input (click)="submit(2)" type="submit" value="submit"  class="Btn BtnBlock" />
+									</li>
+								</ul>
+							</form>
 						</div>
 					</div>
 				</div>

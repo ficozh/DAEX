@@ -156,7 +156,7 @@ export class UserCenterAction {
     }
 
     // 提交数据
-    set(name: 'register' | 'login' | 'saveCoinRecord' | 'saveExchangeRecord' | 'saveExchangeRecord1', options: any, callback?: Function, error?: Function) {
+    set(name: 'register' | 'login' | 'password' | 'saveCoinRecord' | 'saveExchangeRecord' | 'updateinfo', options: any, callback?: Function, error?: Function) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -165,6 +165,21 @@ export class UserCenterAction {
             // 登录
             case 'login':
                 paramURL = 'api/user/login';
+                httpBody = {
+                    // 邮箱
+                    'email': options.email,
+                    // 邮箱验证码
+                    'emailCode': options.emailCode,
+                    // 图片验证码
+                    'code': options.code,
+                    // 密码
+                    'password': options.password
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 更改密码
+            case 'password':
+                paramURL = 'api/password';
                 httpBody = {
                     // 邮箱
                     'email': options.email,
@@ -223,7 +238,7 @@ export class UserCenterAction {
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 完善个人资料
-            case 'register':
+            case 'updateinfo':
                 paramURL = 'api/user/update';
                 if (options.userType === 1) {
                     // 个人注册
@@ -237,7 +252,7 @@ export class UserCenterAction {
                         // 证件类型
                         'cardType': options.cardType,
                         // 证件号码
-                        'cardCode': options.email,
+                        'cardCode': options.cardCode,
                         // 证件有效期
                         'validDate': options.validDate,
                         // 居住地址

@@ -1786,7 +1786,38 @@ kelat.each("Boolean Number String Function Array Date RegExp Object Error Symbol
     classType["[object " + name + "]"] = name.toLowerCase();
 });
 
-
+/** 动态加载 
+ * @alias loadJC
+ * @param {String} path:加载对象路径
+ * @param {String} type:加载对象类型 js & css
+ * @param {function} callback:js回调
+ */
+KUIAPP.LoadJC = function(path, type, callback) {
+    if(typeof path !=='undefined'){
+        var head = document.getElementsByTagName('head')[0];
+        if(type==="js"){
+            var script = document.createElement('script')
+            script.src = path;
+            script.type = 'text/javascript';
+            head.appendChild(script);
+            if(callback){
+                script.onload = script.onreadystatechange = function (){
+                    if(!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete'){
+                        callback();
+                    };
+                };
+            };
+        }else if(type==="css"){
+            var link = document.createElement('link');
+            link.href = path;
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            head.appendChild(link);
+        };
+    };
+    return this;
+};
+window['kelat']['loadJC'] = KUIAPP.LoadJC;
 /************* 页面UI部分 *************/
 /*=====================================================
 ************   折叠面板   ************

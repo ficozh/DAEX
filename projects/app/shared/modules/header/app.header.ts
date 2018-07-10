@@ -26,6 +26,7 @@ declare const $$: any;
 export class AppHeaderComponent implements OnInit {
   @Input() info: number;
   @Input() title: string;
+  showUser: boolean;
   constructor(
     private router: Router,
     private userModel: UserModel,
@@ -34,6 +35,7 @@ export class AppHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.showUser = this.userModel.isLogin;
   }
   setAnchor(num, name) {
     this.info = num;
@@ -61,6 +63,10 @@ export class AppHeaderComponent implements OnInit {
   // 返回事件
   Language(name: string) {
     this.translate.use(name);
+  }
+  // 退出
+  signOut() {
+    this.userModel.isLogin = false;
   }
 
 }

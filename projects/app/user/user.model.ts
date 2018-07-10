@@ -10,6 +10,7 @@
 export class UserModel  {
     // 判断是否登录
     isLogin: boolean;
+    user: any;
     anchor: number;
     anchorName: string;
     anchorOffset: any = {

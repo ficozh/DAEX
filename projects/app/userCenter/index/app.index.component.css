@@ -9,3 +9,14 @@
 .UserCenterIndexWrap .ListBlock .ListItem:after{display: none}
 .UserCenterIndexWrap .ListBlock .ListItem .ItemTitle{font-size: 20px;color: #8E60FC}
 .UserCenterIndexWrap .ListBlock .ListItem .ItemAfter img{width: 32px;height: 32px;}
+
+
+@media screen and (max-width: 768px) {
+    .UserCenterIndexWrap{padding:50px 0;}
+    .UserCenterIndexWrap .AdvisorWrap .Advisor img{width: 120px}
+    .UserCenterIndexWrap .ListBlock .ItemMedia img{width: 32px}
+    .UserCenterIndexWrap .AdvisorWrap:before {display: none}
+    .UserCenterIndexWrap .ListBlock li{padding:10px 0}
+    .UserCenterIndexWrap .ListBlock .ItemAfter img{width: 24px}
+    .UserCenterIndexWrap .ListBlock .ListItem .ItemTitle{font-size: 18px}
+}

@@ -18,3 +18,17 @@
 .ExchangeModal .ModalBox .ModalFooter {justify-content: center}
 .ExchangeModal .ModalBox .ModalFooter .ModalButton{width: 100%}
 .ExchangeModal .ModalBox .ModalFooter .ModalButton .Btn {width: 70%}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .IntrgralWrap .InfoBox{padding-left: 50px}
+    .IntrgralWrap .InfoBox .Img{width: 32px}
+    .IntrgralWrap .InfoBox .Info .Title {font-size: 18px}
+    .IntrgralWrap .InfoBox .Info .Title span,
+    .IntrgralWrap .InfoBox .Info .Desc .BtnPrimary,
+    .IntrgralWrap .InfoBox .Info .Desc{font-size: 12px}
+    .ExchangeModal{width: 90%}
+}
+

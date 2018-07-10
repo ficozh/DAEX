@@ -28,22 +28,24 @@ export class ViewAction {
 
     // 回调操作
     private CallbackHandle(options: HandleOption) {
-        if (options.type === 'success') {
-            console.log('请求' + name + '成功:' + JSON.stringify(options.result));
-            if (this.appParam.isTestParam || options.result.code === 0) {
-                // 判断返回数据
-                if (options.result.data !== null) {
-                    options.callback(options.result.data);
+        if (options.isCallback) {
+            if (options.type === 'success') {
+                console.log('请求' + name + '成功:' + JSON.stringify(options.result));
+                if (this.appParam.isTestParam || options.result.code === 0) {
+                    // 判断返回数据
+                    if (options.result.data !== null) {
+                        options.callback(options.result.data);
+                    }
+                } else {
+                    options.error();
                 }
             } else {
+                console.log('请求' + name + '失败:' + JSON.stringify(options.result));
+                if (this.appParam.isTestParam) {
+                    options.callback(options.result);
+                }
                 options.error();
             }
-        } else {
-            console.log('请求' + name + '失败:' + JSON.stringify(options.result));
-            if (this.appParam.isTestParam) {
-                options.callback(options.result);
-            }
-            options.error();
         }
     }
 
@@ -54,6 +56,7 @@ export class ViewAction {
             that.CallbackHandle({
                 'type': option.type,
                 'name': option.name,
+                'isCallback': option.isCallback,
                 'result': option.result,
                 'callback': option.callback,
                 'error': option.error,
@@ -66,6 +69,7 @@ export class ViewAction {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
+        const isCallback = true;
         // 判断参数类型
         if (typeof options === 'function') {
             callback = arguments[1];
@@ -101,6 +105,7 @@ export class ViewAction {
         this.httpSend({
             'name': name,
             'url': URL,
+            'isCallback': isCallback,
             'paramUrl': paramURL,
             'httpBody': httpBody,
             'callback': callback,
@@ -113,6 +118,7 @@ export class ViewAction {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
+        const isCallback = true;
         switch (name) {
             // 下载
             case 'Down':
@@ -127,6 +133,7 @@ export class ViewAction {
         this.httpSend({
             'name': name,
             'url': URL,
+            'isCallback': isCallback,
             'paramUrl': paramURL,
             'httpBody': httpBody,
             'callback': callback,

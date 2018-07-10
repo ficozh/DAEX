@@ -28,22 +28,24 @@ export class UserCenterAction {
 
     // 回调操作
     private CallbackHandle(options: HandleOption) {
-        if (options.type === 'success') {
-            console.log('请求' + name + '成功:' + JSON.stringify(options.result));
-            if (this.appParam.isTestParam || options.result.code === 0) {
-                // 判断返回数据
-                if (options.result.data !== null) {
-                    options.callback(options.result.data);
+        if (options.isCallback) {
+            if (options.type === 'success') {
+                console.log('请求' + name + '成功:' + JSON.stringify(options.result));
+                if (this.appParam.isTestParam || options.result.code === 0) {
+                    // 判断返回数据
+                    if (options.result.data !== null) {
+                        options.callback(options.result.data);
+                    }
+                } else {
+                    options.error();
                 }
             } else {
+                console.log('请求' + name + '失败:' + JSON.stringify(options.result));
+                if (this.appParam.isTestParam) {
+                    options.callback(options.result);
+                }
                 options.error();
             }
-        } else {
-            console.log('请求' + name + '失败:' + JSON.stringify(options.result));
-            if (this.appParam.isTestParam) {
-                options.callback(options.result);
-            }
-            options.error();
         }
     }
     // 请求
@@ -53,6 +55,7 @@ export class UserCenterAction {
             that.CallbackHandle({
                 'type': option.type,
                 'name': option.name,
+                'isCallback': option.isCallback,
                 'result': option.result,
                 'callback': option.callback,
                 'error': option.error
@@ -65,6 +68,7 @@ export class UserCenterAction {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
+        let isCallback = true;
         // 判断参数类型
         if (typeof options === 'function') {
             callback = arguments[1];
@@ -101,6 +105,7 @@ export class UserCenterAction {
             // 请求邮箱验证码
             case 'sendingMailCode':
                 paramURL = 'api/sendingMailCode';
+                isCallback = false;
                 httpBody = {
                     'email': options.email
                 };
@@ -128,6 +133,14 @@ export class UserCenterAction {
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
+            // 获取账户积分余额
+            case 'validCode':
+                paramURL = 'api/dax/account/coinCount';
+                httpBody = {
+                    'uid': options.uid
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
             default:
                 return false;
         }
@@ -136,25 +149,59 @@ export class UserCenterAction {
             'url': URL,
             'paramUrl': paramURL,
             'httpBody': httpBody,
+            'isCallback': isCallback,
             'callback': callback || function() {},
             'error': error || function() {}
         });
     }
 
     // 提交数据
-    set(name: string | 'register' | 'login', options: any, callback?: Function, error?: Function) {
+    set(name: 'register' | 'login' | 'saveCoinRecord' | 'saveExchangeRecord' | 'saveExchangeRecord1', options: any, callback?: Function, error?: Function) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
+        const isCallback = true;
         switch (name) {
             // 登录
             case 'login':
                 paramURL = 'api/user/login';
                 httpBody = {
-                    // 用户名
+                    // 邮箱
                     'email': options.email,
                     // 密码
                     'password': options.password
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 保存积分消费记录
+            case 'saveCoinRecord':
+                paramURL = 'api/dax/account/saveCoinRecord';
+                httpBody = {
+                    // 用户id
+                    // 'uid': options.uid,
+                    // 消费方式
+                    'usage': options.usage,
+                    // 收入 为正，则为积分收入，为负，则为积分支出
+                    'costCoin': options.costCoin
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 保存积分收支记录
+            case 'saveExchangeRecord':
+                paramURL = 'api/dax/saveExchangeRecord';
+                httpBody = {
+                    // 用户id
+                    // 'uid': options.uid,
+                    // 提现地址
+                    'depositAddress': options.depositAddress,
+                    // 提现规则
+                    'rule': options.rule,
+                    // 提现状态0：提现成功，1：申请中
+                    'status': options.status,
+                    // 消耗积分数
+                    'costCoin': options.costCoin,
+                    // 提现数量
+                    'depositCount': options.depositCount
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
@@ -175,10 +222,59 @@ export class UserCenterAction {
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
+            // 完善个人资料
+            case 'register':
+                paramURL = 'api/user/update';
+                if (options.userType === 1) {
+                    // 个人注册
+                    httpBody = {
+                        // 姓
+                        'firstName': options.firstName,
+                        // 名
+                        'lastName': options.lastName,
+                        // 国籍
+                        'nation': options.nation,
+                        // 证件类型
+                        'cardType': options.cardType,
+                        // 证件号码
+                        'cardCode': options.email,
+                        // 证件有效期
+                        'validDate': options.validDate,
+                        // 居住地址
+                        'address': options.address,
+                        // 钱包地址
+                        'purseAddress': options.purseAddress
+                    };
+                } else {
+                    // 企业注册
+                    httpBody = {
+                        // 企业或机构名称
+                        'name': options.name,
+                        // 注册编码
+                        'registerCode': options.registerCode,
+                        // 发证机构
+                        'certifyAuthority': options.certifyAuthority,
+                        // 注册日期
+                        'registerDate': options.registerDate,
+                        // 续存有效期
+                        'validDate': options.validDate,
+                        // 注册地址
+                        'companyAddress': options.companyAddress,
+                        // 法定代表人
+                        'representative': options.representative,
+                        // 法定代表人联系方式
+                        'contact': options.contact,
+                        // 钱包地址
+                        'purseAddress': options.purseAddress
+                    };
+                }
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
         }
         this.httpSend({
             'name': name,
             'url': URL,
+            'isCallback': isCallback,
             'paramUrl': paramURL,
             'httpBody': httpBody,
             'callback': callback || function() {},

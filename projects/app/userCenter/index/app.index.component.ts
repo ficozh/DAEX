@@ -7,7 +7,7 @@
  * @description:
  */
 import { Component, OnInit } from '@angular/core';
-import { AppParam } from '@user';
+import { UserModel } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
 
 
@@ -18,8 +18,9 @@ import { UserCenterAction } from '../app.userCenter.action';
 })
 
 export class UserCenterIndexlComponent implements OnInit {
+  integral;
   constructor(
-    private appParam: AppParam,
+    private userModel: UserModel,
     private userCenterAction: UserCenterAction,
   ) {
   }
@@ -29,7 +30,10 @@ export class UserCenterIndexlComponent implements OnInit {
   }
   // 组件初始化
   ngOnInit(): void {
-
+    this.userCenterAction.get('validCode', this.userModel.user.uid, (data) => {
+      this.integral = data.coinCount;
+      this.userModel.user.integral = data.coinCount;
+    });
   }
 
 }

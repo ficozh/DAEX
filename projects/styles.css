@@ -49,7 +49,7 @@ p{margin: 0;}
 
 .ModalBox .ModalFooter{height: auto;padding: 15px ;}
 .ModalBox .ModalFooter .ModalButton {width: 100%}
-.ModalBox .ModalFooter .ModalButton .Btn{width: 60%}
+.ModalBox .ModalFooter .ModalButton .Btn{width: 120px}
 
 /* 首选按钮 */
 .BtnPrimary{color:#FFF;border-color:#7339FF;background-color:#7339FF;border-radius:100px;font-size: 14px}

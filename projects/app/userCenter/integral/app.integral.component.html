@@ -8,7 +8,7 @@
 			<div class="InfoBox">
 				<img class="Img" src="assets/images/userCenter/001.jpg" />
 				<div class="Info">
-					<div class="Title">Total points : 5000 points <span>record</span></div>
+					<div class="Title">Total points : {{integral}} points <span>record</span></div>
 					<div class="Desc">Eam points by completing the mission <span class="Btn BtnPrimary" (click)="exchange()">Exchange DAX</span></div>
 				</div>
 			</div>
@@ -86,20 +86,22 @@
 		<div class="ModalInner">
 			<div class="ModalHeader">EXCHANGE DAX</div>
 			<div class="ModalContent UserCenterForm">
-				<ul class="FormWrap">
-					<li class="Fill">
-						<label>Redemption address:</label>
-						<input class="Transi" type="text" />
-					</li>
-					<li class="Fill">
-						<label>Redemption quantity:</label>
-						<input class="Transi" type="text" />
-					</li>
-					<li class="Fill">
-						<label>Consumption points:</label>
-						<input class="Transi" type="text" />
-					</li>
-				</ul>				
+				<form [formGroup]="ExchangeForm">
+					<ul class="FormWrap">
+						<li class="Fill">
+							<label>Redemption address:</label>
+							<input class="Transi" type="text" formControlName="depositAddress" />
+						</li>
+						<li class="Fill">
+							<label>Redemption quantity:</label>
+							<input class="Transi" type="text" formControlName="costCoin"/>
+						</li>
+						<li class="Fill">
+							<label>Consumption points:</label>
+							<input class="Transi" type="text" formControlName="depositCount"/>
+						</li>
+					</ul>
+				</form>			
 			</div>
 		</div>
 		<div class="ModalFooter ModalFooter2">

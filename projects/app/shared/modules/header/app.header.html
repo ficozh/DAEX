@@ -18,7 +18,8 @@
 		<li [ngClass]="{'active': info === 4 }"><a href="#/view/whitepaper">{{'HEADER.DAEXpaper' | translate}}</a></li>
 		<li [ngClass]="{'active': info === 5 }"><a href="#/view/faq">{{'HEADER.faq' | translate}}</a></li>
 		<li [ngClass]="{'active': info === 6 }"><a href="#/view/bounty">{{'HEADER.Bounty' | translate}}</a></li>
-		<li class="UserCenter"><a href="#/userCenter/login">{{'HEADER.login' | translate}}</a> | <a href="#/userCenter/register">{{'HEADER.signUp' | translate}}</a></li>
+		<li class="UserCenter" *ngIf="!showUser"><a href="#/userCenter/login">{{'HEADER.login' | translate}}</a> | <a href="#/userCenter/register">{{'HEADER.signUp' | translate}}</a></li>
+		<li class="UserCenter" *ngIf="showUser"><a href="#/userCenter/index"></a> | <a href="javascript:;" (click)="signOut()">{{'HEADER.signOut' | translate}}</a></li>
 		<!-- <li><span (click)="Language('EN')">English</span> / <span (click)="Language('ZH-CN')">中文</span></li> -->
 	</ul>
 </header>

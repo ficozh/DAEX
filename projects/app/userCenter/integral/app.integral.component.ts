@@ -7,8 +7,9 @@
  * @description:
  */
 import { Component, OnInit } from '@angular/core';
-import { AppParam } from '@user';
+import { UserModel } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
+import { FormBuilder, Validators, FormControl } from '@angular/forms';
 declare const $$: any;
 
 @Component({
@@ -19,18 +20,32 @@ declare const $$: any;
 
 export class UserCenterIntegralComponent implements OnInit {
   EXCHANGE: boolean;
+  integral;
+  ExchangeForm: any;
   constructor(
-    private appParam: AppParam,
+    private userModel: UserModel,
     private userCenterAction: UserCenterAction,
+    private formBuilder: FormBuilder
   ) {
+    this.createForm();
   }
+   // 创建表单元素
+   createForm() {
+    this.ExchangeForm = this.formBuilder.group({
+      depositAddress: [''],
+      status: [''],
+      rule: [''],
+      depositCount: [''],
+      costCoin: ['']
+    });
+}
   // 提升性能
   trackByFn(index, item) {
     return index; // or item.id
   }
   // 组件初始化
   ngOnInit(): void {
-
+    this.integral = this.userModel.user.integral;
   }
   exchange() {
     this.EXCHANGE = true;
@@ -40,5 +55,7 @@ export class UserCenterIntegralComponent implements OnInit {
   }
   confirm() {
     this.EXCHANGE = false;
+    this.userCenterAction.set('saveExchangeRecord', this.ExchangeForm.value, () => {
+    });
   }
 }

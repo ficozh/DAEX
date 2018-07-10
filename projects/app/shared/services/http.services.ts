@@ -44,6 +44,7 @@ export class HttpServices {
         const _Result_: HandleOption = {
             'type': 'success',
             'name': options.name,
+            'isCallback': options.isCallback,
             'result': '',
             'callback': options.callback,
             'error': options.error

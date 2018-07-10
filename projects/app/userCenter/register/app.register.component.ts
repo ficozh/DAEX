@@ -46,11 +46,11 @@ export class UserCenterRegisterComponent implements OnInit {
   registerValid(name) {
     switch (name) {
       case 'email':
-          const _email_ = this.RegisterForm.get('email').valid;
+          /* const _email_ = this.RegisterForm.get('email').valid;
           if (_email_) {
             this.userCenterAction.get('emailValid', this.RegisterForm.value, () => {
             });
-          }
+          } */
           break;
       case 'emailCode':
           this.userCenterAction.get('validMailCode', this.RegisterForm.value, (su) => {

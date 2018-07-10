@@ -8,6 +8,7 @@ export interface ResponseResult {
 export interface HttpOption {
     name: string;
     url: string;
+    isCallback:boolean;
     paramUrl: string;
     httpBody: any;
     callback: Function;
@@ -18,6 +19,7 @@ export interface HttpOption {
 export interface HandleOption {
     type: 'success' | 'error';
     name: string;
+    isCallback:boolean;
     result: any;
     callback: Function;
     error: Function;

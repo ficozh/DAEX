@@ -8,7 +8,8 @@
     "faq": "FAQ",
     "Bounty": "Bounty",
     "login": "LOGIN",
-    "signUp": "SIGN UP"
+    "signUp": "SIGN UP",
+    "signOut": "SIGN OUT"
   },
   "BANNER": {
     "WITNESSVALUE" : "WITNESS VALUE"

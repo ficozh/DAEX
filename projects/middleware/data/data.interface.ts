@@ -6,7 +6,7 @@
  * @author: fico
  * @description:
  */
-import { once, IsEqual } from '../common/index';
+import { once, IsEqual } from '@mid/common';
 
 // 配置文件
 export interface Config {

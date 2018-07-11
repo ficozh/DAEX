@@ -46,6 +46,7 @@ p{margin: 0;}
 .UserCenterForm .FormWrap li.Fill select{box-shadow: none}
 .UserCenterForm .FormWrap li.Fill.UPLoad .AddImg{height:150px;width:100%;border:1px solid #ddd;position:relative;text-align:center;background: url(assets/images/userCenter/add.png) no-repeat center}
 .UserCenterForm .FormWrap li.Fill.UPLoad .AddImg input{opacity:0.00001;position:absolute;top:0;left:0;border:0;margin:0;background:none;width:100%;height:100%;z-index:5}
+.UserCenterForm .FormWrap li.Fill.UPLoad .AddImg .ShowImg{width: 100%;height: 100%;}
 
 .ModalBox .ModalFooter{height: auto;padding: 15px ;}
 .ModalBox .ModalFooter .ModalButton {width: 100%}

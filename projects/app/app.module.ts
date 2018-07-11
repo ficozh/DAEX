@@ -19,7 +19,7 @@ import { UserCenterViewModule } from './userCenter/app.userCenter.module';
 import { NoopInterceptor } from '@shared/guard';
 // app参数
 import { UserModel } from '@user';
-import { environment } from '../environments/environment';
+import { environment } from '@env/environment';
 
 @NgModule({
   // 声明本模块中拥有的视图类。Angular 有三种视图类：组件、指令和管道。

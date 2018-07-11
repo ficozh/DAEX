@@ -1,6 +1,6 @@
 // 执行一次事件
-export * from './event/once';
+export * from '@mid/common/event/once';
 // 对象对比
-export * from './extend/isEqual';
+export * from '@mid/common/extend/isEqual';
 // 版本对比
-export * from './extend/isVerEqual';
+export * from '@mid/common/extend/isVerEqual';

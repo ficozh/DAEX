@@ -7,7 +7,7 @@ import { AppParam } from '@user';
 // Cordova
 import { BasicServices } from '@shared/services';
 // 获取url参数
-import { environment } from '../environments/environment';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-root',

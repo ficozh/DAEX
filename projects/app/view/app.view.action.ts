@@ -11,9 +11,9 @@ import { Injectable } from '@angular/core';
 // 路由相关模块
 import { UserModel, AppParam } from '@user';
 // 服务
-import { HttpServices, BasicServices } from '../shared/services';
+import { HttpServices, BasicServices } from '@shared/services';
 // 环境配置
-import { environment } from 'environments/environment';
+import { environment } from '@env/environment';
 // 类型接口
 import { HttpOption, HandleOption } from '@int/types';
 
@@ -33,9 +33,7 @@ export class ViewAction {
                 console.log('请求' + name + '成功:' + JSON.stringify(options.result));
                 if (this.appParam.isTestParam || options.result.code === 0) {
                     // 判断返回数据
-                    if (options.result.data !== null) {
-                        options.callback(options.result.data);
-                    }
+                    options.callback(options.result);
                 } else {
                     options.error();
                 }

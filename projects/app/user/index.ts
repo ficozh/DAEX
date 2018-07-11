@@ -1,4 +1,4 @@
 // APP参数
-export * from './app.param';
+export * from '@user/app.param';
 // 用户信息
-export * from './user.model';
+export * from '@user/user.model';

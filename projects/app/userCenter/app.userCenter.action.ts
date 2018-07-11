@@ -9,11 +9,11 @@
  */
 import { Injectable } from '@angular/core';
 // 路由相关模块
-import { AppParam } from '@user';
+import { AppParam, UserModel } from '@user';
 // 服务
-import { HttpServices } from '../shared/services';
+import { HttpServices } from '@shared/services';
 // 环境配置
-import { environment } from 'environments/environment';
+import { environment } from '@env/environment';
 // 类型接口
 import { HttpOption, HandleOption } from '@int/types';
 
@@ -21,7 +21,8 @@ import { HttpOption, HandleOption } from '@int/types';
 export class UserCenterAction {
     constructor(
         private httpServices: HttpServices,
-        private appParam: AppParam
+        private appParam: AppParam,
+        private userModel: UserModel
     ) {
     }
 
@@ -33,9 +34,7 @@ export class UserCenterAction {
                 console.log('请求' + name + '成功:' + JSON.stringify(options.result));
                 if (this.appParam.isTestParam || options.result.code === 0) {
                     // 判断返回数据
-                    if (options.result.data !== null) {
-                        options.callback(options.result.data);
-                    }
+                    options.callback(options.result);
                 } else {
                     options.error();
                 }
@@ -137,7 +136,7 @@ export class UserCenterAction {
             case 'validCode':
                 paramURL = 'api/dax/account/coinCount';
                 httpBody = {
-                    'uid': options.uid
+                    'tokenId': this.userModel.user.tokenId
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
@@ -156,7 +155,7 @@ export class UserCenterAction {
     }
 
     // 提交数据
-    set(name: 'register' | 'login' | 'password' | 'saveCoinRecord' | 'saveExchangeRecord' | 'updateinfo', options: any, callback?: Function, error?: Function) {
+    set(name: 'register' | 'login' | 'password' | 'saveCoinRecord' | 'saveExchangeRecord' | 'updateinfo' | 'upload', options: any, callback?: Function, error?: Function) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -193,7 +192,7 @@ export class UserCenterAction {
                 paramURL = 'api/dax/account/saveCoinRecord';
                 httpBody = {
                     // 用户id
-                    // 'uid': options.uid,
+                    'tokenId': this.userModel.user.tokenId,
                     // 消费方式
                     'usage': options.usage,
                     // 收入 为正，则为积分收入，为负，则为积分支出
@@ -206,7 +205,7 @@ export class UserCenterAction {
                 paramURL = 'api/dax/saveExchangeRecord';
                 httpBody = {
                     // 用户id
-                    // 'uid': options.uid,
+                    'tokenId': this.userModel.user.tokenId,
                     // 提现地址
                     'depositAddress': options.depositAddress,
                     // 提现规则
@@ -217,6 +216,15 @@ export class UserCenterAction {
                     'costCoin': options.costCoin,
                     // 提现数量
                     'depositCount': options.depositCount
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 上传文件接口
+            case 'upload':
+                paramURL = 'api/oss/upload';
+                httpBody = {
+                    // 提现地址
+                    'file': options.file
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
@@ -258,7 +266,15 @@ export class UserCenterAction {
                         // 居住地址
                         'address': options.address,
                         // 钱包地址
-                        'purseAddress': options.purseAddress
+                        'purseAddress': options.purseAddress,
+                        // 身份证正面
+                        'licenseFront': options.licenseFront,
+                        // 身份证反面
+                        'licenseBack': options.licenseBack,
+                        // 手持身份证正面
+                        'handFront': options.handFront,
+                        // 手持身份证反面
+                        'handBack': options.handBack
                     };
                 } else {
                     // 企业注册
@@ -279,10 +295,13 @@ export class UserCenterAction {
                         'representative': options.representative,
                         // 法定代表人联系方式
                         'contact': options.contact,
+                        // 公司营业执照图片
+                        'licenseUrl': options.licenseUrl,
                         // 钱包地址
                         'purseAddress': options.purseAddress
                     };
                 }
+                httpBody['tokenId'] = this.userModel.user.tokenId;
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
         }

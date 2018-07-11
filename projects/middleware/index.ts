@@ -1,2 +1,2 @@
 // 数据接口
-export * from './data/data.interface';
+export * from '@mid/data/data.interface';

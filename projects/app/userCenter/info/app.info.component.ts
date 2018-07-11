@@ -41,6 +41,10 @@ export class UserCenterInfoComponent implements OnInit {
         validDate: [''],
         address: [''],
         purseAddress: [''],
+        licenseFront: [''],
+        licenseBack: [''],
+        handFront: [''],
+        handBack: ['']
       });
       this.AgencyForm = this.formBuilder.group({
         name: [''],
@@ -52,7 +56,7 @@ export class UserCenterInfoComponent implements OnInit {
         companyAddress: [''],
         representative: [''],
         contact: [''],
-        purseAddress: [''],
+        purseAddress: ['']
       });
   }
   // 提升性能
@@ -70,6 +74,32 @@ export class UserCenterInfoComponent implements OnInit {
       Data.userType = 2;
     }
     this.userCenterAction.set('updateinfo', Data, () => {
+    });
+  }
+  // 上传图片
+  upLoad(ev) {
+    console.log(window.URL.createObjectURL(ev.target.files[0]));
+    // 获取图片对象数组
+    const file = ev.target.files[0];
+    // 将图片生成blob额  这儿我也不知道叫什么  可以生成一个 本地的临时预览图片的字符串
+    // 暂且叫他 blob对象吧   有知道叫什么的大佬 记得留言告诉我哈  省得改天出门丢人了
+    const blob = window.URL.createObjectURL(file);
+
+    function insertAfter( newElement, targetElement) {
+      const parent = targetElement.parentNode;
+      if ( parent.lastChild === targetElement ) {
+            // 如果最后的节点是目标元素，则直接添加。因为默认是最后
+            parent.appendChild( newElement );
+      } else {
+            // 如果不是，则插入在目标元素的下一个兄弟节点的前面。也就是目标元素的后面
+            parent.insertBefore( newElement, targetElement.nextSibling );
+      }
+    }
+    const Img = document.createElement('img');
+    Img.src = blob;
+    Img.className = 'ShowImg';
+    this.userCenterAction.set('upload', {'file': ev.target.files}, () => {
+      insertAfter(Img, ev.target);
     });
   }
 

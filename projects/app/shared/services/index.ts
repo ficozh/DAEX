@@ -3,10 +3,10 @@
  */
 
 // 基础服务
-export * from './basic.services';
+export * from '@shared/services/basic.services';
 // http服务
-export * from './http.services';
+export * from '@shared/services/http.services';
 // 路由服务
-export * from './route.service';
+export * from '@shared/services/route.service';
 // 验证服务
-export * from './validator.services';
+export * from '@shared/services/validator.services';

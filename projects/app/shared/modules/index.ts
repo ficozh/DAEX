@@ -2,30 +2,30 @@
  * 组件
  */
 // 页眉
-export * from './header/app.header';
+export * from '@shared/modules/header/app.header';
 // 页脚
-export * from './footer/app.footer';
+export * from '@shared/modules/footer/app.footer';
 
 /**
  * index
  */
 // 横幅
-export * from './index/banner/app.banner';
+export * from '@shared/modules/index/banner/app.banner';
 // about
-export * from './index/about/app.about';
+export * from '@shared/modules/index/about/app.about';
 // value
-export * from './index/value/app.value';
+export * from '@shared/modules/index/value/app.value';
 // ecosystem
-export * from './index/ecosystem/app.ecosystem';
+export * from '@shared/modules/index/ecosystem/app.ecosystem';
 // roadmap
-export * from './index/roadmap/app.roadmap';
+export * from '@shared/modules/index/roadmap/app.roadmap';
 // team
-export * from './index/team/app.team';
+export * from '@shared/modules/index/team/app.team';
 // community
-export * from './index/community/app.community';
+export * from '@shared/modules/index/community/app.community';
 // followus
-export * from './index/followus/app.followus';
+export * from '@shared/modules/index/followus/app.followus';
 // foreign
-export * from './index/foreign/app.foreign';
+export * from '@shared/modules/index/foreign/app.foreign';
 
 

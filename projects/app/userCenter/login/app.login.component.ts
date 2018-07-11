@@ -53,7 +53,9 @@ export class UserCenterLoginComponent implements OnInit {
        * errors:显示错误
        */
     if (this.LoginForm.valid) {
-      this.userCenterAction.set('login', this.LoginForm.value, () => {
+      this.userCenterAction.set('login', this.LoginForm.value, (data) => {
+
+        this.userModel.user.tokenId = data.tokenId;
         this.userModel.isLogin = true;
       });
     }

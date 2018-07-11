@@ -18,7 +18,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, Htt
 import { Observable,  of } from 'rxjs';
 import { catchError,  mergeMap } from 'rxjs/operators';
 // 环境配置
-import { environment } from 'environments/environment';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root',

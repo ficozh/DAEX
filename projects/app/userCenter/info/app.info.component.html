@@ -72,27 +72,27 @@
 										<div class="Col50">
 											<label>Upload positive ID:</label>
 											<div class="AddImg">
-												<input type="file" />
+												<input type="file"  (change)="upLoad($event)" formControlName="licenseFront"/>
 											</div>
 										</div>
 										<div class="Col50">
 											<label>Upload negative ID:</label>
 											<div class="AddImg">
-													<input type="file" />
-												</div>
+												<input type="file" (change)="upLoad($event)" formControlName="licenseBack"/>
 											</div>
+										</div>
 										<div class="Col50">
 											<label>Hand-held document front:</label>
 											<div class="AddImg">
-													<input type="file" />
-												</div>
+												<input type="file" (change)="upLoad($event)" formControlName="handFront"/>
 											</div>
+										</div>
 										<div class="Col50">
 											<label>Hand-held document reverse:</label>
 											<div class="AddImg">
-													<input type="file" />
-												</div>
+												<input type="file" (change)="upLoad($event)" formControlName="handBack"/>
 											</div>
+										</div>
 									</li>
 									<li class="Buttun">
 										<input (click)="submit(1)" type="submit" value="submit"  class="Btn BtnBlock" />
@@ -164,9 +164,9 @@
 										<div class="Col100 Table50">
 											<label>Upload business license:</label>
 											<div class="AddImg">
-													<input type="file" />
-												</div>
+												<input type="file"  (change)="upLoad($event)"/>
 											</div>
+										</div>
 									</li>
 									<li class="Buttun">
 										<input (click)="submit(2)" type="submit" value="submit"  class="Btn BtnBlock" />

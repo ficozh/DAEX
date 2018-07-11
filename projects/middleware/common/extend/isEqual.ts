@@ -7,9 +7,9 @@
  * @description:
  * 2018/06/05 更改对比方法
  */
-import { isObject } from '../extend/isObject';
-import { isDefined } from '../extend/isDefined';
-import { isFunction } from '../extend/isFunction';
+import { isObject } from '@mid/common/extend/isObject';
+import { isDefined } from '@mid/common/extend/isDefined';
+import { isFunction } from '@mid/common/extend/isFunction';
 
 export class IsEqual {
     // 深度对比

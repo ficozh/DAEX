@@ -79,10 +79,9 @@ export class ViewAction {
             case 'message':
                 paramURL = 'api/message/list';
                 httpBody = {
-                    // 用户名
-                    'limit': '10',
-                    'order': '',
-                    'sidx': '',
+                    'limit': options.limit,
+                    'order': options.order,
+                    'sidx': options.sidx,
                     'page': options.page
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
@@ -106,8 +105,8 @@ export class ViewAction {
             'isCallback': isCallback,
             'paramUrl': paramURL,
             'httpBody': httpBody,
-            'callback': callback,
-            'error': error
+            'callback': callback || function() {},
+            'error': error || function() {}
         });
     }
 
@@ -134,8 +133,8 @@ export class ViewAction {
             'isCallback': isCallback,
             'paramUrl': paramURL,
             'httpBody': httpBody,
-            'callback': callback,
-            'error': error,
+            'callback': callback || function() {},
+            'error': error || function() {},
         });
     }
 }

@@ -63,7 +63,7 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: 'emailValid' | 'message' | 'messageInfo' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode', options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -82,23 +82,6 @@ export class UserCenterAction {
                     // 用户名
                     'email': options.email
                 };
-                URL = environment.paths.SERVER_URL + paramURL;
-                break;
-            // 内容
-            case 'message':
-                paramURL = 'api/message/list';
-                httpBody = {
-                    // 用户名
-                    'limit': '10',
-                    'order': '',
-                    'sidx': '',
-                    'page': options.page
-                };
-                URL = environment.paths.SERVER_URL + paramURL;
-                break;
-            // 内容
-            case 'messageInfo':
-                paramURL = 'api/message/info' + options.code;
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 请求邮箱验证码

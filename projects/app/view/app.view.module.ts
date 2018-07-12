@@ -28,6 +28,7 @@ import { CommunityComponent } from './community/app.community.component';
 import { FAQComponent } from './FAQ/app.faq.component';
 import { FollowusComponent } from './followus/app.followus.component';
 import { BountyComponent } from './bounty/app.bounty.component';
+import { NewComponent } from './new/app.new.component';
 
 // 公共模块
 import { COMMONMODILES } from '../commonModule/commonModule.module';
@@ -71,8 +72,10 @@ const viewRoutes: Routes = [
       { path: 'whitepaper', data: {title: 'whitepaper'},  component: WhitepaperComponent },
       // FAQ
       { path: 'faq', data: {title: 'FAQ'},  component: FAQComponent },
-      // FAQ
+      // bounty
       { path: 'bounty', data: {title: 'bounty'},  component: BountyComponent },
+      // new
+      { path: 'new', data: {title: 'new'},  component: NewComponent },
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: 'index',  pathMatch: 'full'  /* 必须要设置 */}
     ]
@@ -109,6 +112,7 @@ export class AppViewRoutingModule {}
     IndexComponent,
     FollowusComponent,
     BountyComponent,
+    NewComponent,
     InformationComponent,
     TeamComponent,
     WhitepaperComponent,

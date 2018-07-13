@@ -53,6 +53,9 @@ export class RouteguardService implements CanActivate {
     }
     // 根据点击事件添加或删除路径数组队列
     this.routeService.set(state);
+    if (route.data['load']) {
+      return true;
+    }
     console.log(this.routeService.path);
     console.log('路由：' + path);
     // nextRoute: 设置需要路由守卫的路由集合
@@ -89,4 +92,5 @@ export class RouteguardService implements CanActivate {
       }
     }
   }
+
 }

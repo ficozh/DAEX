@@ -21,12 +21,8 @@ declare const $$: any;
  providedIn: 'root',
 })
 export class HttpServices {
-    // 时间戳
-    readonly timestamp = String(+new Date) || '1521715375267';
     // 设置请求头
     private httpOptions: object;
-    // app版本
-    private appVersion: boolean;
 
     constructor(
         // private changeDetectorRef: ChangeDetectorRef,
@@ -35,12 +31,10 @@ export class HttpServices {
         private appParam: AppParam,
         private userModel: UserModel
     ) {
-        this.appVersion = IsVerEqual.prototype.version(($$.fn.device.osVersion || '6.0'), '7.0.0');
     }
 
     HTTP(options: HttpOption, callback: (Val: HandleOption) => void ) {
         const that = this;
-        const _appVersion_ = this.appVersion;
         const _Result_: HandleOption = {
             'type': 'success',
             'name': options.name,

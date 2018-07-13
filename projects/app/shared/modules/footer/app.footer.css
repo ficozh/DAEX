@@ -1,105 +1,45 @@
-.FooterWrap {
-padding: .87rem .9rem;
-background-color: #7852F2;
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
--webkit-box-pack: justify;
--moz-justify-content: space-between;
--webkit-justify-content: space-between;
-justify-content: space-between;
--ms-flex-pack: justify;
--webkit-box-align: start;
--moz-align-items: flex-start;
--webkit-align-items: flex-start;
-align-items: flex-start;
--ms-flex-align: start;
-}
+.FooterWrap .FollowUs{background-color: #7E5CFB;padding: 40px 0;text-align: center}
+
+
 .FollowTitle {
 font-size: 30px;
 color: white;
 margin-bottom: .36rem;
 }
-.FollowIcon {
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
--webkit-box-align: center;
--moz-align-items: center;
--webkit-align-items: center;
-align-items: center;
--ms-flex-align: center;
-margin-bottom: 0.72rem;
-}
-.FollowIcon li {
-margin-right: .3rem;
-}
-.FollowIcon img {
-display: list-item;
-width: .52rem;
-min-width: 30px;
-}
-.FollowIcon img:hover {
+
+.FooterWrap .FollowIcon a {margin-right:.3rem;font-size: 0; }
+.FooterWrap .FollowIcon {font-size: 0; }
+.FooterWrap .FollowIcon img {width:64px;min-width: 30px;}
+.FooterWrap .FollowIcon img:hover {
 animation: myLogo 0.3s 1 ease-in-out forwards 0.1s;
 -webkit-animation: myLogo 0.3s 1 ease-in-out forwards 0.1s;
 }
-.FollowBottomText {
-color: white;
-font-size: 20px;
-}
-.FollowBottomText span {
-display: inline-block;
-height: 25px;
-line-height: 25px;
-}
-.FollowBottomText span:nth-last-child(1) {
-font-size: 14px;
-position: absolute;
-right: .9rem;
-}
-.FollowUsRight img {
-display: list-item;
-width: 1.72rem;
-min-width: 100px;
-}
+
+.FooterWrap .FollowUsInfo{background-color: #7853F0;padding: 30px 200px;font-size: 0}
+.FooterWrap .FollowUsInfo .Logo{width: 200px;text-align: left;}
+.FooterWrap .FollowUsInfo .FollowBottomText{font-size: 22px;color:#fff;text-align: right}
+@keyframes myLogo {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
+  @-webkit-keyframes myLogo {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
+
 
 
 @media screen and (max-width: 768px) {
-    .FooterWrap {
-    padding: 1rem;
-    -webkit-box-align: start;
-    -moz-align-items: flex-start;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-    -ms-flex-align: start;
-    }
-    .FooterWrap .FollowTitle {
-    font-size: 22px;
-    }
-    .FooterWrap .FollowIcon {
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    -o-flex-wrap: wrap;
-    flex-wrap: wrap;
-    max-width: 12rem;
-    }
-    .FooterWrap .FollowIcon li {
-        margin-right: 1.3rem;
-    margin-bottom: 10px;
-    }
-    .FooterWrap .FollowIcon img {
-    min-width: 27px;
-    width: 1.6rem;
-    }
-    .FooterWrap .FollowUsRight img {
-        width: 3.6rem;
-    position: relative;
-    top: 3px;
-    }
-      
+    .FooterWrap .FollowIcon img {width:36px;min-width: 30px;}
+    .FooterWrap .FollowUsInfo  {padding: 30px 0;}
+    .FooterWrap .FollowUsInfo .Logo{width: 120px;}
+    .FooterWrap .FollowUsInfo .FollowBottomText{font-size:18px}
 }

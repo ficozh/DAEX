@@ -1,18 +1,24 @@
-.IntrgralWrap{padding-top: 100px;padding-bottom: 100px;}
-.IntrgralWrap .InfoBox{position: relative; margin-bottom: 30px;padding-left: 100px;}
-.IntrgralWrap .InfoBox .Img{position: absolute;left:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
-.IntrgralWrap .InfoBox .Info span{float: right;}
-.IntrgralWrap .InfoBox .Info .Title{font-size: 24px;margin-bottom: 10px}
-.IntrgralWrap .InfoBox .Info .Title span{font-size: 14px;color: #7339FF;padding-right: 30px}
-.IntrgralWrap .InfoBox .Info .Desc{font-size: 14px;color: #aaa}
-.IntrgralWrap .InfoBox .Info .Desc .BtnPrimary{font-size: 14px}
+.IntrgralWrap{padding-bottom: 100px;}
+.IntrgralWrap .InfoBox{background-color: #F1F1FD; position: relative;padding: 50px 0;}
+.IntrgralWrap .InfoBox .Img{min-width: 180px;width: 240px}
+.IntrgralWrap .InfoBox .Info .Title{font-size: 24px;margin-bottom: 30px;font-weight: 700}
+.IntrgralWrap .InfoBox .Info .Title span{font-size: 32px;color: #7339FF;}
+.IntrgralWrap .InfoBox .Info .Desc{font-size: 14px;color: #aaa;margin-bottom: 30px}
+.IntrgralWrap .InfoBox .Info .Button{font-size: 14px}
+.IntrgralWrap .InfoBox .Info .Button .BtnPrimary{font-size: 14px;width:130px}
+.IntrgralWrap .InfoBox .Info .Button span{margin-right: 20px}
 
 .IntrgralList .ListBlock{font-size: 14px}
-.IntrgralList .ListBlock .GroupTitle{font-size: 18px;font-weight: 700;border-bottom: 1px dotted #ccc;padding:8px 20px;background: none;}
+
 .IntrgralList .ListBlock:after, .IntrgralList .ListBlock:before,
 .IntrgralList .ListBlock .ListItem:after,
 .IntrgralList .ListBlock .ListGroup:after{display: none}
-.IntrgralList .ListBlock .ItemAfter{color: #7339FF;}
+.IntrgralList .ListBlock .ListGroup .ListItem{padding-left: 40px;position: relative;}
+.IntrgralList .ListBlock .GroupTitle{font-size: 18px;color: #333; font-weight: 500;padding:8px 20px;background: none;}
+.IntrgralList .ListBlock .GroupTitle .Img{position:absolute;top:50%;left: 0; width: 32px;height: 32px;-webkit-transform:translateY(-50%);transform:translateY(-50%) ;}
+.IntrgralList .ListBlock .ItemAfter{color: #A747F4;}
+.IntrgralList .ListBlock .ItemCon{padding-left: 0}
+.IntrgralList .ListBlock .ItemTitle{color: #888}
 
 .ExchangeModal{left:50%;top:50%;margin-left: 0;width: 500px; -webkit-transform:translateY(-50%) translateX(-50%);transform:translateY(-50%) translateX(-50%);}
 .ExchangeModal .ModalBox .ModalFooter {justify-content: center}
@@ -23,12 +29,12 @@
 
 
 @media screen and (max-width: 768px) {
-    .IntrgralWrap .InfoBox{padding-left: 50px}
-    .IntrgralWrap .InfoBox .Img{width: 32px}
+    .IntrgralWrap .InfoBox{padding: 30px 0}
+    .IntrgralWrap .InfoBox .Img{width: 180px}
     .IntrgralWrap .InfoBox .Info .Title {font-size: 18px}
-    .IntrgralWrap .InfoBox .Info .Title span,
-    .IntrgralWrap .InfoBox .Info .Desc .BtnPrimary,
-    .IntrgralWrap .InfoBox .Info .Desc{font-size: 12px}
+    .IntrgralWrap .InfoBox .Info .Title span{font-size: 24px}
+    .IntrgralWrap .InfoBox .Info .Desc,
+    .IntrgralWrap .InfoBox .Info .Button .BtnPrimary{font-size: 12px}
     .ExchangeModal{width: 90%}
 }
 

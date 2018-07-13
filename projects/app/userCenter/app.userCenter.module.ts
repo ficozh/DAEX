@@ -26,6 +26,7 @@ import { COMMONMODILES } from '../commonModule/commonModule.module';
 import { UserCenterInfoComponent } from './info/app.info.component';
 import { UserCenterLoginComponent } from './login/app.login.component';
 import { UserCenterIntegralComponent } from './integral/app.integral.component';
+import { UserCenterintegralDetailsComponent } from './integralDetails/app.integralDetails.component';
 import { UserCenterPasswordComponent } from './password/app.password.component';
 import { UserCenterRegisterComponent } from './register/app.register.component';
 import { UserCenterIndexlComponent } from './index/app.index.component';
@@ -33,7 +34,7 @@ import { UserCenterIndexlComponent } from './index/app.index.component';
 import { RouteService } from '@shared/services';
 import { RouteguardService } from '@shared/guard';
 
-const PATH_ARR = ['userCenter', 'register', 'login', 'password', 'index', 'info', 'integral'];
+const PATH_ARR = ['userCenter', 'register', 'login', 'password', 'index', 'info', 'integral', 'integralDetails'];
 // 根路径
 const ROOT_PATH = ['index'];
 /*定义路由const表示不可改变*/
@@ -46,17 +47,19 @@ const viewRoutes: Routes = [
   {
     path: '', component: UserCenterViewComponent, children: [
       // 注册
-      { path: PATH_ARR[1], data: {title: '注册'}, component: UserCenterRegisterComponent },
+      { path: PATH_ARR[1], data: {title: 'Sign up', load: true}, canLoad: [ RouteguardService ], component: UserCenterRegisterComponent },
       // 登录
-      { path: PATH_ARR[2], data: {title: '登录'}, component: UserCenterLoginComponent },
+      { path: PATH_ARR[2], data: {title: 'Login', load: true}, canActivate: [ RouteguardService ], component: UserCenterLoginComponent },
       // 忘记密码
-      { path: PATH_ARR[3], data: {title: '忘记密码'}, component: UserCenterPasswordComponent },
+      { path: PATH_ARR[3], data: {title: 'Forget Password', load: true}, canActivate: [ RouteguardService ], component: UserCenterPasswordComponent },
       // 完善个人信息
-      { path: PATH_ARR[4], data: {title: '个人中心'}, /* canActivate: [RouteguardService], */ component: UserCenterIndexlComponent },
+      { path: PATH_ARR[4], data: {title: 'Personal Center'}, /* canActivate: [RouteguardService], */ component: UserCenterIndexlComponent },
       // 完善个人信息
-      { path: PATH_ARR[5], data: {title: '完善个人信息'}, /* canActivate: [RouteguardService], */ component: UserCenterInfoComponent },
+      { path: PATH_ARR[5], data: {title: 'Customer Information'}, /* canActivate: [RouteguardService], */ component: UserCenterInfoComponent },
       // 账户积分信息
-      { path: PATH_ARR[6], data: {title: '账户积分信息'}, /* canActivate: [RouteguardService], */ component: UserCenterIntegralComponent },
+      { path: PATH_ARR[6], data: {title: 'integral'}, /* canActivate: [RouteguardService], */ component: UserCenterIntegralComponent },
+      // 账户积分信息
+      { path: PATH_ARR[7], data: {title: 'integral details'}, /* canActivate: [RouteguardService], */ component: UserCenterintegralDetailsComponent },
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: PATH_ARR[1],  pathMatch: 'full'  /* 必须要设置 */}
     ]
@@ -83,6 +86,7 @@ export class AppWhitepaperViewRoutingModule {}
     UserCenterLoginComponent,
     UserCenterPasswordComponent,
     UserCenterInfoComponent,
+    UserCenterintegralDetailsComponent,
     UserCenterIntegralComponent
   ],
   // 本模块声明的组件模板需要的类所在的其它模块。

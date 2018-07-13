@@ -1,14 +1,20 @@
 .UserCenterIndexWrap{padding: 150px;}
-.UserCenterIndexWrap .AdvisorWrap{position: relative;text-align: center}
-.UserCenterIndexWrap .AdvisorWrap:before {position: absolute;display:block;content:'';right:0;top:25%;height: 50%;width: 1px;background-color: #ddd;z-index: 15;}
+.UserCenterIndexWrap .AdvisorWrap{position: relative;text-align: center;margin-bottom: 50px}
+/* .UserCenterIndexWrap .AdvisorWrap:before {position: absolute;display:block;content:'';right:0;top:25%;height: 50%;width: 1px;background-color: #ddd;z-index: 15;} */
 .UserCenterIndexWrap .AdvisorWrap .Advisor{border-radius: 1000px;}
 .UserCenterIndexWrap .AdvisorWrap .Advisor img{width: 180px}
 .UserCenterIndexWrap .AdvisorWrap .Name{font-size: 24px;}
 .UserCenterIndexWrap .ListBlock li{padding: 15px 0 15px 30px;}
 .UserCenterIndexWrap .ListBlock:after, .UserCenterIndexWrap .ListBlock:before,
 .UserCenterIndexWrap .ListBlock .ListItem:after{display: none}
-.UserCenterIndexWrap .ListBlock .ListItem .ItemTitle{font-size: 20px;color: #8E60FC}
+.UserCenterIndexWrap .ListBlock .ListItem .ItemTitle{font-size: 20px;color: #333}
 .UserCenterIndexWrap .ListBlock .ListItem .ItemAfter img{width: 32px;height: 32px;}
+.UserCenterIndexWrap .UserCenterIndexList{font-size: 18px}
+.UserCenterIndexWrap .UserCenterIndexList > div:first-child:before {position: absolute;display:block;content:'';right:0;top:40%;height: 50%;width: 1px;background-color: #ddd;z-index: 15;}
+.UserCenterIndexWrap .UserCenterIndexList .ItemMedia img{height:48px}
+.UserCenterIndexWrap .UserCenterIndexList .ItemTitle{height: 80px;line-height: 80px}
+.UserCenterIndexWrap .UserCenterIndexList .ItemTitle span{font-size: 26px;font-weight: 700;color: #A956EE}
+.UserCenterIndexWrap .UserCenterIndexList .ItemAfter img{width: 24px;height: 24px;}
 
 
 @media screen and (max-width: 768px) {
@@ -19,4 +25,8 @@
     .UserCenterIndexWrap .ListBlock li{padding:10px 0}
     .UserCenterIndexWrap .ListBlock .ItemAfter img{width: 24px}
     .UserCenterIndexWrap .ListBlock .ListItem .ItemTitle{font-size: 18px}
+    .UserCenterIndexWrap .UserCenterIndexList > div {margin-bottom: 50px}
+    .UserCenterIndexWrap .UserCenterIndexList > div:first-child:before{display: none}
+    .UserCenterIndexWrap .UserCenterIndexList .ItemMedia img{height:36px}
+    .UserCenterIndexWrap .UserCenterIndexList .ItemAfter img{width: 20px;height: 20px;}
 }

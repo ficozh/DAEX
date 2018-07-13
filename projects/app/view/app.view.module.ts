@@ -46,6 +46,7 @@ import {
   AppForeignComponent
  } from '@shared/modules';
 import { RouteService } from '@shared/services';
+import { RouteguardService } from '@shared/guard';
 
 const PATH_ARR = ['view', 'index', 'information', 'community', 'followus', 'team', 'whitepaper', 'FAQ', 'bounty'];
 // 根路径
@@ -59,23 +60,23 @@ const viewRoutes: Routes = [
   {
     path: '', component: ViewComponent, children: [
       //  home
-      { path: 'index', data: {title: 'DAEX'},  component: IndexComponent },
+      { path: 'index', data: {title: 'DAEX', load: true}, canActivate: [ RouteguardService ], component: IndexComponent },
       //  information
-      { path: 'information', data: {title: 'information'},  component: InformationComponent },
+      { path: 'information', data: {title: 'information', load: true}, canActivate: [ RouteguardService ],  component: InformationComponent },
       // community
-      { path: 'community' , data: {title: 'community'},  component: CommunityComponent},
+      { path: 'community' , data: {title: 'community', load: true}, canActivate: [ RouteguardService ], component: CommunityComponent},
       // followus
-      { path: 'followus', data: {title: 'followus'},  component: FollowusComponent },
+      { path: 'followus', data: {title: 'followus', load: true}, canActivate: [ RouteguardService ], component: FollowusComponent },
       // team
-      { path: 'team', data: {title: 'team'},  component: TeamComponent },
+      { path: 'team', data: {title: 'team', load: true}, canActivate: [ RouteguardService ], component: TeamComponent },
       // whitepaper
-      { path: 'whitepaper', data: {title: 'whitepaper'},  component: WhitepaperComponent },
+      { path: 'whitepaper', data: {title: 'whitepaper', load: true}, canActivate: [ RouteguardService ],  component: WhitepaperComponent },
       // FAQ
-      { path: 'faq', data: {title: 'FAQ'},  component: FAQComponent },
+      { path: 'faq', data: {title: 'FAQ', load: true}, canActivate: [ RouteguardService ], component: FAQComponent },
       // bounty
-      { path: 'bounty', data: {title: 'bounty'},  component: BountyComponent },
+      { path: 'bounty', data: {title: 'bounty', load: true}, canActivate: [ RouteguardService ], component: BountyComponent },
       // new
-      { path: 'new', data: {title: 'new'},  component: NewComponent },
+      { path: 'new', data: {title: 'new', load: true}, canActivate: [ RouteguardService ], component: NewComponent },
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: 'index',  pathMatch: 'full'  /* 必须要设置 */}
     ]

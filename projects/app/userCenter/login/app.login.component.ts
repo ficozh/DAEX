@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserModel } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +23,7 @@ export class UserCenterLoginComponent implements OnInit {
   constructor(
     private userModel: UserModel,
     private userCenterAction: UserCenterAction,
+    private router: Router,
     private formBuilder: FormBuilder
   ) {
     this.createForm();
@@ -58,6 +59,7 @@ export class UserCenterLoginComponent implements OnInit {
         window.sessionStorage.setItem('isLogin', 'true');
         this.userModel.user.tokenId = ResultData.data.tokenId;
         this.userModel.isLogin = true;
+        this.router.navigate(['userCenter/index']);
       });
     }
   }

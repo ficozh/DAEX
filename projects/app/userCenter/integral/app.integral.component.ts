@@ -1,6 +1,6 @@
 /**
  * 积分
- * @class: UserCenterIntegralComponent
+ * @class: IntegralComponent
  * @version: 0.0.1
  * @date: 2018/06/14
  * @author: fico
@@ -18,7 +18,7 @@ declare const $$: any;
   styleUrls: ['./app.integral.component.css']
 })
 
-export class UserCenterIntegralComponent implements OnInit {
+export class IntegralComponent implements OnInit {
   EXCHANGE: boolean;
   integral;
   ExchangeForm: any;

@@ -53,7 +53,7 @@ export class RouteguardService implements CanActivate {
     // nextRoute: 设置需要路由守卫的路由集合
     const nextRoute = this.routeService.PATH_ARR;
     if (this.appParam.isTestParam) {
-      this.userModel.isLogin = true;
+      // this.userModel.isLogin = true;
     }
     // 是否登录
     const isLogin = this.userModel.isLogin || (window.sessionStorage.isLogin && window.sessionStorage.isLogin === 'true');

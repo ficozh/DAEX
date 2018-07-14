@@ -71,6 +71,7 @@ export class AppHeaderComponent implements OnInit {
     window.sessionStorage.isLogin = '';
     window.sessionStorage.tokenId = '';
     this.userModel.isLogin = false;
+    window.location.reload(true);
   }
 
 }

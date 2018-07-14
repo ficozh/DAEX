@@ -8,12 +8,8 @@
  */
 import { Injectable } from '@angular/core';
 // http 模块
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { IsVerEqual } from '@mid/common';
-import { BasicServices } from '@shared/services/basic.services';
-import { UserModel, AppParam } from '@user';
 
-import { HttpOption, ResponseResult, HandleOption } from '@int/types';
+import { HttpOption, HandleOption } from '@int/types';
 
 declare const $$: any;
 
@@ -21,15 +17,8 @@ declare const $$: any;
  providedIn: 'root',
 })
 export class HttpServices {
-    // 设置请求头
-    private httpOptions: object;
 
     constructor(
-        // private changeDetectorRef: ChangeDetectorRef,
-        private basic: BasicServices,
-        private http: HttpClient,
-        private appParam: AppParam,
-        private userModel: UserModel
     ) {
     }
 
@@ -43,14 +32,14 @@ export class HttpServices {
             'callback': options.callback,
             'error': options.error
         };
-        if (this.appParam.isTestParam) {
+        /* if (this.appParam.isTestParam) {
             $$.get(window.location.origin + '/assets/test.json', function(httpData) {
                 httpData = JSON.parse(httpData);
                 _Result_.result = httpData[options.name];
                 callback(_Result_);
             });
             return;
-        }
+        } */
         if (options.name === 'upload') {
             // 创建一个表单参数
             const fromObj = new FormData();
@@ -71,7 +60,24 @@ export class HttpServices {
             });
         } else {
             console.log(options.name + '请求post接口');
-            that.http.post<ResponseResult>(options.url, options.httpBody, that.httpOptions).subscribe(
+            $$.ajax({
+                url: options.url, // 上传的路径
+                type: 'POST',
+                data: options.httpBody, // 上传的方式
+                // contentType: 'application/json;charset=utf-8', // 如果是传图片则这俩项需要为false
+                // processData: false, // 如果是传图片则这俩项需要为false
+                success: function (httpData) {
+                  _Result_.result = httpData;
+                  callback(_Result_);
+                },
+                error: function(err, textStatus ) {
+                    console.log('textStatus=' + textStatus);
+                    _Result_.type = 'error';
+                    _Result_.result = err;
+                    callback(_Result_);
+                }
+              });
+            /* that.http.post<ResponseResult>(options.url, options.httpBody, that.httpOptions).subscribe(
                 httpData => {// 成功
                     _Result_.result = httpData;
                     callback(_Result_);
@@ -81,7 +87,7 @@ export class HttpServices {
                     _Result_.result = err;
                     callback(_Result_);
                 }
-            );
+            ); */
         }
     }
 }

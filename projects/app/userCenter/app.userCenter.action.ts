@@ -31,7 +31,8 @@ export class UserCenterAction {
     private CallbackHandle(options: HandleOption) {
         if (options.isCallback) {
             if (options.type === 'success') {
-                console.log('请求' + name + '成功:' + JSON.stringify(options.result));
+                console.log('请求' + options.name + '成功:' + options.result);
+                options.result = JSON.parse(options.result);
                 if (this.appParam.isTestParam || options.result.code === 0) {
                     // 判断返回数据
                     options.callback(options.result);
@@ -39,7 +40,7 @@ export class UserCenterAction {
                     options.error();
                 }
             } else {
-                console.log('请求' + name + '失败:' + JSON.stringify(options.result));
+                console.log('请求' + options.name + '失败:' + JSON.stringify(options.result));
                 if (this.appParam.isTestParam) {
                     options.callback(options.result);
                 }

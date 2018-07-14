@@ -1,6 +1,6 @@
 /**
  * 积分
- * @class: IntegralDetailsComponent
+ * @class: IntegralRecordComponent
  * @version: 0.0.1
  * @date: 2018/07/13
  * @author: fico
@@ -13,12 +13,12 @@ import { FormBuilder, Validators, FormControl } from '@angular/forms';
 declare const $$: any;
 
 @Component({
-  selector: 'app-integraldetails',
-  templateUrl: './app.integralDetails.component.html',
-  styleUrls: ['./app.integralDetails.component.css']
+  selector: 'app-integralrecord',
+  templateUrl: './app.integralRecord.component.html',
+  styleUrls: ['./app.integralRecord.component.css']
 })
 
-export class IntegralDetailsComponent implements OnInit {
+export class IntegralRecordComponent implements OnInit {
   EXCHANGE: boolean;
   integral;
   ExchangeForm: any;

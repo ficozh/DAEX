@@ -69,7 +69,7 @@ export class NoopInterceptor implements HttpInterceptor {
     const changedReq = req.clone({
       url: _url_,
       setHeaders: {
-        'Content-Type': 'application/json;charset=utf-8'
+        'Content-Type': 'text/html;charset=UTF-8'
       }
     });
     // 如果在url数组中有请求链接，直接返回

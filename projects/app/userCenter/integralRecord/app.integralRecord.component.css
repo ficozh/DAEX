@@ -1,0 +1,26 @@
+.IntrgralRecordWrap .IntrgralRecordBanner{background-color: #F0F0FC;padding-top: 30px;padding-bottom: 30px;text-align: center}
+.IntrgralRecordWrap .IntrgralRecordBanner .Img{min-width: 180px; width: 240px;}
+.IntrgralRecordWrap .IntrgralRecordBanner .Title{font-size: 32px;font-weight: 700;color: #703BFB;display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;height: 220px;}
+.IntrgralRecordWrap .IntrgralRecordList{font-size:14px;padding: 30px 0;}
+.IntrgralRecordWrap .IntrgralRecordList .Table{text-align:center;background: none}
+.IntrgralRecordWrap .IntrgralRecordList .Table tr > th{border-top:0;}
+.IntrgralRecordWrap .IntrgralRecordList .Table > thead > tr > th {border-bottom: 0}
+.IntrgralRecordWrap .IntrgralRecordList .Table tr > td {border-top: 0;line-height: 30px}
+.IntrgralRecordWrap .IntrgralRecordList .Table tr > td.Color{color: #A342F1;}
+
+@media screen and (max-width: 768px) {
+    .IntrgralDetailsWrap .InfoBox{padding: 30px 0}
+    .IntrgralRecordWrap .IntrgralRecordBanner .Img {width: 180px}
+}
+

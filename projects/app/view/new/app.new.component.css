@@ -1,10 +1,18 @@
-.NewWrap .Title{font-size: 28px;font-weight: 500;padding: 10px 0;}
-.NewWrap .Source{font-size: 14px;color: #aaa}
-.NewWrap .Detail{font-size: 14px;line-height: 1.8;padding: 20px 0;}
+.NewsWrap .Title{font-size: 48px;font-weight: 500;padding: 50px 0;text-align: center;}
+.NewsWrap .NewsList{font-size: 14px;border-top:2px dotted #B9AAEF}
+.NewsWrap .ListBlock:after, .NewsWrap .ListBlock:before,
+.NewsWrap .ListBlock .ListItem:after{display: none}
+.NewsWrap .ListBlock .ListItem:hover{box-shadow: 0 0 7px rgba(71, 71, 71, 0.479);}
+.NewsWrap .ListBlock .ListItem{margin: 30px 0;}
+.NewsWrap .ListBlock .ListItem .ItemMedia img{width: 170px;min-width: 100px;}
+.NewsWrap .ListBlock .ItemCon{padding-left: 0}
+.NewsWrap .ListBlock.MediaList .ItemMedia{padding-top: 0;padding-bottom: 0}
 
-.NewWrap .NewBanner{font-size: 0;}
-.NewWrap .NewBanner img{width: 100%}
-
-@media screen and (max-width: 716px) {
-    .NewWrap .Title{font-size: 18px}
-}
+@media screen and (max-width: 768px) {
+    .NewsWrap .Title{font-size: 32px;padding: 30px 0;}
+  }
+  
+  @media screen and (max-width: 560px) {
+    .NewsWrap .Title{font-size: 24px;padding: 20px 0;}
+    .NewsWrap .ListBlock .ListItem .ItemMedia img{width: 120px;}
+  }

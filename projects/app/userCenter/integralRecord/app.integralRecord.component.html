@@ -1,0 +1,63 @@
+<!--Header-->
+<app-header class="WrapHeader" [info]="99"></app-header>
+<!--Header end-->
+<!--PageBody-->
+<div class="WrapContent">
+	<div class="WAll">
+		<section class="IntrgralRecordWrap">
+			<div class="WARPWALL IntrgralRecordBanner Row">
+				<div class="Col40">
+					<img class="Img" src="assets/images/points/008.png" />
+				</div>
+				<div class="Col60 Title TC">
+					Conversion Record
+				</div>
+			</div>
+			
+			<div class="IntrgralRecordList">
+				<div class="WARPWALL">
+					<table class="Table">
+						<thead>
+							<tr>
+								<th>Username</th>
+								<th>Time</th>
+								<th>Quantity</th>
+								<th>Consumption</th>
+								<th>Remaining</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <tr *ngFor="let itme of recordList; trackBy: trackByFn">
+								<td>{{itme.name}}</td>
+								<td>{{itme.time}}</td>
+								<td>+{{itme.value}}</td>
+								<td>{{itme.statusName}}</td>
+							</tr> -->
+							<tr >
+								<td>222@22.com</td>
+								<td>2018-06-12</td>
+								<td>60</td>
+								<td class="Color">-26 Points</td>
+								<td class="Color">60 Points</td>
+								<td>DONE</td>
+							</tr>
+							<tr >
+								<td>222@22.com</td>
+								<td>2018-06-12</td>
+								<td>60</td>
+								<td class="Color">-26 Points</td>
+								<td class="Color">60 Points</td>
+								<td>DONE</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!--PageBody end-->
+<!--footer-->
+<app-footer></app-footer>
+<!--footer end-->

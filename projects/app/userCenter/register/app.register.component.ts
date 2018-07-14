@@ -17,6 +17,8 @@ import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms'
 })
 
 export class UserCenterRegisterComponent implements OnInit {
+  // 时间戳
+  readonly timestamp = String(+new Date) || '1521715375267';
   RegisterForm: any;
   confirmPasswordError: boolean;
   emailError: boolean;
@@ -87,6 +89,7 @@ export class UserCenterRegisterComponent implements OnInit {
     this.RegisterForm = this.formBuilder.group({
         email: ['', [Validators.required, Validators.email]],
         emailCode: [''],
+        tag: this.timestamp,
         verify: [''],
         password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
         confirmPassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],

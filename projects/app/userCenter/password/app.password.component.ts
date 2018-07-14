@@ -18,6 +18,8 @@ import { FormBuilder, Validators, FormControl } from '@angular/forms';
 })
 
 export class UserCenterPasswordComponent implements OnInit {
+  // 时间戳
+  readonly timestamp = String(+new Date) || '1521715375267';
   PasswordForm: any;
   confirmPasswordError: boolean;
   constructor(
@@ -30,11 +32,13 @@ export class UserCenterPasswordComponent implements OnInit {
   // 创建表单元素
   createForm() {
     this.PasswordForm = this.formBuilder.group({
-      depositAddress: [''],
-      status: [''],
-      rule: [''],
-      depositCount: [''],
-      costCoin: ['']
+        email: ['', [Validators.required, Validators.email]],
+        emailCode: [''],
+        tag: this.timestamp,
+        verify: [''],
+        password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+        confirmPassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+        inviteCode: ['']
     });
   }
   // 请求邮箱验证码

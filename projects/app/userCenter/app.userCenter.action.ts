@@ -91,6 +91,7 @@ export class UserCenterAction {
                 paramURL = 'api/sendingMailCode';
                 isCallback = false;
                 httpBody = {
+                    'tag': options.tag,
                     'email': options.email
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
@@ -99,6 +100,7 @@ export class UserCenterAction {
             case 'validMailCode':
                 paramURL = 'api/validMailCode';
                 httpBody = {
+                    'tag': options.tag,
                     'mailCode': options.emailCode
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
@@ -106,13 +108,16 @@ export class UserCenterAction {
             // 请求图片验证码
             case 'refreshCode':
                 paramURL = 'api/refreshCode';
-                httpBody = {};
+                httpBody = {
+                    'tag': options.tag
+                };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 验证图片验证码
             case 'validCode':
                 paramURL = 'api/validCode';
                 httpBody = {
+                    'tag': options.tag,
                     'picCode': options.verify
                 };
                 URL = environment.paths.SERVER_URL + paramURL;

@@ -46,7 +46,7 @@ export class AppForeignComponent implements OnInit {
 
   details(code) {
     this.userModel.newId = code;
-    this.router.navigate(['/view/new']);
+    this.router.navigate(['view/new']);
   }
 
   more() {

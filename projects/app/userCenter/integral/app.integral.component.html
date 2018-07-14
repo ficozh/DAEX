@@ -11,7 +11,7 @@
 						<img class="Img" src="assets/images/points/001.png" />
 					</div>
 					<div class="Col100 Table60 Info">
-						<div class="Title">Total points : <span>666666</span>{{integral}} points </div>
+						<div class="Title">Total points : <span>{{integral}}</span> points </div>
 						<div class="Desc">Eam points by completing the mission</div>
 						<div class="Button">
 							<span class="Btn BtnPrimary" (click)="exchange()">Exchange DAX</span> 
@@ -94,7 +94,7 @@
 	<div class="ModalBlank ModalBlankVisibleIn" (click)="cancel()" style="z-index: 2001;"></div>
 	<div class="ModalBox ModalIn ExchangeModal " style="z-index: 2003;">
 		<div class="ModalInner">
-			<div class="ModalHeader">EXCHANGE DAX</div>
+			<div class="ModalHeader">EXCHANGE DAX <img (click)="cancel()" class="Img" src="assets/images/002.png" /></div>
 			<div class="ModalContent UserCenterForm">
 				<form [formGroup]="ExchangeForm">
 					<ul class="FormWrap">

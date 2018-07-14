@@ -63,7 +63,7 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'mission' | 'missionInfo', options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -123,6 +123,38 @@ export class UserCenterAction {
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
+            // 任务列表
+            case 'mission':
+                paramURL = 'api/mission/list';
+                httpBody = {
+                    'tokenId': this.userModel.user.tokenId
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 任务详情
+            case 'missionInfo':
+                paramURL = 'api/mission/info/' + options.id;
+                httpBody = {
+                    'tokenId': this.userModel.user.tokenId
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 已做任务记录
+            case 'record':
+                paramURL = 'api/mission/record/list';
+                httpBody = {
+                    // 分页大小
+                    'limit': options.limit,
+                    // 页数
+                    'page': options.page,
+                    // 排序方式，desc,asc两个选项
+                    'order': 'desc',
+                    // 其他条件，没有可不填
+                    'sidx': options.sidx,
+                    'tokenId': this.userModel.user.tokenId
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
             default:
                 return false;
         }
@@ -138,7 +170,7 @@ export class UserCenterAction {
     }
 
     // 提交数据
-    set(name: 'register' | 'login' | 'password' | 'saveCoinRecord' | 'saveExchangeRecord' | 'updateinfo' | 'upload', options: any, callback?: Function, error?: Function) {
+    set(name: 'register' | 'login' | 'password' | 'saveCoinRecord' | 'saveExchangeRecord' | 'updateinfo' | 'upload' | 'recordSave', options: any, callback?: Function, error?: Function) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -285,6 +317,16 @@ export class UserCenterAction {
                     };
                 }
                 httpBody['tokenId'] = this.userModel.user.tokenId;
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // 接受任务
+            case 'recordSave':
+                paramURL = 'api/mission/record/save';
+                httpBody = {
+                    // 任务的ID
+                    'missionId': options.missionId,
+                    'tokenId': this.userModel.user.tokenId
+                };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
         }

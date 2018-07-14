@@ -4,12 +4,14 @@
     "Value": "价值",
     "Ecosystem": "生态系统",
     "Community": "Community",
-    "DAEXpaper": "DAEX paper",
+    "DAEXpaper": "白皮书",
     "faq": "FAQ",
     "Bounty": "Bounty",
-    "login": "LOGIN",
-    "signUp": "SIGN UP",
-    "signOut": "SIGN OUT"
+    "News": "新闻",
+    "login": "登录",
+    "signUp": "注册",
+    "UserCenter": "用户中心",
+    "signOut": "退出登录"
   },
   "BANNER": {
     "WITNESSVALUE" : "WITNESS VALUE"

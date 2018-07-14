@@ -30,9 +30,9 @@ export class UserCenterIndexlComponent implements OnInit {
   }
   // 组件初始化
   ngOnInit(): void {
-    this.userCenterAction.get('validCode', this.userModel.user.tokenId, (data) => {
-      this.integral = data.coinCount;
-      this.userModel.user.integral = data.coinCount;
+    this.userCenterAction.get('validCode', this.userModel.user.tokenId, (ResultData) => {
+      this.integral = ResultData.data.coinCount;
+      this.userModel.user.integral = ResultData.data.coinCount;
     });
   }
 

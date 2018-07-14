@@ -6,7 +6,7 @@
         {
             "label": ">>>运行 手机版",
             "type": "shell",
-            "command": "ng serve web-app --aot --host 192.168.0.102 --port 4201",
+            "command": "ng serve web-app --aot --host 192.168.31.253 --port 4201",
             // "command": "ng serve web-app --aot --host 10.180.108.89 --port 4201",
             "problemMatcher": []
         },

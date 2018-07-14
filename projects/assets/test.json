@@ -1,59 +1,47 @@
 {
-  "sceneDetail": {
-    "retCode": "00000",
-    "retInfo": "成功",
+  "validCode": {
+    "code": "0",
+    "msg": "成功",
     "data": {
-      "id": null,
-      "sourceId": "f54da90437354cf58fa9cb2b264fa41a",
-      "sceneName": "T空调模式",
-      "appSceneAlias": "空调根据室内温度启动模式",
-      "basicSceneAlias": "空调根据室内温度启动模式",
-      "sceneDesc": "空调根据室内温度启动模式",
-      "type": "deviceFamily",
-      "fromType": null,
-      "familyId": null,
-      "userId": "bobo",
-      "status": "draft",
-      "appSceneStatus": 1,
-      "auto": true,
-      "isOpen": 0,
-      "weight": 1,
-      "keyword": "zxc",
-      "sceneDialect": "",
-      "rules": [
-        {
-          "id": "810d301e19c242f69e5d77a438b01596",
-          "rule": "空调根据室内温度启动模式",
-          "desc": null,
-          "salience": null,
-          "when": null,
-          "then": null,
-          "isOpen": null
-        }
-      ],
-      "createTime": "2018-05-11 10:03:38",
-      "updateTime": "2018-04-04 14:59:23",
-      "canAppTrigger": false,
-      "activeBeginTime": null,
-      "activeEndTime": null,
-      "version": "1",
-      "prompt": "zxczxc",
-      "recommend": "",
-      "collect": "",
-      "banner": "",
-      "icon": "",
-      "inoutSide": null,
-      "createUserSort": null,
-      "basisSceneVersion": null,
-      "basisSceneName": null,
-      "basisSceneDescription": null,
-      "basisSceneTags": null,
-      "createUserId": "bobo",
-      "createUserNickname": "",
-      "createUserLogo": "",
-      "appId": "MB-UZHSH-0001",
-      "sortList": [],
-      "tagList": []
+      "coinCount": "4887"
     }
+  },
+  "mission": {
+    "code": "0",
+    "msg": "成功",
+    "data": [{
+      "id": 22,
+      "name": "T空调模式",
+      "type": "1",
+      "content": "空调根据室内温度启动模式",
+      "status": "0",
+      "coin_count": "20"
+    },{
+      "id": 11,
+      "name": "T空调模式",
+      "type": "0",
+      "content": "空调根据室内温度启动模式",
+      "status": "0",
+      "coin_count": "20"
+    }]
+  },
+  "record": {
+    "code": "0",
+    "msg": "成功",
+    "data": [{
+      "id": 11,
+      "name": "T空调模式",
+      "type": "1",
+      "content": "空调根据室内温度启动模式",
+      "status": "0",
+      "coin_count": "20"
+    },{
+      "id": 22,
+      "name": "T空调模式",
+      "type": "0",
+      "content": "空调根据室内温度启动模式",
+      "status": "0",
+      "coin_count": "20"
+    }]
   }
 }

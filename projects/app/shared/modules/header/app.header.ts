@@ -62,10 +62,14 @@ export class AppHeaderComponent implements OnInit {
   }
   // 返回事件
   Language(name: string) {
+    window.sessionStorage.language = name;
     this.translate.use(name);
   }
   // 退出
   signOut() {
+    this.showUser = false;
+    window.sessionStorage.isLogin = '';
+    window.sessionStorage.tokenId = '';
     this.userModel.isLogin = false;
   }
 

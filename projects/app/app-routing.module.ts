@@ -38,7 +38,7 @@ export class TranslateResolver implements Resolve<any> {
         this.translate.addLangs(['ZH-CN', 'EN']);
     }
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        const lang: string = localStorage.getItem('language');
+        const lang: string = window.sessionStorage.getItem('language');
         if (lang) {
           return this.translate.use(lang);
         } else {

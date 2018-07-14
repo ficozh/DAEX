@@ -43,14 +43,14 @@ export class HttpServices {
             'callback': options.callback,
             'error': options.error
         };
-        /* if (this.appParam.isTestParam) {
+        if (this.appParam.isTestParam) {
             $$.get(window.location.origin + '/assets/test.json', function(httpData) {
                 httpData = JSON.parse(httpData);
                 _Result_.result = httpData[options.name];
                 callback(_Result_);
             });
             return;
-        } */
+        }
         if (options.name === 'upload') {
             // 创建一个表单参数
             const fromObj = new FormData();

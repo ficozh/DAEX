@@ -27,8 +27,8 @@ import { WhitepaperComponent } from './whitepaper/app.whitepaper.component';
 import { CommunityComponent } from './community/app.community.component';
 import { FAQComponent } from './FAQ/app.faq.component';
 import { FollowusComponent } from './followus/app.followus.component';
-import { BountyComponent } from './bounty/app.bounty.component';
 import { NewComponent } from './new/app.new.component';
+import { NewDetailsComponent } from './newDetails/app.newDetails.component';
 
 // 公共模块
 import { COMMONMODILES } from '../commonModule/commonModule.module';
@@ -73,10 +73,10 @@ const viewRoutes: Routes = [
       { path: 'whitepaper', data: {title: 'whitepaper', load: true}, canActivate: [ RouteguardService ],  component: WhitepaperComponent },
       // FAQ
       { path: 'faq', data: {title: 'FAQ', load: true}, canActivate: [ RouteguardService ], component: FAQComponent },
-      // bounty
-      { path: 'bounty', data: {title: 'bounty', load: true}, canActivate: [ RouteguardService ], component: BountyComponent },
       // new
       { path: 'new', data: {title: 'new', load: true}, canActivate: [ RouteguardService ], component: NewComponent },
+      // new
+      { path: 'newDetails', data: {title: 'new', load: true}, canActivate: [ RouteguardService ], component: NewDetailsComponent },
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: 'index',  pathMatch: 'full'  /* 必须要设置 */}
     ]
@@ -112,8 +112,8 @@ export class AppViewRoutingModule {}
     // 页面
     IndexComponent,
     FollowusComponent,
-    BountyComponent,
     NewComponent,
+    NewDetailsComponent,
     InformationComponent,
     TeamComponent,
     WhitepaperComponent,

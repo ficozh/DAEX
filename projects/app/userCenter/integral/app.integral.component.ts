@@ -45,7 +45,14 @@ export class UserCenterIntegralComponent implements OnInit {
   }
   // 组件初始化
   ngOnInit(): void {
-    this.integral = this.userModel.user.integral;
+    if ( this.userModel.user.integral ) {
+      this.integral = this.userModel.user.integral;
+    } else {
+      this.userCenterAction.get('validCode', this.userModel.user.tokenId, (ResultData) => {
+        this.integral = ResultData.data.coinCount;
+        this.userModel.user.integral = ResultData.data.coinCount;
+      });
+    }
   }
   exchange() {
     this.EXCHANGE = true;

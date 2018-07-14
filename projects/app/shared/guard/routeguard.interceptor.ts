@@ -10,7 +10,6 @@
  * 2018/06/08   version: 0.1.1  将返回根路径名称通过变量传递 ROOT_PATH
  */
 import { Injectable } from '@angular/core';
-import { PlatformLocation } from '@angular/common';
 // 路由相关模块
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { UserModel, AppParam } from '@user';
@@ -25,7 +24,6 @@ export class RouteguardService implements CanActivate {
 
   constructor(
     private routeService: RouteService,
-    private location: PlatformLocation,
     private router: Router,
     private userModel: UserModel,
     private appParam: AppParam,
@@ -35,9 +33,6 @@ export class RouteguardService implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    // 处理安卓物理返回键回退 监听location的变化
-    this.location.onPopState(() => {
-    });
     // 设置页面标题
     const _Title_ = route.data['title'];
     if (typeof _Title_ !== 'undefined' && this.appParam.title !== _Title_) {
@@ -48,9 +43,6 @@ export class RouteguardService implements CanActivate {
     // 返回值 true: 跳转到当前路由 false: 不跳转到当前路由
     // 当前路由名称
     const path = route.routeConfig.path;
-    if (this.routeService.path.length >= 2 && this.routeService.get(-1).indexOf(path) > -1) {
-      return false;
-    }
     // 根据点击事件添加或删除路径数组队列
     this.routeService.set(state);
     if (route.data['load']) {
@@ -60,8 +52,15 @@ export class RouteguardService implements CanActivate {
     console.log('路由：' + path);
     // nextRoute: 设置需要路由守卫的路由集合
     const nextRoute = this.routeService.PATH_ARR;
+    if (this.appParam.isTestParam) {
+      this.userModel.isLogin = true;
+    }
     // 是否登录
-    const isLogin = this.userModel.isLogin;
+    const isLogin = this.userModel.isLogin || (window.sessionStorage.isLogin && window.sessionStorage.isLogin === 'true');
+    if (window.sessionStorage.isLogin === 'true') {
+      this.userModel.user.tokenId = window.sessionStorage.tokenId;
+    }
+
     // 当前路由是nextRoute指定页时
     if (nextRoute.indexOf(path) >= 0) {
       if (typeof this.routeService.routeMode === 'undefined') {
@@ -69,7 +68,7 @@ export class RouteguardService implements CanActivate {
       }
       if (!isLogin) {
         // 未登录，跳转到login
-        this.router.navigate(['/userCenter/login']);
+        this.router.navigate(['userCenter/login']);
         return false;
       } else {
         // 已登录，跳转到当前路由
@@ -87,7 +86,7 @@ export class RouteguardService implements CanActivate {
         return true;
       } else {
         // 已登录，跳转到首页
-        this.router.navigate(['/userCenter/index']);
+        this.router.navigate(['userCenter/index']);
         return false;
       }
     }

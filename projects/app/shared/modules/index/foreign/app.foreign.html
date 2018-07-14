@@ -9,19 +9,19 @@
       <li class="Col100 Table50">
         <ol class="ForeignList">
           <li class="active">
-            <div class="Title">Foreign media released seven major technology</div>
+            <div class="Title"><a href="#/view/newDetails"></a>Foreign media released seven major technology</div>
             <div class="Desc">Foreign media released seven major technology predictions for VR in 2018 What changes will the technology of blockchain bring?</div>
             <div class="Date">2018-06-25 2 Days ago <span class="FR"><img src="assets/images/005.png" /></span></div>
           </li>
           <li>
-            <div class="Title">Foreign media released seven major technology</div>
+            <div class="Title"><a href="#/view/newDetails"></a>Foreign media released seven major technology</div>
             <div class="Desc">Foreign media released seven major technology predictions for VR in 2018 What changes will the technology of blockchain bring?</div>
             <div class="Date">2018-06-25 2 Days ago <span class="FR"><img src="assets/images/005.png" /></span></div>
           </li>
-          <li *ngFor="let itme of ListData; trackBy: trackByFn">
+          <li *ngFor="let itme of ListData; trackBy: trackByFn" (click)="details(itme.code)">
             <div class="Title">{{itme.title}}</div>
             <div class="Desc">{{itme.summary}}</div>
-            <div class="Date">{{itme.source}} <span class="FR" (click)="details(itme.code)"><img src="assets/images/005.png" /></span></div>
+            <div class="Date">{{itme.source}} <span class="FR"><img src="assets/images/005.png" /></span></div>
           </li>
         </ol>
       </li>

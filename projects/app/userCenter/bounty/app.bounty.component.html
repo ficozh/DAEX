@@ -21,7 +21,7 @@
 			<div class="WARPWALL">
 				<h2 class="Title"><img src="assets/images/bounty/003.png"/> Social Bounties</h2>
 				<ul class="Row">
-					<li class="Col100 Table33">
+<!-- 					<li class="Col100 Table33">
 						<div class="Box BoxBlock">
 							<div class="BoxHeader">
 								<div class="Ti">Follow us on twitter</div>
@@ -66,6 +66,23 @@
 							</div>
 						</div>
 						<div class="Button activce">Get Mission <img src="assets/images/005.png" /></div>
+					</li> -->
+					<li class="Col100 Table33" *ngFor="let itme of bountyList; trackBy: trackByFn" [hidden]="itme.type != 0">
+						<div class="Box BoxBlock">
+							<div class="BoxHeader">
+								<div class="Ti">{{itme.name}}</div>
+								<div class="Reward">+{{itme.coin_count}} points</div>
+							</div>
+							<div class="BoxContent">
+								<div class="BoxContentInner">
+									{{itme.content}}
+								</div>
+							</div>
+						</div>
+						<div class="Button activce" *ngIf="itme.status == 0"><span (click)="save(itme.id)">Get Mission <img src="assets/images/005.png" /></span></div>
+						<div class="Button" *ngIf="itme.status == 3">Done <img src="assets/images/004.png" /></div>
+						<div class="Button" *ngIf="itme.status == 2">Auditing <img src="assets/images/004.png" /></div>
+						<div class="Button" *ngIf="itme.status == 1">Accepted <img src="assets/images/004.png" /></div>
 					</li>
 				</ul>
 			</div>
@@ -74,50 +91,22 @@
 			<div class="WARPWALL">
 				<h2 class="Title"><img src="assets/images/bounty/004.png"/> Creative Bounties</h2>
 				<ul class="Row">
-					<li class="Col100 Table33">
+					<li class="Col100 Table33"  *ngFor="let itme of bountyList; trackBy: trackByFn" [hidden]="itme.type != 1">
 						<div class="Box BoxBlock">
 							<div class="BoxHeader">
-								<div class="Ti">Invite your friends </div>
-								<div class="Reward">+10 points/each</div>
+								<div class="Ti">{{itme.name}}</div>
+								<div class="Reward">+{{itme.coin_count}} points</div>
 							</div>
 							<div class="BoxContent">
 								<div class="BoxContentInner">
-									DAEX aims to provide the most reliable clearing ecosystem for digital assets. If you are inspired by this concept. We are more than happy to have you to introduce DAEX for others.
-									Note:
-									<div>a.You will get your personal link via press "Get Mission" bottom.</div>
-									<div>b.10 points will be made when the invitees finished registration.</div>
+									{{itme.content}}
 								</div>
 							</div>
 						</div>
-						<div class="Button activce">Get Mission <img src="assets/images/005.png" /></div>
-					</li>
-					<li class="Col100 Table33">
-						<div class="Box BoxBlock">
-							<div class="BoxHeader">
-								<div class="Ti">Follow us on Twitter</div>
-								<div class="Reward">+50 ZPT</div>
-							</div>
-							<div class="BoxContent">
-								<div class="BoxContentInner">
-									Take the take of following Zeepin Official Page on Twitter, you can obtain 50ZPTs.
-								</div>
-							</div>
-						</div>
-						<div class="Button">Done <img src="assets/images/004.png" /></div>
-					</li>
-					<li class="Col100 Table33">
-						<div class="Box BoxBlock">
-							<div class="BoxHeader">
-								<div class="Ti">Follow us on Twitter</div>
-								<div class="Reward">+50 ZPT</div>
-							</div>
-							<div class="BoxContent">
-								<div class="BoxContentInner">
-									Take the take of following Zeepin Official Page on Twitter, you can obtain 50ZPTs.
-								</div>
-							</div>
-						</div>
-						<div class="Button"><span class="Btn BtnPrimary">Auditing</span></div>
+						<div class="Button activce" *ngIf="itme.status == 0"><span (click)="save(itme.id)">Get Mission <img src="assets/images/005.png" /></span></div>
+						<div class="Button" *ngIf="itme.status == 3">Done <img src="assets/images/004.png" /></div>
+						<div class="Button" *ngIf="itme.status == 2">Auditing <img src="assets/images/004.png" /></div>
+						<div class="Button" *ngIf="itme.status == 1">Accepted <img src="assets/images/004.png" /></div>
 					</li>
 				</ul>
 			</div>
@@ -135,29 +124,11 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Social</td>
-							<td>2018-07-09 12:30:30</td>
-							<td>+50</td>
-							<td>accepted</td>
-						</tr>
-						<tr>
-							<td>Social</td>
-							<td>2018-07-09 12:30:30</td>
-							<td>+50</td>
-							<td>accepted</td>
-						</tr>
-						<tr>
-							<td>Social</td>
-							<td>2018-07-09 12:30:30</td>
-							<td>+50</td>
-							<td>accepted</td>
-						</tr>
-						<tr>
-							<td>Social</td>
-							<td>2018-07-09 12:30:30</td>
-							<td>+50</td>
-							<td>accepted</td>
+						<tr *ngFor="let itme of recordList; trackBy: trackByFn">
+							<td>{{itme.name}}</td>
+							<td>{{itme.time}}</td>
+							<td>+{{itme.value}}</td>
+							<td>{{itme.statusName}}</td>
 						</tr>
 					</tbody>
 				</table>

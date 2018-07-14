@@ -30,11 +30,12 @@ import { UserCenterintegralDetailsComponent } from './integralDetails/app.integr
 import { UserCenterPasswordComponent } from './password/app.password.component';
 import { UserCenterRegisterComponent } from './register/app.register.component';
 import { UserCenterIndexlComponent } from './index/app.index.component';
+import { BountyComponent } from './bounty/app.bounty.component';
 
 import { RouteService } from '@shared/services';
 import { RouteguardService } from '@shared/guard';
 
-const PATH_ARR = ['userCenter', 'register', 'login', 'password', 'index', 'info', 'integral', 'integralDetails'];
+const PATH_ARR = ['userCenter', 'register', 'login', 'password', 'index', 'info', 'integral', 'integralDetails', 'bounty'];
 // 根路径
 const ROOT_PATH = ['index'];
 /*定义路由const表示不可改变*/
@@ -52,14 +53,16 @@ const viewRoutes: Routes = [
       { path: PATH_ARR[2], data: {title: 'Login', load: true}, canActivate: [ RouteguardService ], component: UserCenterLoginComponent },
       // 忘记密码
       { path: PATH_ARR[3], data: {title: 'Forget Password', load: true}, canActivate: [ RouteguardService ], component: UserCenterPasswordComponent },
+      // 首页
+      { path: PATH_ARR[4], data: {title: 'Personal Center'}, canActivate: [RouteguardService], component: UserCenterIndexlComponent },
       // 完善个人信息
-      { path: PATH_ARR[4], data: {title: 'Personal Center'}, /* canActivate: [RouteguardService], */ component: UserCenterIndexlComponent },
-      // 完善个人信息
-      { path: PATH_ARR[5], data: {title: 'Customer Information'}, /* canActivate: [RouteguardService], */ component: UserCenterInfoComponent },
+      { path: PATH_ARR[5], data: {title: 'Customer Information'}, canActivate: [RouteguardService], component: UserCenterInfoComponent },
       // 账户积分信息
-      { path: PATH_ARR[6], data: {title: 'integral'}, /* canActivate: [RouteguardService], */ component: UserCenterIntegralComponent },
+      { path: PATH_ARR[6], data: {title: 'integral'}, canActivate: [RouteguardService], component: UserCenterIntegralComponent },
       // 账户积分信息
-      { path: PATH_ARR[7], data: {title: 'integral details'}, /* canActivate: [RouteguardService], */ component: UserCenterintegralDetailsComponent },
+      { path: PATH_ARR[7], data: {title: 'integral details'}, canActivate: [RouteguardService], component: UserCenterintegralDetailsComponent },
+      // bounty
+      { path: PATH_ARR[8], data: {title: 'bounty'}, canActivate: [ RouteguardService ], component: BountyComponent },
       // 错误路由重定向[写在最后一个]
       { path: '**', redirectTo: PATH_ARR[1],  pathMatch: 'full'  /* 必须要设置 */}
     ]
@@ -86,6 +89,7 @@ export class AppWhitepaperViewRoutingModule {}
     UserCenterLoginComponent,
     UserCenterPasswordComponent,
     UserCenterInfoComponent,
+    BountyComponent,
     UserCenterintegralDetailsComponent,
     UserCenterIntegralComponent
   ],

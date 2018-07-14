@@ -1,0 +1,10 @@
+.NewWrap .Title{font-size: 28px;font-weight: 500;padding: 10px 0;}
+.NewWrap .Source{font-size: 14px;color: #aaa}
+.NewWrap .Detail{font-size: 14px;line-height: 1.8;padding: 20px 0;}
+
+.NewWrap .NewBanner{font-size: 0;}
+.NewWrap .NewBanner img{width: 100%}
+
+@media screen and (max-width: 716px) {
+    .NewWrap .Title{font-size: 18px}
+}

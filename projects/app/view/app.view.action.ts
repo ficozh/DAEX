@@ -22,6 +22,7 @@ import { HttpOption, HandleOption } from '@int/types';
 export class ViewAction {
     constructor(
         private httpServices: HttpServices,
+        private userModel: UserModel,
         private appParam: AppParam
     ) {
     }
@@ -63,7 +64,7 @@ export class ViewAction {
     }
 
     // 获取数据
-    get(name: 'message' | 'messageInfo' | 'paper', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'mission' | 'missionInfo' | 'record' | 'message' | 'messageInfo' | 'paper', options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -111,18 +112,19 @@ export class ViewAction {
     }
 
     // 提交数据
-    set(name: 'Down', options: any, callback?: Function, error?: Function) {
+    set(name: 'record', options: any, callback?: Function, error?: Function) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
         const isCallback = true;
         switch (name) {
-            // 下载
-            case 'Down':
-                paramURL = 'iftttscene/scene/store/download';
+            // 接受任务
+            case 'record':
+                paramURL = 'api/mission/record/save';
                 httpBody = {
-                    // 需要下载
-                    'storeSceneIds': [options.storeSceneIds],
+                    // 任务的ID
+                    'missionId': options.missionId,
+                    'tokenId': this.userModel.user.tokenId
                 };
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;

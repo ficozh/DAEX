@@ -55,6 +55,7 @@ export class UserCenterInfoComponent implements OnInit {
         validDate: [''],
         companyAddress: [''],
         representative: [''],
+        licenseUrl: [''],
         contact: [''],
         purseAddress: ['']
       });
@@ -77,7 +78,7 @@ export class UserCenterInfoComponent implements OnInit {
     });
   }
   // 上传图片
-  upLoad(ev) {
+  upLoad(ev, name, id) {
     console.log(window.URL.createObjectURL(ev.target.files[0]));
     // 获取图片对象数组
     const file = ev.target.files[0];
@@ -98,8 +99,13 @@ export class UserCenterInfoComponent implements OnInit {
     const Img = document.createElement('img');
     Img.src = blob;
     Img.className = 'ShowImg';
-    this.userCenterAction.set('upload', {'file': ev.target.files}, () => {
+    this.userCenterAction.set('upload', {'file': ev.target.files}, (ResultData) => {
       insertAfter(Img, ev.target);
+      if (id === 0) {
+        this.PersonalForm.value[name] = ResultData.data.url;
+      } else {
+        this.AgencyForm.value[name] = ResultData.data.url;
+      }
     });
   }
 

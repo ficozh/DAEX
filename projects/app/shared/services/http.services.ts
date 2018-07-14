@@ -44,7 +44,7 @@ export class HttpServices {
             // 创建一个表单参数
             const fromObj = new FormData();
             // 获取图片对象
-            const files = options.httpBody.file;
+            const files = options.httpBody.file[0];
             // 将图片对象 添加进待上传参数中
             fromObj.append('file', files);
             $$.ajax({

@@ -19,17 +19,15 @@ import { UserCenterAction } from '../app.userCenter.action';
 
 export class UserCenterIndexlComponent implements OnInit {
   integral;
+  userName: any;
   constructor(
     private userModel: UserModel,
     private userCenterAction: UserCenterAction,
   ) {
   }
-  // 提升性能
-  trackByFn(index, item) {
-    return index; // or item.id
-  }
   // 组件初始化
   ngOnInit(): void {
+    this.userName = this.userModel.user.email ||  window.sessionStorage.email;
     this.userCenterAction.get('coinCount',  (ResultData) => {
       this.integral = ResultData.data.account;
       this.userModel.user.integral = ResultData.data.account;

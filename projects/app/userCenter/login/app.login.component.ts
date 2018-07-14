@@ -57,7 +57,9 @@ export class UserCenterLoginComponent implements OnInit {
       this.userCenterAction.set('login', this.LoginForm.value, (ResultData) => {
         window.sessionStorage.setItem('tokenId', ResultData.data.tokenId);
         window.sessionStorage.setItem('isLogin', 'true');
+        window.sessionStorage.setItem('email', this.LoginForm.value.email);
         this.userModel.user.tokenId = ResultData.data.tokenId;
+        this.userModel.user.email = this.LoginForm.value.email;
         this.userModel.isLogin = true;
         this.router.navigate(['userCenter/index']);
       });

@@ -18,13 +18,13 @@ p{margin: 0;}
 .LoginWrap .LoginHeader .Logo img{width:115px;position: absolute;top:30px;}
 .LoginWrap .LoginHeader a.Link{float: right;margin-top: 30px;color: #FFF}
 .LoginBox{border:1px solid #9B5FE9;background-color: #fff;padding:25px 35px;width:90%;max-width: 500px;margin:0.8rem auto 0.5rem;box-shadow:0px 0px 10px 1px rgba(0,0,0,0.4)}
-.LoginBox .Title{color: #7139FC;font-size: 24px;font-weight: 500;text-align: center}
+.LoginBox .Title{color: #7139FC;font-size: 24px;font-weight:700;text-align: center}
 .FormWrap li{padding: 5px 0;font-size: 12px;}
 
 .FormWrap li.Fill label{display: block;color: #544DB0;font-size: 16px;font-weight: 500}
 .FormWrap li.Fill label .Required{color:#544DB0}
 .FormWrap li.Fill input,
-.FormWrap li.Fill select{width: 100%;padding: 4px;border: 1px solid #ccc; background:#FFF;height:42px;box-shadow:rgba(50,50,50,0.3) 0px 1px 3px;border-radius:3px;font-size:14px}
+.FormWrap li.Fill select{width: 100%;padding: 4px;border: 1px solid #ccc; background:#FFF;height:42px;/* box-shadow:rgba(50,50,50,0.3) 0px 1px 3px; */border-radius:6px;font-size:14px}
 .FormWrap li.Fill input:focus,
 .FormWrap li.Fill select:focus{border: 1px solid #C071F0}
 .FormWrap li.Fill select{-webkit-appearance:menulist;appearance:menulist;}

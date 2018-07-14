@@ -32,6 +32,7 @@ export class ViewAction {
         if (options.isCallback) {
             if (options.type === 'success') {
                 console.log('请求' + name + '成功:' + JSON.stringify(options.result));
+                options.result = JSON.parse(options.result);
                 if (this.appParam.isTestParam || options.result.code === 0) {
                     // 判断返回数据
                     options.callback(options.result);
@@ -64,7 +65,7 @@ export class ViewAction {
     }
 
     // 获取数据
-    get(name: 'mission' | 'missionInfo' | 'record' | 'message' | 'messageInfo' | 'paper', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'faq' | 'faqInfo' | 'record' | 'message' | 'messageInfo' | 'paper', options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -76,6 +77,16 @@ export class ViewAction {
             options = undefined;
         }
         switch (name) {
+            // faq
+            case 'faq':
+                paramURL = 'api/faq/list';
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // faq
+            case 'faqInfo':
+                paramURL = 'api/faq/info/' + options.id;
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
             // 内容
             case 'message':
                 paramURL = 'api/message/list';

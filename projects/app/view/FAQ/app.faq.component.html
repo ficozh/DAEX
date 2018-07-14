@@ -9,15 +9,15 @@
 			<div class="WARPWALL">
 				<div class="ListBlock AccordionList">
 					<ul>
-						<li class="AccordionItem ListItem">
+						<li class="AccordionItem ListItem" *ngFor="let itme of faqList; trackBy: trackByFn">
 							<a href="javascript:;" class="ItemLink ItemCon">
 								<div class="ItemInner ">
-									<div class="ItemTitle">Lorem Ipsum</div>
+									<div class="ItemTitle">{{itme.questionName}}</div>
 								</div>
 							</a>
 							<div class="AccordionItemCon">
 								<div class="ContentBlock">
-									<p>Frequently</p>
+									<p>{{itme.answer}}</p>
 								</div>
 							</div>
 						</li>

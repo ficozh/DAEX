@@ -67,10 +67,10 @@ export class UserCenterInfoComponent implements OnInit {
   submit( id ) {
     let Data;
     if (id === 1) {
-      Data = this.PersonalForm;
+      Data = this.PersonalForm.value;
       Data.userType = 1;
     } else {
-      Data = this.AgencyForm;
+      Data = this.AgencyForm.value;
       Data.userType = 2;
     }
     this.userCenterAction.set('updateinfo', Data, () => {

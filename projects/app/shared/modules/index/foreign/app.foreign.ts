@@ -31,12 +31,12 @@ export class AppForeignComponent implements OnInit {
   getMessage(index) {
     this.viewAction.get('message', {
       'limit': '3',
-      'order': '',
+      'order': 'desc',
       'sidx': '',
       'page': index
     }, (ResultData) => {
       this.isMore = true;
-      this.ListData.push(ResultData.data);
+      this.ListData = ResultData.data;
     });
   }
   // 组件初始化
@@ -46,15 +46,16 @@ export class AppForeignComponent implements OnInit {
 
   details(code) {
     this.userModel.newId = code;
-    this.router.navigate(['view/new']);
+    this.router.navigate(['view/newDetails']);
   }
 
   more() {
-    if (this.isMore) {
+    this.router.navigate(['view/new']);
+    /* if (this.isMore) {
       this.isMore = false;
       ++this.pageIndex;
       this.getMessage(this.pageIndex);
-    }
+    } */
   }
   // 提升性能
   trackByFn(index, item) {

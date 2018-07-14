@@ -64,7 +64,8 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'mission' | 'missionInfo', options?: any, callback?: Function, error?: Function ) {
+    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'coinCount' | 'mission' | 'missionInfo',
+    options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
@@ -117,7 +118,7 @@ export class UserCenterAction {
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 获取账户积分余额
-            case 'validCode':
+            case 'coinCount':
                 paramURL = 'api/dax/account/coinCount';
                 httpBody = {
                     'tokenId': this.userModel.user.tokenId

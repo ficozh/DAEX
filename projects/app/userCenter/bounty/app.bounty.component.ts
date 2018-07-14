@@ -61,7 +61,7 @@ export class BountyComponent implements OnInit {
   ngOnInit(): void {
     // 任务列表
     this.userCenterAction.get('mission', (ResultData) => {
-      this.bountyList = ResultData.data;
+      this.bountyList = ResultData.data.missions;
     });
     this.record();
   }

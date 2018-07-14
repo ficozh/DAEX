@@ -48,9 +48,9 @@ export class IntegralComponent implements OnInit {
     if ( this.userModel.user.integral ) {
       this.integral = this.userModel.user.integral;
     } else {
-      this.userCenterAction.get('validCode', this.userModel.user.tokenId, (ResultData) => {
-        this.integral = ResultData.data.coinCount;
-        this.userModel.user.integral = ResultData.data.coinCount;
+      this.userCenterAction.get('coinCount',  (ResultData) => {
+        this.integral = ResultData.data.account;
+        this.userModel.user.integral = ResultData.data.account;
       });
     }
   }

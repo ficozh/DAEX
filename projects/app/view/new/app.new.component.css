@@ -1,5 +1,7 @@
 .NewsWrap .Title{font-size: 48px;font-weight: 500;padding: 50px 0;text-align: center;}
 .NewsWrap .NewsList{font-size: 14px;border-top:2px dotted #B9AAEF}
+.NewsWrap .NewsList .More{text-align: center;padding: 20px 0;}
+.NewsWrap .NewsList .More img{height: 12px;}
 .NewsWrap .ListBlock:after, .NewsWrap .ListBlock:before,
 .NewsWrap .ListBlock .ListItem:after{display: none}
 .NewsWrap .ListBlock .ListItem:hover{box-shadow: 0 0 7px rgba(71, 71, 71, 0.479);}

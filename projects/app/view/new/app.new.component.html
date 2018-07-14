@@ -9,7 +9,7 @@
 			<div class="WARPWALL">
 				<div class="NewsList">
 					<ul class="ListBlock MediaList">
-						<li class="ListItem">
+						<!-- <li class="ListItem">
 							<a href="#/view/newDetails" class="ItemCon">
 								<div class="ItemMedia"><img src="assets/images/new.jpg" /></div>
 								<div class="ItemInner">
@@ -20,20 +20,21 @@
 									<div class="ItemSubtitle">2018-06-12 2 Days ago</div>
 								</div>
 							</a>
-						</li>
-						<li class="ListItem">
-							<a href="#/view/newDetails" class="ItemCon">
+						</li> -->
+						<li class="ListItem"  *ngFor="let itme of ListData; trackBy: trackByFn" (click)="details(itme.code)">
+							<div class="ItemCon">
 								<div class="ItemMedia"><img src="assets/images/new.jpg" /></div>
 								<div class="ItemInner">
 									<div class="ItemTitleRow">
-										<div class="ItemTitle">Foreign media released seven major technology predictions for VR</div>
+										<div class="ItemTitle">{{itme.title}}</div>
 									</div>
-									<div class="ItemText">Foreign media released seven major technology predictions for VR in 2018. What changes will the technology of blockchain bring?</div>
-									<div class="ItemSubtitle">2018-06-12 2 Days ago</div>
+									<div class="ItemText">{{itme.summary}}</div>
+									<div class="ItemSubtitle">{{itme.source}}</div>
 								</div>
-							</a>
+							</div>
 						</li>
 					</ul>
+					<div class="More"><img (click)="more()" src="assets/images/003.png" /></div>
 				</div>
 			</div>
 		</section>

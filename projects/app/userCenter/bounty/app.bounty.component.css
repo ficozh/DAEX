@@ -14,7 +14,7 @@
 .BountyWrap .BountyList .Box .BoxContent{overflow-y: auto;text-align: left}
 .BountyWrap .BountyList .Box .BoxContent:before{background: none;}
 .BountyWrap .BountyList .Box .BoxContent:after{display: none}
-.BountyWrap .BountyList .Row li .Button{font-size: 14px;height: 32px;color: #ccc;}
+.BountyWrap .BountyList .Row li .Button{font-size: 14px;height: 32px;color: #ccc;padding: 5px 12px;}
 .BountyWrap .BountyList .Row li .Button img{width: 24px;height: 24px;}
 .BountyWrap .BountyList .Row li .Button.activce{color: #763BFF}
 .BountyWrap .BountyList .Row li .Btn{font-size: 14px;height: 32px;}

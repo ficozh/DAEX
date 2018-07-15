@@ -9,6 +9,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewAction } from '../app.view.action';
 import { UserModel } from '@user';
+import { DomSanitizer } from '@angular/platform-browser';
 // 定义 $$ 对象
 declare const $$: any;
 
@@ -20,15 +21,16 @@ declare const $$: any;
 
 export class NewDetailsComponent implements OnInit {
   newInfo: any;
-
+  details;
   constructor(
     private userModel: UserModel,
     private viewAction: ViewAction,
+    private sanitizer: DomSanitizer
   ) {
   }
   ngOnInit(): void {
-    this.viewAction.get('messageInfo', {'code': this.userModel.newId }, (ResultData) => {
-      this.newInfo = ResultData.data;
+    this.viewAction.get('messageInfo', {'code': this.userModel.newId || window.sessionStorage.newId }, (ResultData) => {
+      this.newInfo = ResultData.data.message;
     });
   }
 }

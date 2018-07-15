@@ -30,13 +30,15 @@ export class AppForeignComponent implements OnInit {
 
   getMessage(index) {
     this.viewAction.get('message', {
-      'limit': '3',
+      'limit': '10',
       'order': 'desc',
-      'sidx': '',
+      'sidx': '1',
       'page': index
     }, (ResultData) => {
       this.isMore = true;
-      this.ListData = ResultData.data;
+      if (index === 1) {
+        this.ListData = ResultData.data.page.list;
+      }
     });
   }
   // 组件初始化
@@ -46,6 +48,7 @@ export class AppForeignComponent implements OnInit {
 
   details(code) {
     this.userModel.newId = code;
+    window.sessionStorage.setItem('newId', code);
     this.router.navigate(['view/newDetails']);
   }
 

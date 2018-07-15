@@ -21,7 +21,7 @@
 								</div>
 							</a>
 						</li> -->
-						<li class="ListItem"  *ngFor="let itme of ListData; trackBy: trackByFn" (click)="details(itme.code)">
+						<li class="ListItem" *ngFor="let itme of ListData; trackBy: trackByFn" [hidden]="!itme.code" (click)="details(itme.code)">
 							<div class="ItemCon">
 								<div class="ItemMedia"><img src="assets/images/new.jpg" /></div>
 								<div class="ItemInner">

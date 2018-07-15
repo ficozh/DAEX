@@ -100,7 +100,7 @@ export class ViewAction {
                 break;
             // 内容
             case 'messageInfo':
-                paramURL = 'api/message/info' + options.code;
+                paramURL = 'api/message/info/' + options.code;
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 白皮书

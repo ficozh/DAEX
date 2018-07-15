@@ -29,8 +29,8 @@ export class UserCenterIndexlComponent implements OnInit {
   ngOnInit(): void {
     this.userName = this.userModel.user.email ||  window.sessionStorage.email;
     this.userCenterAction.get('coinCount',  (ResultData) => {
-      this.integral = ResultData.data.account;
-      this.userModel.user.integral = ResultData.data.account;
+      this.integral = ResultData.data.coinCount;
+      this.userModel.user.integral = ResultData.data.coinCount;
     });
   }
 

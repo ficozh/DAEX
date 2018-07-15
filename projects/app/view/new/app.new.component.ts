@@ -37,14 +37,14 @@ export class NewComponent implements OnInit {
     this.viewAction.get('message', {
       'limit': '10',
       'order': 'desc',
-      'sidx': '',
+      'sidx': '1',
       'page': index
     }, (ResultData) => {
       this.isMore = true;
       if (index === 1) {
-        this.ListData = ResultData.data;
+        this.ListData = ResultData.data.page.list;
       } else {
-        this.ListData.push(ResultData.data);
+        this.ListData.push(ResultData.data.page.list);
       }
     });
   }
@@ -56,6 +56,7 @@ export class NewComponent implements OnInit {
 
   details(code) {
     this.userModel.newId = code;
+    window.sessionStorage.setItem('newId', code);
     this.router.navigate(['view/newDetails']);
   }
 

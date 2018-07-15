@@ -49,8 +49,8 @@ export class IntegralComponent implements OnInit {
       this.integral = this.userModel.user.integral;
     } else {
       this.userCenterAction.get('coinCount',  (ResultData) => {
-        this.integral = ResultData.data.account;
-        this.userModel.user.integral = ResultData.data.account;
+        this.integral = ResultData.data.coinCount;
+        this.userModel.user.integral = ResultData.data.coinCount;
       });
     }
   }

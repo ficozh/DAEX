@@ -35,7 +35,7 @@ export class AppHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.showUser = this.userModel.isLogin;
+    this.showUser = this.userModel.isLogin || (window.sessionStorage.isLogin === 'true');
   }
   setAnchor(num, name) {
     this.info = num;

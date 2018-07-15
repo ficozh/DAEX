@@ -37,18 +37,20 @@ export class BountyComponent implements OnInit {
       // 其他条件，没有可不填
       'sidx': ''
     }, (ResultData) => {
-      ResultData.data.forEach(element => {
-        if (element.status === 0) {
-          element.statusName = 'Get Mission';
-        } else if (element.status === 1) {
-          element.statusName = 'Accepted';
-        } else if (element.status === 2) {
-          element.statusName = 'Auditing';
-        } else if (element.status === 3) {
-          element.statusName = 'Done';
-        }
-      });
-      this.recordList = ResultData.data;
+      if (ResultData.data !== '') {
+        ResultData.data.forEach(element => {
+          if (element.status === 0) {
+            element.statusName = 'Get Mission';
+          } else if (element.status === 1) {
+            element.statusName = 'Accepted';
+          } else if (element.status === 2) {
+            element.statusName = 'Auditing';
+          } else if (element.status === 3) {
+            element.statusName = 'Done';
+          }
+        });
+        this.recordList = ResultData.data;
+      }
     });
   }
   // 接受任务

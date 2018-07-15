@@ -21,7 +21,9 @@ declare const $$: any;
 
 export class UserCenterInfoComponent implements OnInit {
   AgencyForm: any;
+  AgencyFormImg = {};
   PersonalForm: any;
+  PersonalFormImg = {};
   constructor(
     private appParam: AppParam,
     private formBuilder: FormBuilder,
@@ -68,9 +70,15 @@ export class UserCenterInfoComponent implements OnInit {
   submit( id ) {
     let Data;
     if (id === 1) {
+      this.PersonalForm.value['licenseFront'] = this.PersonalFormImg['licenseFront'];
+      this.PersonalForm.value['licenseBack'] = this.PersonalFormImg['licenseBack'];
+      this.PersonalForm.value['handFront'] = this.PersonalFormImg['handFront'];
+      this.PersonalForm.value['handBack'] = this.PersonalFormImg['handBack'];
+
       Data = this.PersonalForm.value;
       Data.userType = 1;
     } else {
+      this.AgencyForm.value['licenseUrl'] = this.AgencyFormImg['licenseUrl'];
       Data = this.AgencyForm.value;
       Data.userType = 2;
     }
@@ -101,10 +109,13 @@ export class UserCenterInfoComponent implements OnInit {
     Img.className = 'ShowImg';
     this.userCenterAction.set('upload', {'file': ev.target.files}, (ResultData) => {
       insertAfter(Img, ev.target);
+      // ev.target.value = ResultData.data.url;
       if (id === 0) {
         this.PersonalForm.value[name] = ResultData.data.url;
+        this.PersonalFormImg[name] = ResultData.data.url;
       } else {
         this.AgencyForm.value[name] = ResultData.data.url;
+        this.AgencyFormImg[name] = ResultData.data.url;
       }
     });
   }

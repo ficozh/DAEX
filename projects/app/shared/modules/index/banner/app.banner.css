@@ -15,7 +15,8 @@
     opacity: 0;
     z-index: 10;
   }
-.BannerWrap .Video {position:relative;overflow:hidden;background-size:cover;background-position:center center;background-repeat:no-repeat;font-size: 0}
+.BannerWrap .VideoBox {position:relative;overflow:hidden;background-size:cover;background-position:center center;background-repeat:no-repeat;font-size: 0;height: 40vw;}
+.BannerWrap .VideoBox .Video{min-width: auto; min-height: auto; width: 100%; height: auto; transition-duration: 2000ms;}
 .BannerWrap .Pic{display:none}
 
 @keyframes myTitle {
@@ -41,4 +42,8 @@
       transform: scale(1, 1.2);
       -webkit-transform: scale(1, 1.2);
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    .BannerWrap .VideoBox .Video{display: none}
   }

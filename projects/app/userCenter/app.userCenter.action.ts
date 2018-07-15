@@ -200,10 +200,11 @@ export class UserCenterAction {
                 break;
             // 更改密码
             case 'password':
-                paramURL = 'api/password';
+                paramURL = 'api/user/resetPassword';
                 httpBody = {
                     // 邮箱
                     'email': options.email,
+                    'mailCode': options.emailCode,
                     // 密码
                     'password': options.password
                 };

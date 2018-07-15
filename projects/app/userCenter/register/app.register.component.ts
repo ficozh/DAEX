@@ -9,6 +9,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCenterAction } from '../app.userCenter.action';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -24,6 +25,7 @@ export class UserCenterRegisterComponent implements OnInit {
   emailError: boolean;
   constructor(
     private userCenterAction: UserCenterAction,
+    private router: Router,
     private formBuilder: FormBuilder
   ) {
     this.createForm();
@@ -108,7 +110,7 @@ export class UserCenterRegisterComponent implements OnInit {
        */
     if (this.RegisterForm.valid) {
       this.userCenterAction.set('register', this.RegisterForm.value, () => {
-
+        this.router.navigate(['userCenter/login']);
       });
     }
   }

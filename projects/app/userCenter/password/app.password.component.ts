@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppParam } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-password',
@@ -24,6 +25,7 @@ export class UserCenterPasswordComponent implements OnInit {
   confirmPasswordError: boolean;
   constructor(
     private appParam: AppParam,
+    private router: Router,
     private formBuilder: FormBuilder,
     private userCenterAction: UserCenterAction,
   ) {
@@ -105,7 +107,7 @@ export class UserCenterPasswordComponent implements OnInit {
      */
     if (this.PasswordForm.valid) {
       this.userCenterAction.set('password', this.PasswordForm.value, () => {
-
+        this.router.navigate(['userCenter/login']);
       });
     }
   }

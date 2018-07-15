@@ -341,6 +341,7 @@ export class UserCenterAction {
                     };
                 }
                 httpBody['tokenId'] = this.userModel.user.tokenId;
+                httpBody['userType'] = options.userType;
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // 接受任务

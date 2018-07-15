@@ -22,6 +22,7 @@ export class IntegralComponent implements OnInit {
   EXCHANGE: boolean;
   integral;
   ExchangeForm: any;
+  integralList: any;
   constructor(
     private userModel: UserModel,
     private userCenterAction: UserCenterAction,
@@ -53,6 +54,10 @@ export class IntegralComponent implements OnInit {
         this.userModel.user.integral = ResultData.data.coinCount;
       });
     }
+    // 任务列表
+    this.userCenterAction.get('mission', (ResultData) => {
+      this.integralList = ResultData.data.missions;
+    });
   }
   exchange() {
     this.EXCHANGE = true;

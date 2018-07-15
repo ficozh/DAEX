@@ -7,10 +7,7 @@
  * @description:
  */
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
-import { FormBuilder, Validators, FormControl } from '@angular/forms';
-declare const $$: any;
 
 @Component({
   selector: 'app-integralrecord',
@@ -22,40 +19,41 @@ export class IntegralRecordComponent implements OnInit {
   EXCHANGE: boolean;
   integral;
   ExchangeForm: any;
+  RecordList: any;
   constructor(
-    private userModel: UserModel,
     private userCenterAction: UserCenterAction,
-    private formBuilder: FormBuilder
   ) {
-    this.createForm();
   }
-   // 创建表单元素
-   createForm() {
-    this.ExchangeForm = this.formBuilder.group({
-      depositAddress: [''],
-      status: [''],
-      rule: [''],
-      depositCount: [''],
-      costCoin: ['']
-    });
-}
   // 提升性能
   trackByFn(index, item) {
     return index; // or item.id
   }
   // 组件初始化
   ngOnInit(): void {
-    this.integral = this.userModel.user.integral;
-  }
-  exchange() {
-    this.EXCHANGE = true;
-  }
-  cancel() {
-    this.EXCHANGE = false;
-  }
-  confirm() {
-    this.EXCHANGE = false;
-    this.userCenterAction.set('saveExchangeRecord', this.ExchangeForm.value, () => {
+    this.userCenterAction.get('exchangeRecordList', {
+      // 分页大小
+      'limit': '40',
+      // 页数
+      'page': '1',
+      // 排序方式，desc,asc两个选项
+      'order': 'desc',
+      // 其他条件，没有可不填
+      'sidx': ''
+    }, (ResultData) => {
+      if (ResultData.data !== '' && ResultData.data.exchangeVos !== '') {
+        ResultData.data.exchangeVos.forEach(element => {
+          if (element.status === 0) {
+            element.statusName = 'Get Mission';
+          } else if (element.status === 1) {
+            element.statusName = 'Accepted';
+          } else if (element.status === 2) {
+            element.statusName = 'Auditing';
+          } else if (element.status === 3) {
+            element.statusName = 'Done';
+          }
+        });
+        this.RecordList = ResultData.data.exchangeVos;
+      }
     });
   }
 }

@@ -64,7 +64,7 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'coinCount' | 'mission' | 'missionInfo',
+    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'coinCount' | 'mission' | 'missionInfo' | 'exchangeRecordList',
     options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
@@ -149,6 +149,22 @@ export class UserCenterAction {
             // 已做任务记录
             case 'record':
                 paramURL = 'api/mission/record/list';
+                httpBody = {
+                    // 分页大小
+                    'limit': options.limit,
+                    // 页数
+                    'page': options.page,
+                    // 排序方式，desc,asc两个选项
+                    'order': 'desc',
+                    // 其他条件，没有可不填
+                    'sidx': options.sidx,
+                    'tokenId': this.userModel.user.tokenId
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // dax兑换记录
+            case 'exchangeRecordList':
+                paramURL = 'api/dax/exchangeRecordList';
                 httpBody = {
                     // 分页大小
                     'limit': options.limit,

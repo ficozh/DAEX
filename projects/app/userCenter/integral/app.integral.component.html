@@ -27,9 +27,9 @@
 				<div class="WARPWALL">
 					<div class="ListBlock">
 						<ul class="ListGroup">
-							<li class="ListItem GroupTitle"><img class="Img" src="assets/images/points/002.png" /> Novice task</li>
+							<li class="ListItem GroupTitle"><img class="Img" src="assets/images/points/002.png" /> Get DAX</li>
 							<li class="ListItem" *ngFor="let itme of integralList; trackBy: trackByFn" [hidden]="itme.type != 0">
-								<a class="ItemCon ItemLink" href="#">
+								<a class="ItemCon" href="javascript:;">
 									<div class="ItemInner">
 										<div class="ItemTitle">{{itme.name}}</div>
 										<div class="ItemAfter">+{{itme.coinCount}} Points</div>
@@ -41,9 +41,9 @@
 					
 					<div class="ListBlock">
 						<ul class="ListGroup">
-							<li class="ListItem GroupTitle"><img class="Img" src="assets/images/points/004.png" /> Daily task</li>
+							<li class="ListItem GroupTitle"><img class="Img" src="assets/images/points/004.png" /> Bounty task</li>
 							<li class="ListItem" *ngFor="let itme of integralList; trackBy: trackByFn" [hidden]="itme.type != 1">
-								<a class="ItemCon ItemLink" href="#/userCenter/integralDetails">
+								<a class="ItemCon" href="javascript:;">
 									<div class="ItemInner">
 										<div class="ItemTitle">{{itme.name}}</div>
 										<div class="ItemAfter">+{{itme.coinCount}} Points</div>

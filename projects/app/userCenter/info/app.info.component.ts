@@ -34,12 +34,13 @@ export class UserCenterInfoComponent implements OnInit {
    // 创建表单元素
    createForm() {
       this.PersonalForm = this.formBuilder.group({
-        usemame: [''],
+        usemame: ['', [Validators.required]],
         firstName: [''],
-        lastName: [''],
+        lastName: ['', [Validators.required]],
         nation: [''],
-        cardType: [''],
-        cardCode: [''],
+        cardType: ['', [Validators.required]],
+        cardCode: ['', [Validators.required]],
+        mobile: ['', [Validators.required]],
         validDate: [''],
         address: [''],
         purseAddress: [''],
@@ -49,7 +50,7 @@ export class UserCenterInfoComponent implements OnInit {
         handBack: ['']
       });
       this.AgencyForm = this.formBuilder.group({
-        name: [''],
+        name: ['', [Validators.required]],
         firesname: [''],
         registerCode: [''],
         certifyAuthority: [''],

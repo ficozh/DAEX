@@ -9,6 +9,8 @@
 .NewsWrap .ListBlock .ListItem .ItemMedia img{width: 170px;min-width: 100px;}
 .NewsWrap .ListBlock .ItemCon{padding-left: 0}
 .NewsWrap .ListBlock.MediaList .ItemMedia{padding-top: 0;padding-bottom: 0}
+.NewsWrap .ListBlock .ItemTitle{font-size: 15px;font-weight: 700}
+.NewsWrap .ListBlock .ItemText{font-size: 13px;}
 
 @media screen and (max-width: 768px) {
     .NewsWrap .Title{font-size: 32px;padding: 30px 0;}

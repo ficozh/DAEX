@@ -1,5 +1,5 @@
 /**
- * 场景视图组件
+ * 视图组件
  * @class: ViewComponent
  * @version: 0.0.1
  * @date: 2018/04/24

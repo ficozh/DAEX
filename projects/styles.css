@@ -19,7 +19,7 @@ p{margin: 0;}
 .LoginWrap .LoginHeader a.Link{float: right;margin-top: 30px;color: #FFF}
 .LoginBox{border:1px solid #9B5FE9;background-color: #fff;padding:25px 35px;width:90%;max-width: 500px;margin:0.8rem auto 0.5rem;box-shadow:0px 0px 10px 1px rgba(0,0,0,0.4)}
 .LoginBox .Title{color: #7139FC;font-size: 24px;font-weight:700;text-align: center}
-.FormWrap li{padding: 5px 0;font-size: 12px;}
+.FormWrap li{padding: 5px 0;font-size: 12px;margin-bottom: 10px}
 
 .FormWrap li.Fill label{display: block;color: #544DB0;font-size: 16px;font-weight: 500}
 .FormWrap li.Fill label .Required{color:#544DB0}

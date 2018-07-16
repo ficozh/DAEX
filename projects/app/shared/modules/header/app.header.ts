@@ -27,6 +27,7 @@ export class AppHeaderComponent implements OnInit {
   @Input() info: number;
   @Input() title: string;
   showUser: boolean;
+  isLanguage = false;
   constructor(
     private router: Router,
     private userModel: UserModel,
@@ -62,8 +63,13 @@ export class AppHeaderComponent implements OnInit {
   }
   // 返回事件
   Language(name: string) {
+    this.isLanguage = false;
     window.sessionStorage.language = name;
     this.translate.use(name);
+  }
+  // 打开语言选项
+  OpenLanguage() {
+    this.isLanguage = true;
   }
   // 退出
   signOut() {

@@ -1,9 +1,9 @@
 /*------------------team------------------*/
 .ForeignWrap {background-color:#fff;padding: 1rem 0;}
 .ForeignWrap h2 {font-size:24px;color:#7339FF;text-align:center;padding:1.53rem 0 .8rem}
-.ForeignWrap .ForeignList{padding:0 12px;}
-.ForeignWrap .ForeignList .Title{font-size:16px;}
-.ForeignWrap .ForeignList .Desc{font-size:13px;padding:10px 0;}
+.ForeignWrap .ForeignList{padding:0 12px 0 30px;}
+.ForeignWrap .ForeignList .Title{font-size:16px;font-weight: 700}
+.ForeignWrap .ForeignList .Desc{font-size:13px;padding:10px 0;color: #555}
 .ForeignWrap .ForeignList .Date{font-size:13px;line-height:24px;}
 .ForeignWrap .ForeignList .Date span{font-size:0;}
 .ForeignWrap .ForeignList .Date img{width:24px;height:24px;}
@@ -20,6 +20,6 @@
 
 
 @media screen and (max-width: 768px) {
-  
+    .ForeignWrap .ForeignList{padding:0 12px;} 
     .ForeignWrap .Video{width:100%;height:auto;margin-bottom: 20px}
 }

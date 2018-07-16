@@ -21,6 +21,12 @@
 		<li [ngClass]="{'active': info === 3 }" (click)="setAnchor(3, 'community')"><a href="#community">{{'HEADER.Community' | translate}}</a></li> -->
 		<li class="UserCenter" *ngIf="!showUser"><a href="#/userCenter/login">{{'HEADER.login' | translate}}</a> | <a href="#/userCenter/register">{{'HEADER.signUp' | translate}}</a></li>
 		<li class="UserCenter" *ngIf="showUser"><a href="#/userCenter/index">{{'HEADER.UserCenter' | translate}}</a> | <a href="javascript:;" (click)="signOut()">{{'HEADER.signOut' | translate}}</a></li>
-		<!-- <li><span (click)="Language('EN')">English</span> / <span (click)="Language('ZH-CN')">中文</span></li> -->
+		<!-- <li class="Language">
+			<div class="Overlay" *ngIf="!isLanguage" (click)="OpenLanguage()"></div>
+			<dl>
+				<dd class="Itme" (click)="Language('EN')">English</dd>
+				<dd class="Itme"  *ngIf="isLanguage" (click)="Language('ZH-CN')">中文</dd>
+			</dl>
+		</li> -->
 	</ul>
 </header>

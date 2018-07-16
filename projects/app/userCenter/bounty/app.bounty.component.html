@@ -21,52 +21,6 @@
 			<div class="WARPWALL">
 				<h2 class="Title"><img src="assets/images/bounty/003.png"/> Social Bounties</h2>
 				<ul class="Row">
-<!-- 					<li class="Col100 Table33">
-						<div class="Box BoxBlock">
-							<div class="BoxHeader">
-								<div class="Ti">Follow us on twitter</div>
-								<div class="Reward">+20 points</div>
-							</div>
-							<div class="BoxContent">
-								<div class="BoxContentInner">
-									Take the task of following DAEX Official Page on Twitter, you can obtain 20 points
-								</div>
-							</div>
-						</div>
-						<div class="Button activce">Get Mission <img src="assets/images/005.png" /></div>
-					</li>
-					<li class="Col100 Table33">
-						<div class="Box BoxBlock">
-							<div class="BoxHeader">
-								<div class="Ti">Follow us on Reddit</div>
-								<div class="Reward">+20 points</div>
-							</div>
-							<div class="BoxContent">
-								<div class="BoxContentInner">
-									Take the task of following DAEX Official Page on Reddit you can obtain 20 points
-								</div>
-							</div>
-						</div>
-						<div class="Button">Done <img src="assets/images/004.png" /></div>
-					</li>
-					<li class="Col100 Table33">
-						<div class="Box BoxBlock">
-							<div class="BoxHeader">
-								<div class="Ti">Retweet on Twitter</div>
-								<div class="Reward">+10 points</div>
-							</div>
-							<div class="BoxContent">
-								<div class="BoxContentInner">
-									Take the task of retweeting the posts about DAEX, you will get 10 points. 
-									Note:
-									<div>a.The task can be performed once a day.</div>
-									<div>b.Repetitive content and partial quote are invalid</div>
-									<div>c.The twitter account needs at least 50 followers</div>
-								</div>
-							</div>
-						</div>
-						<div class="Button activce">Get Mission <img src="assets/images/005.png" /></div>
-					</li> -->
 					<li class="Col100 Table33" *ngFor="let itme of bountyList; trackBy: trackByFn" [hidden]="itme.type != 0">
 						<div class="Box BoxBlock">
 							<div class="BoxHeader">

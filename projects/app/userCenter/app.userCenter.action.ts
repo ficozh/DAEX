@@ -154,12 +154,19 @@ export class UserCenterAction {
                     'limit': options.limit,
                     // 页数
                     'page': options.page,
+                    // type为1，传此字段任务类型0：social bounties,1：creative bounties
+                    'subType': options.subType,
+                    // 主分类0:新手任务1：赏金任务
+                    'type': options.type,
                     // 排序方式，desc,asc两个选项
                     'order': 'desc',
                     // 其他条件，没有可不填
                     'sidx': options.sidx,
                     'tokenId': this.userModel.user.tokenId
                 };
+                if (httpBody['type'] === '0') {
+                    delete httpBody['subType'];
+                }
                 URL = environment.paths.SERVER_URL + paramURL;
                 break;
             // dax兑换记录

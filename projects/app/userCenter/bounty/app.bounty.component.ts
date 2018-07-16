@@ -32,6 +32,8 @@ export class BountyComponent implements OnInit {
       'limit': '20',
       // 页数
       'page': '1',
+      'subType': '0',
+      'type': '1',
       // 排序方式，desc,asc两个选项
       'order': 'desc',
       // 其他条件，没有可不填

@@ -19,12 +19,12 @@
 .IntrgralList .ListBlock .ItemAfter{color: #A747F4;}
 .IntrgralList .ListBlock .ItemCon{padding-left: 0}
 .IntrgralList .ListBlock .ItemTitle{color: #888}
+.IntrgralList .ListBlock .ItemLink .ItemInner {background-position:100% center;}
 
 .ExchangeModal{left:50%;top:50%;margin-left: 0;width: 500px; -webkit-transform:translateY(-50%) translateX(-50%);transform:translateY(-50%) translateX(-50%);}
 .ExchangeModal .ModalBox .ModalFooter {justify-content: center}
 .ExchangeModal .ModalBox .ModalFooter .ModalButton{width: 100%}
 .ExchangeModal .ModalBox .ModalFooter .ModalButton .Btn {width: 70%}
-
 
 
 

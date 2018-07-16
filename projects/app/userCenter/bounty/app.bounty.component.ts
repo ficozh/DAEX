@@ -32,8 +32,8 @@ export class BountyComponent implements OnInit {
       'limit': '20',
       // 页数
       'page': '1',
-      'subType': '0',
-      'type': '1',
+      // 'subType': '0',
+      'type': ' ',
       // 排序方式，desc,asc两个选项
       'order': 'desc',
       // 其他条件，没有可不填
@@ -95,7 +95,7 @@ export class BountyComponent implements OnInit {
     this.userCenterAction.get('mission', (ResultData) => {
       this.bountyList = ResultData.data.missions;
     });
-    this.record();
+    // this.record();
   }
 
   // 提升性能

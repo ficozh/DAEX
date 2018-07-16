@@ -228,6 +228,7 @@ export class UserCenterAction {
                     // 邮箱
                     'email': options.email,
                     'mailCode': options.emailCode,
+                    'tag': options.tag,
                     // 密码
                     'password': options.password
                 };

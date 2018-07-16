@@ -42,6 +42,8 @@ export class IntegralRecordComponent implements OnInit {
     }, (ResultData) => {
       if (ResultData.data !== '' && ResultData.data.exchangeVos !== '') {
         ResultData.data.exchangeVos.forEach(element => {
+          const Mark = (element.email.indexOf('@') - 1) / 2;
+          element.emailA = element.email.substr(0, Mark) + '****' + element.email.substr(element.email.length - Mark - 4);
           if (element.status === 0) {
             element.statusName = 'Get Mission';
           } else if (element.status === 1) {

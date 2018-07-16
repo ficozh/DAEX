@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserCenterAction } from '../app.userCenter.action';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserModel } from '@user';
 
 @Component({
   selector: 'app-register',
@@ -24,6 +25,7 @@ export class UserCenterRegisterComponent implements OnInit {
   confirmPasswordError: boolean;
   emailError: boolean;
   constructor(
+    private userModel: UserModel,
     private userCenterAction: UserCenterAction,
     private router: Router,
     private formBuilder: FormBuilder
@@ -89,7 +91,7 @@ export class UserCenterRegisterComponent implements OnInit {
   // 创建表单元素
   createForm() {
     this.RegisterForm = this.formBuilder.group({
-        email: ['', [Validators.required, Validators.email]],
+        email: [this.userModel.email, [Validators.required, Validators.email]],
         emailCode: [''],
         tag: this.timestamp,
         verify: [''],

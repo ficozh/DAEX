@@ -11,6 +11,7 @@ export class UserModel  {
     [x: string]: any
     // 判断是否登录
     isLogin: boolean;
+    email: string;
     newId: any;
     user: any = {
         'tokenId': ''

@@ -7,6 +7,8 @@
  * @description:
  */
 import { Component } from '@angular/core';
+import { UserModel } from '@user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-followus',
@@ -14,4 +16,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.followus.css']
 })
 
-export class AppFollowUsComponent {}
+export class AppFollowUsComponent {
+  email;
+  constructor(
+    private userModel: UserModel,
+    private router: Router,
+  ) {
+  }
+  JIONUS() {
+    this.userModel.email = this.email;
+    this.router.navigate(['userCenter/register']);
+  }
+}

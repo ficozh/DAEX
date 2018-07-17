@@ -14,7 +14,8 @@ export class UserModel  {
     email: string;
     newId: any;
     user: any = {
-        'tokenId': ''
+        'tokenId': '',
+        'status': false
     };
     anchor: number;
     anchorName: string;

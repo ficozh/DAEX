@@ -1,8 +1,8 @@
-.BountyWrap .BountyBanner{padding: 40px 0;}
+.BountyWrap .BountyBanner{padding: 60px 0;}
 .BountyWrap .BountyBanner .Img{min-width: 180px;width: 240px}
 .BountyWrap .BountyBanner li{font-size: 14px;color: #999;padding-left: 40px;padding: 15px 40px;}
 .BountyWrap .BountyBanner .Title{font-size: 24px;font-weight: 700}
-.BountyWrap .BountyBanner .Title img{width: 32px;height: 32px;}
+.BountyWrap .BountyBanner .Title img{width: 32px;height: 32px;margin-right: 10px}
 
 .BountyWrap .BountyList{padding:0 0 30px 0;font-size: 13px}
 .BountyWrap .BountyList .Title{font-size: 18px;color: #7137FA;padding:30px 0;}

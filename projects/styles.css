@@ -25,15 +25,15 @@ p{margin: 0;}
 .LoginBox .Title span.active:after{content: '';position: absolute;left: 30%; bottom:-8px;height: 2px;width: 40%;background-color: #7854eb}
 .FormWrap li{padding: 5px 0;font-size: 12px;margin-bottom: 10px}
 
-.FormWrap li.Fill label{display: block;color: #544DB0;font-size: 16px;font-weight: 500}
+.FormWrap li.Fill label{display: block;color: #544DB0;font-size: 16px;font-weight: 500;margin-bottom: 5px}
 .FormWrap li.Fill label .Required{color:#544DB0}
 .FormWrap li.Fill input,
-.FormWrap li.Fill select{width: 100%;padding: 4px;border: 1px solid #cdcde7; background:#FFF;height:42px;/* box-shadow:rgba(50,50,50,0.3) 0px 1px 3px; */border-radius:6px;font-size:14px}
+.FormWrap li.Fill select{width: 100%;padding: 4px 8px;border: 1px solid #cdcde7; background:#FFF;height:42px;/* box-shadow:rgba(50,50,50,0.3) 0px 1px 3px; */border-radius:6px;font-size:14px}
 .FormWrap li.Fill input::-webkit-input-placeholder,
 .FormWrap li.Fill input:-moz-placeholder,
 .FormWrap li.Fill input::-moz-placeholder,
 .FormWrap li.Fill input:-ms-input-placeholder{ 
- color: #cdcde7; 
+ color: #eee; 
  }
 .FormWrap li.Fill input:focus,
 .FormWrap li.Fill select:focus{border: 1px solid #7854eb}
@@ -54,8 +54,9 @@ p{margin: 0;}
 .UserCenterForm .FormWrap li.Buttun .Btn{background-color: #7853F0;}
 .UserCenterForm .FormWrap li.Fill input,
 .UserCenterForm .FormWrap li.Fill select{box-shadow: none}
-.UserCenterForm .FormWrap li.Fill.UPLoad .AddImg{height:150px;width:100%;border:1px solid #ddd;position:relative;text-align:center;background: url(assets/images/userCenter/add.png) no-repeat center}
+.UserCenterForm .FormWrap li.Fill.UPLoad .AddImg{height:150px;width:100%;border:1px solid #ddd;position:relative;text-align:center;background: url(assets/images/userCenter/add.png) no-repeat center;background-size: 15%}
 .UserCenterForm .FormWrap li.Fill.UPLoad .AddImg input{opacity:0.00001;position:absolute;top:0;left:0;border:0;margin:0;background:none;width:100%;height:100%;z-index:5}
+.UserCenterForm .FormWrap li.Fill.UPLoad .AddImg img{position: absolute;top:0;left:0; width: 100%;height: 100%;z-index: 1}
 .UserCenterForm .FormWrap li.Fill.UPLoad .AddImg .ShowImg{width: 100%;height: 100%;}
 
 .ModalBox .ModalHeader{color: #7237F8;font-size: 18px;font-weight: 600}

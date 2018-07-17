@@ -9,15 +9,15 @@ margin-bottom: .36rem;
 
 .FooterWrap .FollowIcon a {margin-right:.3rem;font-size: 0; }
 .FooterWrap .FollowIcon {font-size: 0; }
-.FooterWrap .FollowIcon img {width:64px;min-width: 30px;}
+.FooterWrap .FollowIcon img {width:50px;min-width: 30px;}
 .FooterWrap .FollowIcon img:hover {
 animation: myLogo 0.3s 1 ease-in-out forwards 0.1s;
 -webkit-animation: myLogo 0.3s 1 ease-in-out forwards 0.1s;
 }
 
 .FooterWrap .FollowUsInfo{background-color: #7853F0;padding: 30px 200px;font-size: 0}
-.FooterWrap .FollowUsInfo .Logo{width: 200px;text-align: left;}
-.FooterWrap .FollowUsInfo .FollowBottomText{font-size: 22px;color:#fff;text-align: right}
+.FooterWrap .FollowUsInfo .Logo{width: 150px;text-align: left;}
+.FooterWrap .FollowUsInfo .FollowBottomText{font-size: 24px;color:#fff;text-align: right}
 @keyframes myLogo {
     0% {
       transform: scale(1);

@@ -34,7 +34,9 @@ export class UserCenterIndexlComponent implements OnInit {
       this.userModel.user.integral = ResultData.data.coinCount;
     });
     this.userCenterAction.get('validStatus',  (ResultData) => {
-      this.validStatus = ResultData.data;
+      this.userModel.user.status = ResultData.data === 1 ? true : false;
+      this.validStatus = this.userModel.user.status;
+      window.sessionStorage.setItem('UserStatus', this.validStatus);
     });
   }
 

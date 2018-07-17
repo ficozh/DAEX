@@ -1,7 +1,7 @@
 .UserCenterIndexWrap{padding: 150px;}
 .UserCenterIndexWrap .AdvisorWrap{position: relative;text-align: center;margin-bottom: 50px}
 /* .UserCenterIndexWrap .AdvisorWrap:before {position: absolute;display:block;content:'';right:0;top:25%;height: 50%;width: 1px;background-color: #ddd;z-index: 15;} */
-.UserCenterIndexWrap .AdvisorWrap .Advisor{border-radius: 1000px;}
+.UserCenterIndexWrap .AdvisorWrap .Advisor{border-radius: 1000px;margin-bottom: 15px}
 .UserCenterIndexWrap .AdvisorWrap .Advisor img{width: 180px}
 .UserCenterIndexWrap .AdvisorWrap .Name{font-size: 24px;}
 .UserCenterIndexWrap .ListBlock li{padding: 15px 0 15px 30px;}

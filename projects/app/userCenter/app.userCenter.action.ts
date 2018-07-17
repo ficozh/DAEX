@@ -64,7 +64,7 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'coinCount' | 'mission' | 'missionInfo' | 'exchangeRecordList' | 'validStatus',
+    get(name: 'userInfo' | 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'coinCount' | 'mission' | 'missionInfo' | 'exchangeRecordList' | 'validStatus',
     options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
@@ -77,6 +77,14 @@ export class UserCenterAction {
             options = undefined;
         }
         switch (name) {
+            // 用户信息
+            case 'userInfo':
+                paramURL = 'api/user/info';
+                httpBody = {
+                    'tokenId': this.userModel.user.tokenId
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
             // 验证用户名
             case 'emailValid':
                 paramURL = 'api/user/validname';

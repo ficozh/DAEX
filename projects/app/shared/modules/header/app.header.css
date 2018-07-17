@@ -5,7 +5,7 @@
 .HeaderWrap .Navigation li.active{border-bottom:2px solid #A94CF1;}
 .HeaderWrap .Navigation li a{display:block}
 .HeaderWrap .Navigation li.UserCenter{color:#A94CF1;margin-left: 50px}
-.HeaderWrap .Navigation li.UserCenter a{display:inline-block;color:#A94CF1}
+.HeaderWrap .Navigation li.UserCenter a{display:inline-block;color:#A94CF1;padding: 0 10px;}
 .HeaderWrap .Navigation li.Language {position: relative; background-color: #F4F1F8;padding: 0 12px;cursor: pointer;background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%201024%22%3E%3Cpath%20fill%3D%22%23272727%22%20d%3D%22M733.230545%20518.795636%20295.749818%2081.314909c-9.076364-9.076364-23.831273-9.076364-32.907636%200-9.076364%209.076364-9.076364%2023.831273%200%2032.907636l421.050182%20421.050182-421.050182%20421.050182c-9.076364%209.076364-9.076364%2023.831273%200%2032.907636%209.076364%209.076364%2023.831273%209.076364%2032.907636%200l437.480727-437.480727C742.306909%20542.626909%20742.306909%20527.918545%20733.230545%20518.795636z%22%20%20transform%3D%22translate(1024,0)%20rotate(90)%22%2F%3E%3C%2Fsvg%3E");background-size: 12px 24px;padding-right: 22px;
     background-repeat: no-repeat;
     background-position: 94% 5px;}

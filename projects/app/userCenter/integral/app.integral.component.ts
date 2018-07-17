@@ -66,8 +66,11 @@ export class IntegralComponent implements OnInit {
     this.EXCHANGE = false;
   }
   confirm() {
-    this.EXCHANGE = false;
+    const that = this;
     this.userCenterAction.set('saveExchangeRecord', this.ExchangeForm.value, () => {
+      $$.alert('', '<span style="line-height:80px;">Successful Operation</span>', function() {
+        that.EXCHANGE = false;
+      }, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
     });
   }
 }

@@ -84,6 +84,7 @@ export class UserCenterInfoComponent implements OnInit {
       Data.userType = 2;
     }
     this.userCenterAction.set('updateinfo', Data, () => {
+      $$.alert('', '<span style="line-height:80px;">Successful Operation</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
     });
   }
   // 上传图片

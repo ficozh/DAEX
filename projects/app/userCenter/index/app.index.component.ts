@@ -20,6 +20,7 @@ import { UserCenterAction } from '../app.userCenter.action';
 export class UserCenterIndexlComponent implements OnInit {
   integral;
   userName: any;
+  validStatus: any;
   constructor(
     private userModel: UserModel,
     private userCenterAction: UserCenterAction,
@@ -31,6 +32,9 @@ export class UserCenterIndexlComponent implements OnInit {
     this.userCenterAction.get('coinCount',  (ResultData) => {
       this.integral = ResultData.data.coinCount;
       this.userModel.user.integral = ResultData.data.coinCount;
+    });
+    this.userCenterAction.get('validStatus',  (ResultData) => {
+      this.validStatus = ResultData.data;
     });
   }
 

@@ -64,7 +64,7 @@ export class UserCenterAction {
     }
 
     // 获取数据
-    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'coinCount' | 'mission' | 'missionInfo' | 'exchangeRecordList',
+    get(name: 'emailValid' | 'sendingMailCode' | 'validMailCode' | 'refreshCode' | 'validCode' | 'record' | 'coinCount' | 'mission' | 'missionInfo' | 'exchangeRecordList' | 'validStatus',
     options?: any, callback?: Function, error?: Function ) {
         let httpBody = {};
         let URL = '';
@@ -181,6 +181,14 @@ export class UserCenterAction {
                     'order': 'desc',
                     // 其他条件，没有可不填
                     'sidx': options.sidx,
+                    'tokenId': this.userModel.user.tokenId
+                };
+                URL = environment.paths.SERVER_URL + paramURL;
+                break;
+            // dax兑换记录
+            case 'validStatus':
+                paramURL = 'api/user/validStatus';
+                httpBody = {
                     'tokenId': this.userModel.user.tokenId
                 };
                 URL = environment.paths.SERVER_URL + paramURL;

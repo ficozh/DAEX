@@ -1,9 +1,9 @@
 .IntrgralWrap{padding-bottom: 100px;}
 .IntrgralWrap .InfoBox{background-color: #F1F1FD; position: relative;padding: 50px 0;}
 .IntrgralWrap .InfoBox .Img{min-width: 180px;width: 240px}
-.IntrgralWrap .InfoBox .Info .Title{font-size: 24px;margin-bottom: 30px;font-weight: 700}
+.IntrgralWrap .InfoBox .Info .Title{font-size: 24px;margin-bottom:15px;font-weight: 700}
 .IntrgralWrap .InfoBox .Info .Title span{font-size: 32px;color: #7339FF;}
-.IntrgralWrap .InfoBox .Info .Desc{font-size: 14px;color: #aaa;margin-bottom: 30px}
+.IntrgralWrap .InfoBox .Info .Desc{font-size: 14px;color: #aaa;margin-bottom:20px}
 .IntrgralWrap .InfoBox .Info .Button{font-size: 14px}
 .IntrgralWrap .InfoBox .Info .Button .BtnPrimary{font-size: 14px;width:140px}
 .IntrgralWrap .InfoBox .Info .Button span{margin-right: 20px}

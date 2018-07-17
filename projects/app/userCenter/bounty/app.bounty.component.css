@@ -1,5 +1,6 @@
 .BountyWrap .BountyBanner{padding: 60px 0;}
-.BountyWrap .BountyBanner .Img{min-width: 180px;width: 240px}
+.BountyWrap .BountyBanner .Table25{position:relative;min-height: 180px}
+.BountyWrap .BountyBanner .Img{position: absolute;top:0; min-width: 180px;width: 240px;}
 .BountyWrap .BountyBanner li{font-size: 14px;color: #999;padding-left: 40px;padding: 15px 40px;}
 .BountyWrap .BountyBanner .Title{font-size: 24px;font-weight: 700}
 .BountyWrap .BountyBanner .Title img{width: 32px;height: 32px;margin-right: 10px}
@@ -12,10 +13,17 @@
 .BountyWrap .BountyList .Box .BoxHeader .Ti{color: #7338FA;font-size: 16px;font-weight: 500}
 .BountyWrap .BountyList .Box .BoxHeader .Reward{color: #A151E7}
 .BountyWrap .BountyList .Box .BoxContent{overflow-y: auto;text-align: left}
+.BountyWrap .BountyList .Box .BoxContent .BoxContentInner{line-height: 21px;padding: 0 10px;
+  overflow: hidden;
+  height: 63px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;}
 .BountyWrap .BountyList .Box .BoxContent:before{background: none;}
 .BountyWrap .BountyList .Box .BoxContent:after{display: none}
 .BountyWrap .BountyList .Row li .Button{font-size: 14px;height: 32px;color: #ccc;padding: 5px 12px;}
-.BountyWrap .BountyList .Row li .Button img{width: 24px;height: 24px;}
+.BountyWrap .BountyList .Row li .Button img{width: 18px;height: 18px;}
 .BountyWrap .BountyList .Row li .Button.activce{color: #763BFF}
 .BountyWrap .BountyList .Row li .Btn{font-size: 14px;height: 32px;}
 .BountyWrap .BountyListColor{background-color:#F9F9F9 }

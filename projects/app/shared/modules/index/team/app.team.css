@@ -1,6 +1,6 @@
 /*------------------team------------------*/
 .Ourteam{background-color: #f9f9f9}
-.TeamWrap h2 {font-size:24px;color:#7339FF;text-align:center;padding:1.53rem 0 .8rem}
+.TeamWrap h2 {font-size:24px;font-weight: 700;color:#7339FF;text-align:center;padding:1.53rem 0 .8rem}
 .TeamIntro {
 display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;
 -webkit-box-pack: center;

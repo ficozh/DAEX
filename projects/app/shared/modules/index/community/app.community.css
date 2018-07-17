@@ -4,13 +4,13 @@
 }
 .COMMUNITYList{padding-bottom: 40px;}
 .CommunityWrap h2 {
-  font-size: 24px;
+  font-size: 24px;font-weight: 700;
   color: #7339FF;
   text-align: center;
-  padding: 130px 0 100px;
+  padding: 50px 0 ;
 }
 .EXCHANGESBox{background-color: #FAFAFA;padding-bottom: 50px}
-.CommunityWrap .EXCHANGESTi{padding: 50px 0 100px;}
+.CommunityWrap .EXCHANGESTi{padding: 50px 0;}
 .CommunityWrap > div {
   text-align: center;
 }

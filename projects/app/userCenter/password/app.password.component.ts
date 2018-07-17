@@ -11,7 +11,7 @@ import { AppParam } from '@user';
 import { UserCenterAction } from '../app.userCenter.action';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-
+declare const $$: any;
 @Component({
   selector: 'app-password',
   templateUrl: './app.password.component.html',
@@ -45,7 +45,11 @@ export class UserCenterPasswordComponent implements OnInit {
   }
   // 请求邮箱验证码
   emailCode() {
-    this.userCenterAction.get('sendingMailCode', this.PasswordForm.value);
+    this.userCenterAction.get('sendingMailCode', this.PasswordForm.value, () => {
+      $$.alert('', '<span style="line-height:80px;">Successful Operation</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
+    }, (error) => {
+      $$.alert('', '<span style="line-height:80px;">' + error.msg + '</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
+    });
   }
   // 请求图片验证码
   validate(event) {

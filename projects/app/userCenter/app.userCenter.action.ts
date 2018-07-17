@@ -37,14 +37,14 @@ export class UserCenterAction {
                     // 判断返回数据
                     options.callback(options.result);
                 } else {
-                    options.error();
+                    options.error(options.result);
                 }
             } else {
                 console.log('请求' + options.name + '失败:' + JSON.stringify(options.result));
                 if (this.appParam.isTestParam) {
                     options.callback(options.result);
                 }
-                options.error();
+                options.error(options.result);
             }
         }
     }
@@ -69,7 +69,7 @@ export class UserCenterAction {
         let httpBody = {};
         let URL = '';
         let paramURL = '';
-        let isCallback = true;
+        const isCallback = true;
         // 判断参数类型
         if (typeof options === 'function') {
             callback = arguments[1];
@@ -89,7 +89,7 @@ export class UserCenterAction {
             // 请求邮箱验证码
             case 'sendingMailCode':
                 paramURL = 'api/sendingMailCode';
-                isCallback = false;
+                // isCallback = false;
                 httpBody = {
                     'tag': options.tag,
                     'email': options.email

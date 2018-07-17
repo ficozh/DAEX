@@ -54,7 +54,11 @@ export class UserCenterLoginComponent implements OnInit {
   }
   // 请求邮箱验证码
   emailCode() {
-    this.userCenterAction.get('sendingMailCode', this.RegisterForm.value);
+    this.userCenterAction.get('sendingMailCode', this.RegisterForm.value, () => {
+      $$.alert('', '<span style="line-height:80px;">Successful Operation</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
+    }, (error) => {
+      $$.alert('', '<span style="line-height:80px;">' + error.msg + '</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
+    });
   }
   // 验证
   registerValid(name) {
@@ -69,8 +73,8 @@ export class UserCenterLoginComponent implements OnInit {
       case 'emailCode':
           this.userCenterAction.get('validMailCode', this.RegisterForm.value, (su) => {
             console.log(su);
-          }, (err) => {
-            console.log(err);
+          }, (error) => {
+            $$.alert('', '<span style="line-height:80px;">' + error.msg + '</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
           });
           break;
       case 'verify':
@@ -145,6 +149,8 @@ export class UserCenterLoginComponent implements OnInit {
   if (this.RegisterForm.valid) {
     this.userCenterAction.set('register', this.RegisterForm.value, () => {
       $$.alert('', '<span style="line-height:80px;">Successful Operation</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
+    }, (error) => {
+      $$.alert('', '<span style="line-height:80px;">' + error.msg + '</span>', function() {}, ['<span class="Btn BtnSmall BtnPrimary">Confirm</span>']);
     });
   }
 }

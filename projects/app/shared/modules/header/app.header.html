@@ -11,21 +11,21 @@
 		</div>
 	</div>
 	<ul class="Navigation" id="Navigation">
-		<li [ngClass]="{'active': !info}" (click)="setAnchor(0, 'home')"><a href="#home">{{'HEADER.Home' | translate}}</a></li>
-		<li [ngClass]="{'active': info === 6 }"><a href="#/userCenter/bounty">{{'HEADER.Bounty' | translate}}</a></li>
-		<li [ngClass]="{'active': info === 7 }"><a href="#/view/new">{{'HEADER.News' | translate}}</a></li>
-		<li [ngClass]="{'active': info === 4 }"><a href="#/view/whitepaper">{{'HEADER.DAEXpaper' | translate}}</a></li>
-		<li [ngClass]="{'active': info === 5 }"><a href="#/view/faq">{{'HEADER.faq' | translate}}</a></li>
+		<li class="NavigationLink" [ngClass]="{'active': !info}" (click)="setAnchor(0, 'home')"><a href="#home">{{'HEADER.Home' | translate}}</a></li>
+		<li class="NavigationLink" [ngClass]="{'active': info === 6 }"><a href="#/userCenter/bounty">{{'HEADER.Bounty' | translate}}</a></li>
+		<li class="NavigationLink" [ngClass]="{'active': info === 7 }"><a href="#/view/new">{{'HEADER.News' | translate}}</a></li>
+		<li class="NavigationLink" [ngClass]="{'active': info === 4 }"><a href="#/view/whitepaper">{{'HEADER.DAEXpaper' | translate}}</a></li>
+		<li class="NavigationLink" [ngClass]="{'active': info === 5 }"><a href="#/view/faq">{{'HEADER.faq' | translate}}</a></li>
 <!-- 		<li [ngClass]="{'active': info === 1 }" (click)="setAnchor(1, 'value')"><a href="#value">{{'HEADER.Value' | translate}}</a></li>
 		<li [ngClass]="{'active': info === 2 }" (click)="setAnchor(2, 'ecosystem')"><a href="#ecosystem">{{'HEADER.Ecosystem' | translate}}</a></li>
 		<li [ngClass]="{'active': info === 3 }" (click)="setAnchor(3, 'community')"><a href="#community">{{'HEADER.Community' | translate}}</a></li> -->
-		<li class="UserCenter" *ngIf="!showUser"><a href="#/userCenter/login">{{'HEADER.login' | translate}}</a> | <a href="#/userCenter/register">{{'HEADER.signUp' | translate}}</a></li>
-		<li class="UserCenter" *ngIf="showUser"><a href="#/userCenter/index">{{'HEADER.UserCenter' | translate}}</a> | <a href="javascript:;" (click)="signOut()">{{'HEADER.signOut' | translate}}</a></li>
+		<li class="NavigationLink" class="UserCenter" *ngIf="!showUser"><a href="#/userCenter/login">{{'HEADER.login' | translate}}</a> | <a href="#/userCenter/register">{{'HEADER.signUp' | translate}}</a></li>
+		<li class="NavigationLink" class="UserCenter" *ngIf="showUser"><a href="#/userCenter/index">{{'HEADER.UserCenter' | translate}}</a> | <a href="javascript:;" (click)="signOut()">{{'HEADER.signOut' | translate}}</a></li>
 		<li class="Language">
 			<div class="Overlay" *ngIf="!isLanguage" (click)="OpenLanguage()"></div>
 			<dl>
-				<dd class="Itme" (click)="Language('EN')">English</dd>
-				<dd class="Itme"  *ngIf="isLanguage" (click)="Language('ZH-CN')">中文</dd>
+				<dd class="Itme NavigationLink" (click)="Language('EN')">English</dd>
+				<dd class="Itme NavigationLink"  *ngIf="isLanguage" (click)="Language('ZH-CN')">中文</dd>
 			</dl>
 		</li>
 	</ul>

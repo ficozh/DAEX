@@ -56,7 +56,7 @@ export class AppHeaderComponent implements OnInit {
   // 菜单事件
   onMenu() {
     $$('#Navigation').toggleClass('active animated fadeInRight').animationEnd(function() {
-      $$('body').once('click', function() {
+      $$('.NavigationLink').once('click', function(event) {
         $$('#Navigation').toggleClass('active animated fadeInRight');
       });
     });
